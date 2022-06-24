@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="URLY5WtVUNqM2dJI9ymh4n" LanguageVersion="2021.4.10.1007" Version="0.128">
+<Document xmlns:p="property" Id="HgmqPI4nh4tLRv4Z5fiJZR" LanguageVersion="2021.4.9.982" Version="0.128">
   <Patch Id="HGUDXWO9Z7cNKkjkxtdjvd">
     <Canvas Id="C7TP0nEsgmMPljBzBOMo3C" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
@@ -156,6 +156,8 @@
             <Pin Id="MoFx9tbDJzQLY4369jDxM6" Name="Duration" Kind="InputPin" />
             <Pin Id="JXTqho6E5wLMAMFEtsHmlZ" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="Il3jp39eM7ILytzxpQSdps" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Qdo8KZkRsGPLTC7OuxZltw" Name="Update" Kind="InputPin" />
+            <Pin Id="Qx0kkZhSt2mPCiG1w6nH6K" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="Lc1zC57GHPkL86VzdgrqWj" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Pad Id="QcgVPcEUkqrMag8LCC9kn4" Comment="Position" Bounds="1207,587,35,15" ShowValueBox="true" isIOBox="true" Value="6">
@@ -221,6 +223,8 @@
             <Pin Id="VMUuPfcPti3MG8Z9CI8IUt" Name="Duration" Kind="InputPin" />
             <Pin Id="O6teD8ne1LLPMuBRWOIq9Y" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="UpBxtf743XFPcPXQ1bfbE4" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Ivx7ixtdcU5LO67WoH6wpZ" Name="Update" Kind="InputPin" />
+            <Pin Id="TGXzKht0YcKOjRY3eQhgOU" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="EoQH6GKyVTEOnaPM72R4WF" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="138,392,65,19" Id="FndD4HbnzinMwrsceLXRvz">
@@ -242,6 +246,8 @@
             <Pin Id="C8MwZp8BUyFNYOwfF4XEPP" Name="Duration" Kind="InputPin" />
             <Pin Id="GOW26sp7wssPNtSftiZDj0" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="G5pUb0h0DCOPPg1ryQtMJq" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="NhxwMvtc5FYQNKASXI7HIO" Name="Update" Kind="InputPin" />
+            <Pin Id="NLJnOCxGDXHOX0njUSGQzh" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="A4jUEwQp2kGNEpL2beAzDT" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="399,392,65,19" Id="DPZ7gZENRwuM6wKIkWkeJS">
@@ -263,6 +269,8 @@
             <Pin Id="CCF5uz7ND7HMi71MkXh49X" Name="Duration" Kind="InputPin" />
             <Pin Id="Pofici2TlRSNq2Edeff8Xj" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="QvXEm5yucLgLONeqBwE1Kz" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="R4odP5qocaKPahbyltV0Nc" Name="Update" Kind="InputPin" />
+            <Pin Id="Esdqp0vU5JsMDqOLsP6jPt" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="SAMokdoGzYBMI89Uxjr8C1" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="923,640,85,19" Id="JFq8T6oUjqzNhIqs5ORu0L">
@@ -275,6 +283,8 @@
             <Pin Id="T9jnehNwVXqL9dH0HQ2Ful" Name="Duration" Kind="InputPin" />
             <Pin Id="MRNr6gmMN6IPACfBFHRa3e" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="IUzLqwMFzo3L6GUxJpqMK7" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Tw84Lz1Hh3BMwUgo4EQY8T" Name="Update" Kind="InputPin" />
+            <Pin Id="BduewXFENobLMMU7CsottJ" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="CjXouyHM1ZWNSeAsXgvro4" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="923,392,65,19" Id="Mj3B0Uapsd6L1vpz1mitMj">
@@ -335,7 +345,6 @@
             <Pin Id="KIlFBBVpzkbOYxnEBaMzHK" Name="Position" Kind="OutputPin" />
             <Pin Id="Rzlj1I0gePsLGASDPeDZtM" Name="Velocity" Kind="OutputPin" />
             <Pin Id="KAJyWnlwRz0Mw3THt6oopE" Name="Acceleration" Kind="OutputPin" />
-            <Pin Id="Qgmy1AYR36vQKMMmcGUeuX" Name="Has Changed" Kind="OutputPin" />
           </Node>
           <Pad Id="Of8Li3AQnMpQcGnmmXLlwk" Comment="Live Value" Bounds="1449,-165,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation>
@@ -446,6 +455,8 @@
             <Pin Id="SDvp63cSpaJOTB1j55Qs06" Name="Duration" Kind="InputPin" />
             <Pin Id="N03hncveax9Lw8lXO2myhA" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="Plz8yvsTaleMzHos10D50n" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="JXv36tA5PetLkxIJUuzvbx" Name="Update" Kind="InputPin" />
+            <Pin Id="KLupBLL3EkiP7gIxSlEnwd" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="R8GrBh874xEMVDYowq2XVJ" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1186,-36,65,19" Id="HKQ27xcriDCMikzhcBkVVE">
@@ -467,6 +478,8 @@
             <Pin Id="DClGQdFdiUjOnU4S7uCxIU" Name="Duration" Kind="InputPin" />
             <Pin Id="KCTwg9sLIaMPUsuB3jqLBF" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="NLXD1Hf91jRO8kYB1i0F0N" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Ib2NQSEnc8OMeqOdAdkT96" Name="Update" Kind="InputPin" />
+            <Pin Id="NjnHVJYWNwHOMCcb5cCx3e" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="MmIwfGtSRPpOfqUqH9AVHx" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1447,-36,65,19" Id="Szp6jU6kUmFLuPs9KSSCTd">
@@ -488,6 +501,8 @@
             <Pin Id="DNTmXadp5iYM9W4g0GvIBw" Name="Duration" Kind="InputPin" />
             <Pin Id="MWbtIOrGv7JLlWkTWuOh8W" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="NtLt6xZK5BMPdHXebApF09" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="MQMmZaKRE2QPmVkwgvlpKS" Name="Update" Kind="InputPin" />
+            <Pin Id="PyhBb84x6wDOFyLxmKWnqM" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="R2b7OKR2B2VPLbhtiTII3g" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1970,217,85,19" Id="EJHLWKplesDNaz9RCefBH0">
@@ -500,6 +515,8 @@
             <Pin Id="QfqxUHwrjWYP8u6G7bxAAP" Name="Duration" Kind="InputPin" />
             <Pin Id="DaDNsX9Hoq8O4fDlwhbviq" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="APmVKY4bR7OPjimjf6dkLV" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Aw28SCE6Z2gOjOX4I7FqPT" Name="Update" Kind="InputPin" />
+            <Pin Id="HWwJtpXeeHFOT13FLW5218" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="TcNIz7kLEctMmp6kwG6qhC" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1969,-36,65,19" Id="SKELry6TnnuM0wgeV7hBi5">
@@ -523,7 +540,6 @@
             <Pin Id="KOivyLe69TCMgACfVXg4QW" Name="Position" Kind="OutputPin" />
             <Pin Id="GGw9HYtN74pPQPr07tiZbx" Name="Velocity" Kind="OutputPin" />
             <Pin Id="Qj0BfPl3UpSMGF9u2zQNph" Name="Acceleration" Kind="OutputPin" />
-            <Pin Id="KnHxsmn4yUyPFy011Rc2Th" Name="Has Changed" Kind="OutputPin" />
           </Node>
           <Overlay Id="Qzt5RNmzJh6NCw5GiTKH8w" Name="Interpolator world" Bounds="52,458,1309,362" />
           <Overlay Id="TjkdXoiPS6JNTfRua2GZSv" Name="Interpolator world" Bounds="1130,26,1005,367" />
@@ -690,6 +706,8 @@
             <Pin Id="R1FkLA0Ew4QN7FOfmQAzAY" Name="Duration" Kind="InputPin" />
             <Pin Id="J5VPmRsAEjkNmesnzA6rjI" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="T5HzsB1QAAWLjkDJFx4Ytt" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="EWAh94azZhkO0LU0XtmZYo" Name="Update" Kind="InputPin" />
+            <Pin Id="ELXINGWiPZmM3ezxwex3TI" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="R15ewmbyhBrLxzCNRSuNIb" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Pad Id="O4nJIWcyU59OBgK4Y1mIZJ" Comment="Position" Bounds="1190,2125,35,15" ShowValueBox="true" isIOBox="true" Value="6">
@@ -724,6 +742,8 @@
             <Pin Id="RKw94HOq7dlOwFhtRJmY85" Name="Duration" Kind="InputPin" />
             <Pin Id="HpvPUWuNv26L87awaatZ2V" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="GEqrXOwJPw5PdKNF06ux6x" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Vy1z3DGRSmOOh83UC5Vh0n" Name="Update" Kind="InputPin" />
+            <Pin Id="H8tFS8dWDXLNhza8ASs8vr" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="QI5UzwcwMhXNf2RnhxuFTS" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="121,1930,65,19" Id="VxJKQzncJcmOzU814K5tEl">
@@ -745,6 +765,8 @@
             <Pin Id="FDwudtvyk0kLUy6lOgivqE" Name="Duration" Kind="InputPin" />
             <Pin Id="S2b8rFBaajLLdiAR1GBZXV" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="JILNazxfddUPihk3l5ofno" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="RHjt3A25N2qPgO4VyiR1mt" Name="Update" Kind="InputPin" />
+            <Pin Id="JaIA62danD3NZr9VuvxP1c" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="HEHydaZD15qMBqIvZxT8tq" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="382,1930,65,19" Id="OOT6EmIYxKfNhZhk0As7qe">
@@ -766,6 +788,8 @@
             <Pin Id="K1IyAyJlqKROswbD6crNfT" Name="Duration" Kind="InputPin" />
             <Pin Id="Bs04mr2sKlJN07kGacrhof" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="AqBV8j5fGm8Lh17XSvURLc" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="PWB8NusYETZNqTLNtMN4Q4" Name="Update" Kind="InputPin" />
+            <Pin Id="VpHK7wNY3v9NagdL2vWXLm" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="NCuVgMSaXfeOqmv5dZsIom" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="906,2178,85,19" Id="Mi8wStEMykBPtsfh8QIxEi">
@@ -778,6 +802,8 @@
             <Pin Id="VDPT0mO6CKKMbW8dqGvy3b" Name="Duration" Kind="InputPin" />
             <Pin Id="Ffa264VGoIbOxQb1ZAzA1F" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="TpgG95zixNZL8MRRaQsnec" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Ed6s8o06lJZNd9U5UUyOGG" Name="Update" Kind="InputPin" />
+            <Pin Id="LiuafPEL78PNjkUVsTUp08" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="FRxntOri3wmPOfAQW3Igfu" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="906,1930,65,19" Id="IuBDrRzGyN7Ld3fR6rTqW5">
@@ -838,7 +864,6 @@
             <Pin Id="CdCnuXgX8g1P7csF5yU8Lw" Name="Position" Kind="OutputPin" />
             <Pin Id="Ab2XJfMqNwpLPWW81tK8jd" Name="Velocity" Kind="OutputPin" />
             <Pin Id="ScqbyT7jgOyLENinx5CRJB" Name="Acceleration" Kind="OutputPin" />
-            <Pin Id="IzeEJaQzIwdPpQYcAUQzVr" Name="Has Changed" Kind="OutputPin" />
           </Node>
           <Pad Id="IxaObyUjygZOmAIlPOXyvE" Comment="Live Value" Bounds="1433,1350,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation>
@@ -923,6 +948,8 @@
             <Pin Id="IF0mjn9YUpeL5xix2Lzd42" Name="Duration" Kind="InputPin" />
             <Pin Id="HE0l3WUN6ZAN4kp9xtDj4K" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="KeibLLXjZsENgmsxJIO370" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="DiqeNIAFDdbLLENMBvcutb" Name="Update" Kind="InputPin" />
+            <Pin Id="CMjPAjTX29QLyb7XWEey1m" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="VIq6p1ZDjTPM65xn3GJ9FD" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1169,1502,65,19" Id="TjZGsy2oRuHOmu0Z2QVJXv">
@@ -944,6 +971,8 @@
             <Pin Id="NbVF0Bt1WBlPNWpdreGy6X" Name="Duration" Kind="InputPin" />
             <Pin Id="R2J6AKZ7nAtM59pYJ7tWSR" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="CPYkyzxgJ1iOanIw9ANEjK" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="DGdlZk4klIoOsMznvJIqlU" Name="Update" Kind="InputPin" />
+            <Pin Id="JEzgLSp95A6MpAio2QoNiN" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="UTqERqYuMxtM4jUeVXq4bp" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1430,1502,65,19" Id="UfujlgIvNmZPi1kcGZJXxV">
@@ -965,6 +994,8 @@
             <Pin Id="TWbnxWtUKtELbkKk7iVitu" Name="Duration" Kind="InputPin" />
             <Pin Id="Gf9UUcsPUhsNcaPGt4cjao" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="M5SoTp2nJicOR7LGgyQRey" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="GdXW083XVj6MkGiqWFvN2b" Name="Update" Kind="InputPin" />
+            <Pin Id="EHi4AXHfFz7OKVKJQ0bmsg" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="UvzOxTVlcDRMk8qUrp9a6U" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1953,1755,85,19" Id="K3Yb0dKoH1ONOnSUS7y3Xy">
@@ -977,6 +1008,8 @@
             <Pin Id="S5gxcnqaeBgOoi71r1gSjE" Name="Duration" Kind="InputPin" />
             <Pin Id="QYds2X1vzlTOjTEGbPupbA" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="Ra436X986eHNaSS6489zSy" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="VoXg5q6kOOxO5oCZZcXBfh" Name="Update" Kind="InputPin" />
+            <Pin Id="B9EL0JwY3PwNP0JV55Ulkn" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="Vp6lmE3IaZdM5eaVk2wkUp" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1952,1502,65,19" Id="CRgvktv6Lt2OsnR3OJMXks">
@@ -1000,7 +1033,6 @@
             <Pin Id="FU8ESWftlJ9M0iFwWRde13" Name="Position" Kind="OutputPin" />
             <Pin Id="OC6YxIzkfOfOMVirTW8Z8V" Name="Velocity" Kind="OutputPin" />
             <Pin Id="IB1WioCtSHPOOwz4mqcr88" Name="Acceleration" Kind="OutputPin" />
-            <Pin Id="ED45YRF60KyQInS0wzKOzv" Name="Has Changed" Kind="OutputPin" />
           </Node>
           <Overlay Id="Kkw88En5kvqOPaJeSWEsqX" Name="Interpolator world" Bounds="35,1996,1309,375" />
           <Overlay Id="IGaLeBg5EIwL3B6FTEQOMf" Name="Interpolator world" Bounds="1113,1564,1005,367" />
@@ -1177,6 +1209,14 @@
             <Pin Id="QdsnombaVNvLbI2rSa2zG6" Name="Output" Kind="OutputPin" />
             <Pin Id="SBMtoE6GvIuLilGbaA6W52" Name="Value" Kind="OutputPin" />
           </Node>
+          <Node Bounds="968,2071,122,19" Id="DAvBOwOCkxIO4lLtLu7I75">
+            <p:NodeReference LastCategoryFullName="LerpX.Interpolation.Model" LastSymbolSource="VL.LerpX.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="StepInterpolationModel" />
+            </p:NodeReference>
+            <Pin Id="MQM1QNzNsk0OOuJdo20DcQ" Name="Step Coord" Kind="InputPin" />
+            <Pin Id="SAmM11h4O6XMBx35zhGfL0" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="FSVHgsUJMVHN69WuqjNh39" Name="Create" />
         <Patch Id="IZujogNUJB3NANeh5TC7vE" Name="Update" />
@@ -1326,9 +1366,10 @@
         <Link Id="C9oKBQWz7WEMoQczdm59ps" Ids="LRy81pqzKMOMH6GqLxlHV9,QCKhqEumj8FQVkvZkH8K0E" />
         <Link Id="Qme3r7Y20oaNeOaM4oQLzt" Ids="QsO8wlmZDFTN9ZvrOghmjK,VYqn0qfqWEYQNTfrc52oDB" />
         <Link Id="HGOwn8V7Hi2PlBSYqiRytH" Ids="O00ChMC4JEHLMqKavw1kSa,ICLZq5q778qQK9KDuMGT8u" />
+        <Link Id="OjY8j5vzgw3MOYM9PUE3h2" Ids="SAmM11h4O6XMBx35zhGfL0,Ffa264VGoIbOxQb1ZAzA1F" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="OVD4drgo9bxOoEs96ioH1k" Location="VL.CoreLib" Version="2021.4.10-1007-g66c84f8e50" />
+  <NugetDependency Id="OVD4drgo9bxOoEs96ioH1k" Location="VL.CoreLib" Version="2021.4.9" />
   <NugetDependency Id="TDK85uwhWnGLaosskwJMQF" Location="VL.LayerX" Version="0.0.0.0" />
 </Document>
