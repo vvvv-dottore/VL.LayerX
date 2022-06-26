@@ -91,21 +91,21 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="LRJrq1b1DgXNuCG6T0qPEQ" Comment="Duration" Bounds="703,615,35,15" ShowValueBox="true" isIOBox="true" Value="0.439999990165234">
+          <Pad Id="LRJrq1b1DgXNuCG6T0qPEQ" Comment="Duration" Bounds="703,615,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="P3ToI7tzWZKMBbempCYUKk" Comment="Position" Bounds="949,611,35,15" ShowValueBox="true" isIOBox="true" Value="3">
+          <Pad Id="P3ToI7tzWZKMBbempCYUKk" Comment="Position" Bounds="949,611,35,15" ShowValueBox="true" isIOBox="true" Value="4">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="C6ZK1yRtRSCPugngNjN3gq" Comment="" Bounds="139,1054,1113,192" ShowValueBox="true" isIOBox="true">
+          <Pad Id="C6ZK1yRtRSCPugngNjN3gq" Comment="" Bounds="139,1054,1677,179" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
               <p:horizontal p:Type="Boolean">true</p:horizontal>
               <p:maximum p:Type="Single">1</p:maximum>
-              <p:maxvisibleentries p:Type="Int32">89</p:maxvisibleentries>
+              <p:maxvisibleentries p:Type="Int32">157</p:maxvisibleentries>
               <p:minimum p:Type="Single">0</p:minimum>
               <p:precision p:Type="Int32">4</p:precision>
               <p:showslider p:Type="Boolean">true</p:showslider>
@@ -151,7 +151,7 @@
             <Pin Id="Qx0kkZhSt2mPCiG1w6nH6K" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="Lc1zC57GHPkL86VzdgrqWj" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Pad Id="QcgVPcEUkqrMag8LCC9kn4" Comment="Position" Bounds="1207,587,35,15" ShowValueBox="true" isIOBox="true" Value="6">
+          <Pad Id="QcgVPcEUkqrMag8LCC9kn4" Comment="Position" Bounds="1207,587,35,15" ShowValueBox="true" isIOBox="true" Value="5">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
@@ -319,7 +319,7 @@
             <Pin Id="JgwnmS6q2zEOotq0nTPOJP" Name="Width" Kind="InputPin" DefaultValue="10" />
             <Pin Id="K499egYCPCgO5IoFrBcUjY" Name="Alignment" Kind="InputPin" />
             <Pin Id="I7qdftIq1n2Ne0LcFQt6zL" Name="Phase" Kind="InputPin" />
-            <Pin Id="VZjwt7ptQEAPuSy0Gz9XKq" Name="Count" Kind="InputPin" DefaultValue="50" />
+            <Pin Id="VZjwt7ptQEAPuSy0Gz9XKq" Name="Count" Kind="InputPin" DefaultValue="100" />
             <Pin Id="MUIojsWYDy5NAj08TybPHg" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="399,193,65,19" Id="SP2QPtIRmv3MupeBWVXTbl">
@@ -379,11 +379,6 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="Bw5KlB9Hp1WQBAlHKMAJGx" Comment="Duration" Bounds="1227,192,35,15" ShowValueBox="true" isIOBox="true" Value="0">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float64" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="G7PlEJSItqqLhRwB3hG5fh" Comment="Position" Bounds="1469,165,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
@@ -399,49 +394,23 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="QOfnencS6hUMiCeZsfZBiW" Comment="Duration" Bounds="1750,192,35,15" ShowValueBox="true" isIOBox="true" Value="0.299999993294477">
+          <Pad Id="QOfnencS6hUMiCeZsfZBiW" Comment="Duration" Bounds="1750,192,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="CPoDMSktJMgPedKpoDKCQR" Comment="Position" Bounds="1992,165,35,15" ShowValueBox="true" isIOBox="true" Value="3">
+          <Pad Id="CPoDMSktJMgPedKpoDKCQR" Comment="Position" Bounds="1992,165,35,15" ShowValueBox="true" isIOBox="true" Value="4">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="QQt05KDGUIGO2DdkmoBfBu" Comment="Duration" Bounds="2012,192,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float64" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Node Bounds="1507,103,145,19" Id="NKGcIgGxEaWPA2pcKDHipx">
-            <p:NodeReference LastCategoryFullName="LerpX.Interpolation.Model" LastSymbolSource="VL.LerpX.vl">
+          <Node Bounds="1185,217,14,19" Id="G6sRGukGuNYL2b9rDWJ3Kg">
+            <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D" LastSymbolSource="VL.LayerX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="OscillatorInterpolationModel" />
-            </p:NodeReference>
-            <Pin Id="I5XqowPfyOpPEdRc8SPVqP" Name="Filter Time" Kind="InputPin" />
-            <Pin Id="M9XOdvxuf47MgJtSUckzIv" Name="Cycles" Kind="InputPin" />
-            <Pin Id="IIXoe4yIfWbLXcU644ilLg" Name="Cyclic" Kind="InputPin" />
-            <Pin Id="GGSwH1EL2vJPpU3yqbCP5d" Name="Output" Kind="StateOutputPin" />
-          </Node>
-          <Pad Id="V2D37Dg7PUqLgGrnNy8nRU" Comment="Filter Time" Bounds="1509,59,35,15" ShowValueBox="true" isIOBox="true" Value="1.8">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float32" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Pad Id="ES8Uo7sQLZqOGMd4GOWWrx" Comment="Cycles" Bounds="1579,80,35,15" ShowValueBox="true" isIOBox="true" Value="0">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float32" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Node Bounds="1185,217,85,19" Id="G6sRGukGuNYL2b9rDWJ3Kg">
-            <p:NodeReference>
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Clip (Interpolator1D)" />
+              <Choice Kind="ProcessAppFlag" Name="Keyframe (Interpolator1D)" />
             </p:NodeReference>
             <Pin Id="Or2vGHN03VHLLL6Tn3dcgG" Name="Source" Kind="InputPin" />
             <Pin Id="AvpX1DhbslLOIjYaXo6BXO" Name="Position" Kind="InputPin" />
-            <Pin Id="SDvp63cSpaJOTB1j55Qs06" Name="Duration" Kind="InputPin" />
             <Pin Id="N03hncveax9Lw8lXO2myhA" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="Plz8yvsTaleMzHos10D50n" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="Lmk0PhIVfBTO1GYVEaAjkN" Name="Update" Kind="InputPin" />
@@ -494,14 +463,13 @@
             <Pin Id="PyhBb84x6wDOFyLxmKWnqM" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="R2b7OKR2B2VPLbhtiTII3g" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="1970,217,85,19" Id="EJHLWKplesDNaz9RCefBH0">
-            <p:NodeReference>
+          <Node Bounds="1970,217,59,19" Id="EJHLWKplesDNaz9RCefBH0">
+            <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D" LastSymbolSource="VL.LayerX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Clip (Interpolator1D)" />
+              <Choice Kind="ProcessAppFlag" Name="Keyframe (Interpolator1D)" />
             </p:NodeReference>
             <Pin Id="V2s78IwMFdPLabULpDbEyN" Name="Source" Kind="InputPin" />
             <Pin Id="LrjsWaVZDvRNtRq2yrqA0P" Name="Position" Kind="InputPin" />
-            <Pin Id="QfqxUHwrjWYP8u6G7bxAAP" Name="Duration" Kind="InputPin" />
             <Pin Id="DaDNsX9Hoq8O4fDlwhbviq" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="APmVKY4bR7OPjimjf6dkLV" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="CTcDDixT4YbMNnqzeOeiyr" Name="Update" Kind="InputPin" />
@@ -532,7 +500,7 @@
           </Node>
           <Overlay Id="Qzt5RNmzJh6NCw5GiTKH8w" Name="Interpolator world" Bounds="52,458,1309,362" />
           <Overlay Id="TjkdXoiPS6JNTfRua2GZSv" Name="Interpolator world" Bounds="1130,26,1005,367" />
-          <Pad Id="HEbjUiT6CPBO8EOr3eQYFF" Comment="" Bounds="1527,570,525,104" ShowValueBox="true" isIOBox="true">
+          <Pad Id="HEbjUiT6CPBO8EOr3eQYFF" Comment="" Bounds="1527,570,449,111" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
               <p:horizontal p:Type="Boolean">true</p:horizontal>
               <p:maximum p:Type="Single">1</p:maximum>
@@ -626,11 +594,6 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="EzE2LFmwLpqPMHb2Vrraj1" Comment="Duration" Bounds="162,2153,35,15" ShowValueBox="true" isIOBox="true" Value="0">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float64" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="GZf5kZGt5ALNTJY3kKNS7D" Comment="Position" Bounds="404,2125,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
@@ -651,12 +614,7 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="BcEYPYl5dOmNFQkeGGnEAr" Comment="Position" Bounds="928,2125,35,15" ShowValueBox="true" isIOBox="true" Value="3">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float64" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Pad Id="CofVZCw6uP2Nrf9EBADeDe" Comment="Duration" Bounds="948,2153,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
+          <Pad Id="BcEYPYl5dOmNFQkeGGnEAr" Comment="Position" Bounds="928,2125,35,15" ShowValueBox="true" isIOBox="true" Value="5">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
@@ -722,14 +680,13 @@
             <Pin Id="TnhXsS0kW8CP6iPsbDCcCO" Name="Input 3" Kind="InputPin" />
             <Pin Id="M12p6E0RDlSNzY1NfFNTBZ" Name="Input 4" Kind="InputPin" />
           </Node>
-          <Node Bounds="120,2178,85,19" Id="EUOQ9Mfz1efOysrBz19TX3">
-            <p:NodeReference>
+          <Node Bounds="120,2178,23,19" Id="EUOQ9Mfz1efOysrBz19TX3">
+            <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D" LastSymbolSource="VL.LayerX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Clip (Interpolator1D)" />
+              <Choice Kind="ProcessAppFlag" Name="Keyframe (Interpolator1D)" />
             </p:NodeReference>
             <Pin Id="Jo1zCNsZzp4Ov1A2HYSMmM" Name="Source" Kind="InputPin" />
             <Pin Id="HuOqJiUEdPTQQllAuIsJcW" Name="Position" Kind="InputPin" />
-            <Pin Id="RKw94HOq7dlOwFhtRJmY85" Name="Duration" Kind="InputPin" />
             <Pin Id="HpvPUWuNv26L87awaatZ2V" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="GEqrXOwJPw5PdKNF06ux6x" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="GoYJIdKfxc3PmXdg9Wyv9Q" Name="Update" Kind="InputPin" />
@@ -782,14 +739,13 @@
             <Pin Id="VpHK7wNY3v9NagdL2vWXLm" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="NCuVgMSaXfeOqmv5dZsIom" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="906,2178,85,19" Id="Mi8wStEMykBPtsfh8QIxEi">
-            <p:NodeReference>
+          <Node Bounds="906,2178,64,19" Id="Mi8wStEMykBPtsfh8QIxEi">
+            <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D" LastSymbolSource="VL.LayerX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Clip (Interpolator1D)" />
+              <Choice Kind="ProcessAppFlag" Name="Keyframe (Interpolator1D)" />
             </p:NodeReference>
             <Pin Id="HMGlSPLBuLbNSbQUkyFFep" Name="Source" Kind="InputPin" />
             <Pin Id="JMIxeSp6jyZN601C6cX7Ku" Name="Position" Kind="InputPin" />
-            <Pin Id="VDPT0mO6CKKMbW8dqGvy3b" Name="Duration" Kind="InputPin" />
             <Pin Id="Ffa264VGoIbOxQb1ZAzA1F" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="TpgG95zixNZL8MRRaQsnec" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="PQMwLnid721PJEYaMooxQu" Name="Update" Kind="InputPin" />
@@ -893,11 +849,6 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="O5E1Kk2lm9zNm69zgV5yeL" Comment="Duration" Bounds="1210,1730,35,15" ShowValueBox="true" isIOBox="true" Value="0">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float64" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="JEDPbLD5ry5OK2jKjm3lE6" Comment="Position" Bounds="1452,1703,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
@@ -913,29 +864,23 @@
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="Pgs2McaUo6dOicjh6mjisL" Comment="Duration" Bounds="1733,1730,35,15" ShowValueBox="true" isIOBox="true" Value="0.299999993294477">
+          <Pad Id="Pgs2McaUo6dOicjh6mjisL" Comment="Duration" Bounds="1733,1730,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="Q3s962floXGOR2KkIDX11l" Comment="Position" Bounds="1975,1703,35,15" ShowValueBox="true" isIOBox="true" Value="3">
+          <Pad Id="Q3s962floXGOR2KkIDX11l" Comment="Position" Bounds="1975,1703,35,15" ShowValueBox="true" isIOBox="true" Value="4">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="UXQfCVN1VzUOAhZfphFMpG" Comment="Duration" Bounds="1995,1730,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Float64" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Node Bounds="1168,1755,85,19" Id="TxZRL04NDSOOyDN4TTblS6">
-            <p:NodeReference>
+          <Node Bounds="1168,1755,52,19" Id="TxZRL04NDSOOyDN4TTblS6">
+            <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D" LastSymbolSource="VL.LayerX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Clip (Interpolator1D)" />
+              <Choice Kind="ProcessAppFlag" Name="Keyframe (Interpolator1D)" />
             </p:NodeReference>
             <Pin Id="FmYts5cnX95LsKIbJ9KEcA" Name="Source" Kind="InputPin" />
             <Pin Id="MBIHbj1b1pxLYVNQrvrNnK" Name="Position" Kind="InputPin" />
-            <Pin Id="IF0mjn9YUpeL5xix2Lzd42" Name="Duration" Kind="InputPin" />
             <Pin Id="HE0l3WUN6ZAN4kp9xtDj4K" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="KeibLLXjZsENgmsxJIO370" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="Ozpy89LcQ1EPXrfn9Yn5Zn" Name="Update" Kind="InputPin" />
@@ -988,14 +933,13 @@
             <Pin Id="EHi4AXHfFz7OKVKJQ0bmsg" Name="Custom Transport Function" Kind="InputPin" />
             <Pin Id="UvzOxTVlcDRMk8qUrp9a6U" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="1953,1755,85,19" Id="K3Yb0dKoH1ONOnSUS7y3Xy">
-            <p:NodeReference>
+          <Node Bounds="1953,1755,59,19" Id="K3Yb0dKoH1ONOnSUS7y3Xy">
+            <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D" LastSymbolSource="VL.LayerX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Clip (Interpolator1D)" />
+              <Choice Kind="ProcessAppFlag" Name="Keyframe (Interpolator1D)" />
             </p:NodeReference>
             <Pin Id="Moq5ph119UvLhzRRiCKjfA" Name="Source" Kind="InputPin" />
             <Pin Id="EFKhkkzuaMwM5X0F45OLdz" Name="Position" Kind="InputPin" />
-            <Pin Id="S5gxcnqaeBgOoi71r1gSjE" Name="Duration" Kind="InputPin" />
             <Pin Id="QYds2X1vzlTOjTEGbPupbA" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="Ra436X986eHNaSS6489zSy" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="D7XlFICDdY7Oyk8OJikpi3" Name="Update" Kind="InputPin" />
@@ -1026,7 +970,7 @@
           </Node>
           <Overlay Id="Kkw88En5kvqOPaJeSWEsqX" Name="Interpolator world" Bounds="35,1996,1309,375" />
           <Overlay Id="IGaLeBg5EIwL3B6FTEQOMf" Name="Interpolator world" Bounds="1113,1564,1005,367" />
-          <Pad Id="QeGlakPGCpVNcpixDhybwr" Comment="" Bounds="1523,2114,525,94" ShowValueBox="true" isIOBox="true">
+          <Pad Id="QeGlakPGCpVNcpixDhybwr" Comment="" Bounds="1523,2114,544,81" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
               <p:horizontal p:Type="Boolean">true</p:horizontal>
               <p:maximum p:Type="Single">1</p:maximum>
@@ -1038,7 +982,7 @@
               <p:sliderdirection p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.SliderDirectionEnum">Vertical</p:sliderdirection>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="1509,2013,99,74" Id="JljyEdSMN9qOMgltmc9HxQ">
+          <Node Bounds="1509,2012,112,75" Id="JljyEdSMN9qOMgltmc9HxQ">
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
@@ -1060,10 +1004,10 @@
                 <Pin Id="QeLHGMskYb9OfI1oI4QOQi" Name="Output" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="FY7lR7a2m7dOZGW9nxPI5f" Bounds="1591,2019" Alignment="Top" />
+            <ControlPoint Id="FY7lR7a2m7dOZGW9nxPI5f" Bounds="1604,2019" Alignment="Top" />
             <ControlPoint Id="JSjckJ6OzaZQTekpBez9EX" Bounds="1523,2081" Alignment="Bottom" />
           </Node>
-          <Node Bounds="1589,1984,85,19" Id="Hlb24DZHloQO6PjtG7tqYI">
+          <Node Bounds="1602,1978,85,19" Id="Hlb24DZHloQO6PjtG7tqYI">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LinearSpread" />
@@ -1201,7 +1145,7 @@
             <Pin Id="QdsnombaVNvLbI2rSa2zG6" Name="Output" Kind="OutputPin" />
             <Pin Id="SBMtoE6GvIuLilGbaA6W52" Name="Value" Kind="OutputPin" />
           </Node>
-          <Node Bounds="968,2071,122,19" Id="DAvBOwOCkxIO4lLtLu7I75">
+          <Node Bounds="946,2074,122,19" Id="DAvBOwOCkxIO4lLtLu7I75">
             <p:NodeReference LastCategoryFullName="LerpX.Interpolation.Model" LastSymbolSource="VL.LerpX.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="StepInterpolationModel" />
@@ -1245,11 +1189,8 @@
         <Link Id="PoxHJRyxdv2N6AsxMlOigG" Ids="UEypChmaHPYL9rsNgcT3e0,GOW26sp7wssPNtSftiZDj0" />
         <Link Id="L2j0gZBE5XDM5n77Ip3BtK" Ids="S3tWoQu5lnnNJTvKqaWbox,BNg40FSyacsLjPo9gf4Ay5" />
         <Link Id="EAB1SDh6d1XNvjIegMvFhI" Ids="ARtsmaYyljGMT1vqwsvVRP,Of8Li3AQnMpQcGnmmXLlwk" />
-        <Link Id="SEkkq4OJ0J2LFVp9yyXYtP" Ids="V2D37Dg7PUqLgGrnNy8nRU,I5XqowPfyOpPEdRc8SPVqP" />
-        <Link Id="OG6PQcPGONjPr8yogjktfx" Ids="ES8Uo7sQLZqOGMd4GOWWrx,M9XOdvxuf47MgJtSUckzIv" />
         <Link Id="AZKK1s1cKk4N7b0hTFXgKO" Ids="ElkSgkDqpugOsEYAVYRqv3,Or2vGHN03VHLLL6Tn3dcgG" />
         <Link Id="LymH4etmMPaOJf9NvM5dXy" Ids="QcJPBtYB2kgK9W8xpQo53G,AvpX1DhbslLOIjYaXo6BXO" />
-        <Link Id="UkVV25BPn2gLUs60M69W0r" Ids="Bw5KlB9Hp1WQBAlHKMAJGx,SDvp63cSpaJOTB1j55Qs06" />
         <Link Id="DspfIgpdMgoNHqZ4psl4yW" Ids="U4P0HAVhmTSLt6LeyfpGFL,DClGQdFdiUjOnU4S7uCxIU" />
         <Link Id="EEs7EnQip6HO5vN2R9FmIz" Ids="G7PlEJSItqqLhRwB3hG5fh,UutQXTI1TkLLsNPKOHPKMM" />
         <Link Id="HeOPMi0XLaHPF7TuljLgNL" Ids="U3llrtm0u6gQKRXlQ3291k,I045adeTopXMENPe4JNEzH" />
@@ -1259,8 +1200,6 @@
         <Link Id="Tl8BfwCNDqRNRwgiy5L3Xx" Ids="QOfnencS6hUMiCeZsfZBiW,DNTmXadp5iYM9W4g0GvIBw" />
         <Link Id="GN0MpTg2GhAP03OE3E2lqQ" Ids="J6lsEbwtOgZQHeoLYmkJqn,V2s78IwMFdPLabULpDbEyN" />
         <Link Id="RWIaGu0khgmLUM02lJCZkk" Ids="CPoDMSktJMgPedKpoDKCQR,LrjsWaVZDvRNtRq2yrqA0P" />
-        <Link Id="KjmkAE5kPAdPplLBaxilCW" Ids="QQt05KDGUIGO2DdkmoBfBu,QfqxUHwrjWYP8u6G7bxAAP" />
-        <Link Id="RHGrX9dw2SnPzBKI7F4cgY" Ids="GGSwH1EL2vJPpU3yqbCP5d,KCTwg9sLIaMPUsuB3jqLBF" />
         <Link Id="EXXslFpFqjYLDkQbFmqSQg" Ids="R8GrBh874xEMVDYowq2XVJ,Bkkd7eO0j96N8rnHwWHP99" />
         <Link Id="QZLsZetqvKfLUqxQVaJkge" Ids="R2b7OKR2B2VPLbhtiTII3g,L6pNVHo8fR1LKqajOLNwkI" />
         <Link Id="PQYHc79W72PPVSrzss7ZVZ" Ids="MmIwfGtSRPpOfqUqH9AVHx,RaAc5GLZ3AHPolc0jtLyAT" />
@@ -1276,7 +1215,6 @@
         <Link Id="KdbK1u9uuTQQaMWwLZB7gL" Ids="VkGo3dGoB1mOcA73mWzba7,Jo1zCNsZzp4Ov1A2HYSMmM" />
         <Link Id="TQhgOvxwzywNMiv2JIHB5Q" Ids="QI5UzwcwMhXNf2RnhxuFTS,GEJp1GYrbfqLRXi1ScntkI" />
         <Link Id="ScuSFbXxXI5Okgb4mlo2yR" Ids="QZgN5ki7LjSN8xysSK6sv2,HuOqJiUEdPTQQllAuIsJcW" />
-        <Link Id="ICOFuBrQgC0NxbZunFg43l" Ids="EzE2LFmwLpqPMHb2Vrraj1,RKw94HOq7dlOwFhtRJmY85" />
         <Link Id="TcxZYUCNdhjM1ILzx4cHUN" Ids="HEHydaZD15qMBqIvZxT8tq,FzNxw01k2Z3QC2MX6N912V" />
         <Link Id="BYg14uf6sC2MKSNuFTUXlA" Ids="Ou3uMiMI4yKMADGnYKZsY6,FDwudtvyk0kLUy6lOgivqE" />
         <Link Id="Qqlpzs7CLTeOlmrufEfgjz" Ids="GZf5kZGt5ALNTJY3kKNS7D,LUcY0ISfmzqMUyh0YPcwso" />
@@ -1289,14 +1227,12 @@
         <Link Id="VkZ1LrgnCntMs49AKQHY57" Ids="ChXmqCEZ2j4O2SMbRsbdt5,HMGlSPLBuLbNSbQUkyFFep" />
         <Link Id="BZ1bYwnbCROMqennflqqrh" Ids="FRxntOri3wmPOfAQW3Igfu,LmEIDjcVNKtPaiMaGGZE0h" />
         <Link Id="IKlqzhMW6sINhOHTEHSaAP" Ids="BcEYPYl5dOmNFQkeGGnEAr,JMIxeSp6jyZN601C6cX7Ku" />
-        <Link Id="E6UD628FnsnPN2h3lN92Wl" Ids="CofVZCw6uP2Nrf9EBADeDe,VDPT0mO6CKKMbW8dqGvy3b" />
         <Link Id="RDR5w8LSKtbLP1tCRKkRYi" Ids="QAZ3yCBYgPSNjFE6GIHmYY,Hz6fNMMY4dnPYwYU3SAlxT" />
         <Link Id="OJqgiNEu3LZLY05MLUzPlK" Ids="DS7D4SZPXncL9djAAz0ZJE,NzC5cmJYPOaMhO3mpLtPxn" />
         <Link Id="B8IJAPDkkIdPupNYbclTlA" Ids="Az4unNcQLsZLLBYhnnxwRw,JclZzEVddLDMJsedxBKSp0" />
         <Link Id="HOqcsRIhJTrNkbszHcV1os" Ids="SPFElMRSav7PZXG8upiKrw,IxaObyUjygZOmAIlPOXyvE" />
         <Link Id="GkR9KkcwyDGMd9IO7ozUw1" Ids="A8LuymUmbldM1BYb3EMgpC,FmYts5cnX95LsKIbJ9KEcA" />
         <Link Id="OuA2l6lhmFzOW9A7Ibc2Kj" Ids="L7MvfFKNyXTPXeahiZhsb6,MBIHbj1b1pxLYVNQrvrNnK" />
-        <Link Id="LTzvRwuSP1mM0PysVazt1i" Ids="O5E1Kk2lm9zNm69zgV5yeL,IF0mjn9YUpeL5xix2Lzd42" />
         <Link Id="QC8t6ck6v8SL3lcvuqTtJk" Ids="JbaL3S1g3VIMNVSiYVyhTC,NbVF0Bt1WBlPNWpdreGy6X" />
         <Link Id="ErfAR8vDhZdLeSREcDYucQ" Ids="JEDPbLD5ry5OK2jKjm3lE6,B7E04FTL4dlPxzGeFJGMgw" />
         <Link Id="DrGZbhXOhffQJRV58DwcvF" Ids="Aa79DZMtOKvNbAX0aUCDAI,UcUjdvMkSSfQEAa0U8AD0z" />
@@ -1306,7 +1242,6 @@
         <Link Id="AGNUu1KifeWOGUHTXS4m2r" Ids="Pgs2McaUo6dOicjh6mjisL,TWbnxWtUKtELbkKk7iVitu" />
         <Link Id="SD02YJa6oYjOdgFzghuUCZ" Ids="L9aamF5C8IBO2lZTfwuSjz,Moq5ph119UvLhzRRiCKjfA" />
         <Link Id="PhnvXlpBPgjLXuHQez6Ufh" Ids="Q3s962floXGOR2KkIDX11l,EFKhkkzuaMwM5X0F45OLdz" />
-        <Link Id="TELytXq2GUCLfal9CCEo5p" Ids="UXQfCVN1VzUOAhZfphFMpG,S5gxcnqaeBgOoi71r1gSjE" />
         <Link Id="T0xIAF73S4fNZ0Ju7spIen" Ids="VIq6p1ZDjTPM65xn3GJ9FD,Dg1656xP8HIPksyFiOrBDo" />
         <Link Id="QYrfScOvQ6ZLFxikgJVCOP" Ids="UvzOxTVlcDRMk8qUrp9a6U,TnhXsS0kW8CP6iPsbDCcCO" />
         <Link Id="M6MEKwAwGdjLjsmifluaro" Ids="UTqERqYuMxtM4jUeVXq4bp,UCrYuiP9mabMEWHIhgBVj9" />
