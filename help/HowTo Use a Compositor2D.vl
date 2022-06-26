@@ -252,6 +252,7 @@
             <Pin Id="IF0mjn9YUpeL5xix2Lzd42" Name="Duration" Kind="InputPin" />
             <Pin Id="HE0l3WUN6ZAN4kp9xtDj4K" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="KeibLLXjZsENgmsxJIO370" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="IJJSuH2XxE9Pp9I4ptpadV" Name="Update" Kind="InputPin" />
             <Pin Id="VIq6p1ZDjTPM65xn3GJ9FD" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1291,208,78,19" Id="TjZGsy2oRuHOmu0Z2QVJXv">
@@ -273,6 +274,7 @@
             <Pin Id="NbVF0Bt1WBlPNWpdreGy6X" Name="Duration" Kind="InputPin" />
             <Pin Id="R2J6AKZ7nAtM59pYJ7tWSR" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="CPYkyzxgJ1iOanIw9ANEjK" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="VuFV1zjkGPfOKwkwfoqHoq" Name="Update" Kind="InputPin" />
             <Pin Id="UTqERqYuMxtM4jUeVXq4bp" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1552,208,78,19" Id="UfujlgIvNmZPi1kcGZJXxV">
@@ -294,6 +296,7 @@
             <Pin Id="TWbnxWtUKtELbkKk7iVitu" Name="Duration" Kind="InputPin" />
             <Pin Id="Gf9UUcsPUhsNcaPGt4cjao" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="M5SoTp2nJicOR7LGgyQRey" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="C3IbCbCIuASNmuwZh0ly3q" Name="Update" Kind="InputPin" />
             <Pin Id="UvzOxTVlcDRMk8qUrp9a6U" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="2075,461,101,19" Id="K3Yb0dKoH1ONOnSUS7y3Xy">
@@ -306,6 +309,7 @@
             <Pin Id="S5gxcnqaeBgOoi71r1gSjE" Name="Duration" Kind="InputPin" />
             <Pin Id="QYds2X1vzlTOjTEGbPupbA" Name="Value Interpolation Model" Kind="InputPin" />
             <Pin Id="Ra436X986eHNaSS6489zSy" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="Gu2PWVX6ZgoLYVwzOts0tL" Name="Update" Kind="InputPin" />
             <Pin Id="Vp6lmE3IaZdM5eaVk2wkUp" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="2074,208,78,19" Id="CRgvktv6Lt2OsnR3OJMXks">
