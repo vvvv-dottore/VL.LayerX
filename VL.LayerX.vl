@@ -41,9 +41,11 @@
                   <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
                 </p:ValueBoxSettings>
               </Pad>
-              <Overlay Id="SbIiQP2CA9ZMY5pONExbwb" Name="SampleT" Bounds="227,160,294,191">
+              <Overlay Id="SbIiQP2CA9ZMY5pONExbwb" Name="SampleT" Bounds="227,160,517,191">
                 <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
               </Overlay>
+              <ControlPoint Id="Cd4mb3B10ZjO8xjbirUiNd" Bounds="569,219" />
+              <ControlPoint Id="B1FSDV4XRVMMy2cmMVmZRP" Bounds="609,246" />
             </Canvas>
             <ProcessDefinition Id="TwseHKFlA4MPygjATpENJ8" IsHidden="true">
               <Fragment Id="AMravkaVibDP3AYIlYsp95" Patch="MNwa9Qxkoe3OWrfvG6hYUe" Enabled="true" />
@@ -68,8 +70,20 @@
                   <Choice Kind="TypeFlag" Name="T" />
                 </p:TypeAnnotation>
               </Pin>
+              <Pin Id="PAPM8K4R1wjNQAceuviZIc" Name="Alpha Blending Model" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="IBlendingModel" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="OuwsRq6k2k3MkHDh1BjQ2r" Name="Downstream Alpha" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Float32" />
+                </p:TypeAnnotation>
+              </Pin>
             </Patch>
             <Link Id="M62rM8aFxZBMhl2uqqWm1l" Ids="GVDwENkWCaBNd8XJzfSTjY,VrfPR8O4sJHQVvu1VZLkW0" />
+            <Link Id="M4yDEY6LTA6PzrjQiog3xa" Ids="PAPM8K4R1wjNQAceuviZIc,Cd4mb3B10ZjO8xjbirUiNd" IsHidden="true" />
+            <Link Id="Jh8rUKtbrvEOUnvLCn6fGN" Ids="OuwsRq6k2k3MkHDh1BjQ2r,B1FSDV4XRVMMy2cmMVmZRP" IsHidden="true" />
           </Patch>
         </Node>
         <!--
@@ -145,9 +159,8 @@
           </p:Interfaces>
           <Patch Id="PJBoNYLFNJaMbEdBO32sPq" IsGeneric="true" ExplicitTypeParameters="T">
             <Canvas Id="JTDrm72H7fWMJ6fjvj2xeO" CanvasType="Group">
-              <ControlPoint Id="GyOhBdIEkZqOdlrkWyJtf1" Bounds="661,415" />
               <ControlPoint Id="UqWEbNjg7ldLgoIMJxbIRm" Bounds="185,281" />
-              <ControlPoint Id="PSOKW7OpNBWOUfXjoMdmU8" Bounds="660,607" />
+              <ControlPoint Id="PSOKW7OpNBWOUfXjoMdmU8" Bounds="660,697" />
               <Node Bounds="183,326,109,26" Id="Q2AQyOIDJD7LUrglZLMjn8">
                 <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -158,7 +171,7 @@
                 <Pin Id="O5yFXsns7SwMdO0jvC7wlQ" Name="Output" Kind="OutputPin" />
                 <Pin Id="PmXYG11iU1FQbN97mJCxpG" Name="OutputT" Kind="OutputPin" />
               </Node>
-              <Node Bounds="287,540,376,19" Id="D4lFEyG0CVpO9pLSj8pgfZ">
+              <Node Bounds="287,630,376,19" Id="D4lFEyG0CVpO9pLSj8pgfZ">
                 <p:NodeReference LastCategoryFullName="LerpX.Compositing" LastSymbolSource="VL.LerpX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="Compose" />
@@ -173,24 +186,65 @@
                 <Pin Id="PIlSsDYfuBkN3LGYhwAXKt" Name="Found" Kind="OutputPin" />
                 <Pin Id="JIUIT1WeSBvO2chMt9jonk" Name="Output" Kind="OutputPin" />
               </Node>
-              <Pad Id="LbkQC7pjdZmOIfiGbOBMcc" Comment="Alpha" Bounds="660,511,35,15" ShowValueBox="true" isIOBox="true" Value="1">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float32" />
-                </p:TypeAnnotation>
-              </Pad>
               <ControlPoint Id="BpWGbU4Fy5TO5NWlqz82xQ" Bounds="413,281" />
               <Pad Id="MSAPlDiYh5yPeYU9UvrAvd" SlotId="KOTpFD8PhhYQII9PlsYWCn" Bounds="582,326" />
               <ControlPoint Id="M3kdYw2S1lpOZxWRpajVbo" Bounds="582,363" />
               <ControlPoint Id="NHq2rqU8RRHOZqZxv7bctr" Bounds="536,281" />
+              <Node Bounds="618,577,45,19" Id="Qz34GjZn4tGMPnDMme16Bh">
+                <p:NodeReference LastCategoryFullName="LerpX.Blending" LastSymbolSource="VL.LerpX.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="Blend" />
+                </p:NodeReference>
+                <Pin Id="UIf8gRkWl2zMxNFMZdgn2I" Name="Blending Model" Kind="InputPin" />
+                <Pin Id="TxbtsiPujYrPpOHUUIci0Q" Name="Background" Kind="InputPin" />
+                <Pin Id="PCfAUKL8Hv7LGzE4nfrex5" Name="Value" Kind="InputPin" />
+                <Pin Id="BnPPakQes1wQFlNT0jurkN" Name="State Output" Kind="StateOutputPin" />
+                <Pin Id="AqNqlGzo2MULUOpPAI0xud" Name="Found" Kind="OutputPin" />
+                <Pin Id="TFioeyCCbGUMPCs9gxlnfh" Name="Output" Kind="OutputPin" />
+              </Node>
+              <ControlPoint Id="IKHyL50JLfDNENXlmejBKZ" Bounds="620,523" />
+              <ControlPoint Id="IeigxpDx6S8MMiPykkVmE8" Bounds="660,550" />
+              <ControlPoint Id="PFR8GlDwjuCPHQsHQt6h5e" Bounds="640,425" />
+              <Pad Id="RQoXhewfEuRMVLQve7lDCx" SlotId="Nh2kBIu6CxPO9nYFlC6Ebl" Bounds="640,481" />
+              <Pad Id="Q7jxl5VHiMhM7zHnbUe6ef" Comment="" Bounds="666,448,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Float32" />
+                </p:TypeAnnotation>
+              </Pad>
             </Canvas>
-            <Link Id="LIDEp6LPCxuNY3eQuPSKRs" Ids="UBNwPCPfsErNBfbXnKPzEt,GyOhBdIEkZqOdlrkWyJtf1" IsHidden="true" />
             <Link Id="Oeh5HvuuBvSM1D3w9y6zRG" Ids="A6TTv1cn12wN3we2XPvWcF,UqWEbNjg7ldLgoIMJxbIRm" IsHidden="true" />
             <Link Id="Lxo5okikYQHN4hFe06UDJV" Ids="PSOKW7OpNBWOUfXjoMdmU8,Hpsd2WA2SBqME9f9gIQODw" IsHidden="true" />
             <Link Id="GDQ6xf2gcliQRc3fXp0hFt" Ids="UqWEbNjg7ldLgoIMJxbIRm,VCxlAVhwxtqLVbwwwsHnm1" />
             <Link Id="UAKfhByVXDePALADOl8zVh" Ids="PmXYG11iU1FQbN97mJCxpG,J1MEXk0kpNZNb8bsrR86JT" />
             <Link Id="A4rEm75ZBedLalvXleyYmZ" Ids="JIUIT1WeSBvO2chMt9jonk,PSOKW7OpNBWOUfXjoMdmU8" />
-            <Link Id="QPe6ptDsn2sOqB4KOHVEQ4" Ids="LbkQC7pjdZmOIfiGbOBMcc,DySLoZNcgewPwk6BIqM2L5" />
-            <Patch Id="CeWSHFBpASFMZDzUFtmD5b" Name="Create" />
+            <Link Id="AGTsMN0ucwPOyZAJHbMGaH" Ids="BpWGbU4Fy5TO5NWlqz82xQ,LxyDUnRhBCdN7jsTb46aEc" />
+            <Link Id="UVjSLdHoniiNKsU6sSWVk8" Ids="UR4nspH3U9ZL9OXoedw0HI,BpWGbU4Fy5TO5NWlqz82xQ" IsHidden="true" />
+            <Slot Id="KOTpFD8PhhYQII9PlsYWCn" Name="Compositing Model">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="CompositingModel" />
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="TTmMmh2dTRELLIonEPRPFE" Ids="MSAPlDiYh5yPeYU9UvrAvd,M3kdYw2S1lpOZxWRpajVbo" />
+            <Link Id="V1PThqaNFfBNZGAbDt4W9F" Ids="M3kdYw2S1lpOZxWRpajVbo,HUw89BNLhqGLk0vhG7un88" IsHidden="true" />
+            <Link Id="AFdQbPigrfaLPjZ0fhcXxC" Ids="NHq2rqU8RRHOZqZxv7bctr,MSAPlDiYh5yPeYU9UvrAvd" />
+            <Link Id="Lu4z5hMZY7DOnqznom0AWX" Ids="SfryfJkV7heMODTuZ5UPyu,NHq2rqU8RRHOZqZxv7bctr" IsHidden="true" />
+            <Link Id="NSi9PD9r5Y8OjslL91f3C2" Ids="NHq2rqU8RRHOZqZxv7bctr,Fcb4tgsABJQLiN47ntAdkz" />
+            <Link Id="B7JP1mXQ1WzPb0hLMDvKim" Ids="KndBzLt3GRdMyF1qH15Sio,IKHyL50JLfDNENXlmejBKZ" IsHidden="true" />
+            <Link Id="VDcNHkVrcAgPkYoNbNe5fb" Ids="C56sFFAHeWMLimKkd0o0aY,IeigxpDx6S8MMiPykkVmE8" IsHidden="true" />
+            <Link Id="TWjJGWHEc24MYIRQp1dgDk" Ids="TCR5sB4fi5ENNkOY8wNU3F,PFR8GlDwjuCPHQsHQt6h5e" IsHidden="true" />
+            <Link Id="HV1QIcccvAuQM0kAJJk3pV" Ids="IeigxpDx6S8MMiPykkVmE8,PCfAUKL8Hv7LGzE4nfrex5" />
+            <Slot Id="Nh2kBIu6CxPO9nYFlC6Ebl" Name="Alpha" />
+            <Link Id="F6JIxSCMfpePbFefnimgBw" Ids="PFR8GlDwjuCPHQsHQt6h5e,RQoXhewfEuRMVLQve7lDCx" />
+            <Link Id="FBCQydcWyngMEzv23be3Qx" Ids="RQoXhewfEuRMVLQve7lDCx,TxbtsiPujYrPpOHUUIci0Q" />
+            <ProcessDefinition Id="DiHVIm1yBoNNMGZurHmyRL" HasStateOut="true">
+              <Fragment Id="PcG4z9Uaq10ObPGGhvB4Tu" Patch="CeWSHFBpASFMZDzUFtmD5b" Enabled="true" />
+              <Fragment Id="Nk1peMX2fCLObqwYAOAavB" Patch="KBZHbq9evXaPCmDA9dhLuY" Enabled="true" />
+              <Fragment Id="TFjwQ7DVIIKPJw0ZBupbUA" Patch="T7ocNmWedciLCiECcNLVdJ" Enabled="true" />
+              <Fragment Id="APyt7wKr0pHLpe07WhAoXr" Patch="Uid7CzVhqoKObp4j7dK7pZ" Enabled="true" />
+              <Fragment Id="BGT550HKRjxOVifEYFndVL" Patch="RlJyOQYZ1mMPzZibqLaCb7" />
+              <Fragment Id="InQOwcZhobWLelZ6NOJpFn" Patch="NUCWYXAJPFCNBOctAfcpc4" />
+            </ProcessDefinition>
+            <Patch Id="CeWSHFBpASFMZDzUFtmD5b" Name="Create" ParticipatingElements="PC6Ef2BGc1cNIy0lAxEJ85" />
             <Patch Id="RlJyOQYZ1mMPzZibqLaCb7" Name="SampleT">
               <Pin Id="A6TTv1cn12wN3we2XPvWcF" MergeId="314272" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation>
@@ -202,37 +256,26 @@
                   </p:TypeArguments>
                 </p:TypeAnnotation>
               </Pin>
-              <Pin Id="UBNwPCPfsErNBfbXnKPzEt" MergeId="314270" Name="Sampling Position" Kind="InputPin" />
+              <Pin Id="MYi4zQjTVCcOe41FwKg6lQ" Name="Sampling Position" Kind="InputPin" />
+              <Pin Id="KndBzLt3GRdMyF1qH15Sio" Name="Alpha Blending Model" Kind="InputPin" />
+              <Pin Id="C56sFFAHeWMLimKkd0o0aY" Name="Downstream Alpha" Kind="InputPin" />
               <Pin Id="Hpsd2WA2SBqME9f9gIQODw" MergeId="314274" Name="Value" Kind="OutputPin" />
             </Patch>
-            <Link Id="AGTsMN0ucwPOyZAJHbMGaH" Ids="BpWGbU4Fy5TO5NWlqz82xQ,LxyDUnRhBCdN7jsTb46aEc" />
-            <Link Id="UVjSLdHoniiNKsU6sSWVk8" Ids="UR4nspH3U9ZL9OXoedw0HI,BpWGbU4Fy5TO5NWlqz82xQ" IsHidden="true" />
             <Patch Id="KBZHbq9evXaPCmDA9dhLuY" Name="SetValue">
               <Pin Id="UR4nspH3U9ZL9OXoedw0HI" Name="Value" Kind="InputPin" />
             </Patch>
-            <Slot Id="KOTpFD8PhhYQII9PlsYWCn" Name="Compositing Model">
-              <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="CompositingModel" />
-              </p:TypeAnnotation>
-            </Slot>
             <Patch Id="NUCWYXAJPFCNBOctAfcpc4" Name="GetCompositingModel">
               <Pin Id="HUw89BNLhqGLk0vhG7un88" MergeId="401059" Name="Compositing Model" Kind="OutputPin" />
             </Patch>
             <Patch Id="T7ocNmWedciLCiECcNLVdJ" Name="SetCompositingModel">
               <Pin Id="SfryfJkV7heMODTuZ5UPyu" MergeId="401057" Name="Compositing Model" Kind="InputPin" />
             </Patch>
-            <Link Id="TTmMmh2dTRELLIonEPRPFE" Ids="MSAPlDiYh5yPeYU9UvrAvd,M3kdYw2S1lpOZxWRpajVbo" />
-            <Link Id="V1PThqaNFfBNZGAbDt4W9F" Ids="M3kdYw2S1lpOZxWRpajVbo,HUw89BNLhqGLk0vhG7un88" IsHidden="true" />
-            <Link Id="AFdQbPigrfaLPjZ0fhcXxC" Ids="NHq2rqU8RRHOZqZxv7bctr,MSAPlDiYh5yPeYU9UvrAvd" />
-            <Link Id="Lu4z5hMZY7DOnqznom0AWX" Ids="SfryfJkV7heMODTuZ5UPyu,NHq2rqU8RRHOZqZxv7bctr" IsHidden="true" />
-            <Link Id="NSi9PD9r5Y8OjslL91f3C2" Ids="NHq2rqU8RRHOZqZxv7bctr,Fcb4tgsABJQLiN47ntAdkz" />
-            <ProcessDefinition Id="DiHVIm1yBoNNMGZurHmyRL" HasStateOut="true">
-              <Fragment Id="PcG4z9Uaq10ObPGGhvB4Tu" Patch="CeWSHFBpASFMZDzUFtmD5b" Enabled="true" />
-              <Fragment Id="Nk1peMX2fCLObqwYAOAavB" Patch="KBZHbq9evXaPCmDA9dhLuY" Enabled="true" />
-              <Fragment Id="TFjwQ7DVIIKPJw0ZBupbUA" Patch="T7ocNmWedciLCiECcNLVdJ" Enabled="true" />
-              <Fragment Id="BGT550HKRjxOVifEYFndVL" Patch="RlJyOQYZ1mMPzZibqLaCb7" />
-              <Fragment Id="InQOwcZhobWLelZ6NOJpFn" Patch="NUCWYXAJPFCNBOctAfcpc4" />
-            </ProcessDefinition>
+            <Patch Id="Uid7CzVhqoKObp4j7dK7pZ" Name="SetAlpha">
+              <Pin Id="TCR5sB4fi5ENNkOY8wNU3F" Name="Alpha" Kind="InputPin" DefaultValue="1" />
+            </Patch>
+            <Link Id="U2W476GDeYxLlUJf9sXcdy" Ids="IKHyL50JLfDNENXlmejBKZ,UIf8gRkWl2zMxNFMZdgn2I" />
+            <Link Id="PC6Ef2BGc1cNIy0lAxEJ85" Ids="Q7jxl5VHiMhM7zHnbUe6ef,RQoXhewfEuRMVLQve7lDCx" />
+            <Link Id="JGg406X0qIiLZ3PWKz6DIU" Ids="TFioeyCCbGUMPCs9gxlnfh,DySLoZNcgewPwk6BIqM2L5" />
           </Patch>
         </Node>
         <Canvas Id="EYiMdNRLH9LPiTFI58DSUp" Name="Utils" Position="286,835">
@@ -257,9 +300,9 @@
                 </Node>
                 <ControlPoint Id="NW0ahTEENQtMFitKFoXCtD" Bounds="359,427" />
                 <ControlPoint Id="D5SZrIBoVDvLUGhtGNe8Qq" Bounds="462,408" />
-                <ControlPoint Id="PQKK1EQzHYsQdbc4H6b4Lr" Bounds="564,506" />
-                <ControlPoint Id="F0r4b1FfKCvO300IfcQdHH" Bounds="359,596" />
-                <Node Bounds="357,539,210,19" Id="LsWqe33tilfL5JSyzRJARV">
+                <ControlPoint Id="PQKK1EQzHYsQdbc4H6b4Lr" Bounds="500,479" />
+                <ControlPoint Id="F0r4b1FfKCvO300IfcQdHH" Bounds="359,626" />
+                <Node Bounds="357,569,210,19" Id="LsWqe33tilfL5JSyzRJARV">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Utils" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleLayer1DSafe" />
@@ -267,10 +310,19 @@
                   <Pin Id="DWWNA8loFRAPFPX8hMxRwF" Name="Value Provider T" Kind="InputPin" />
                   <Pin Id="FzOunfTIKmhOVw1FoUgwpF" Name="Background Function T" Kind="InputPin" />
                   <Pin Id="Gy2OhyUtIZ6MizSKXLpWX2" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="KkfPpgzffcJQB6eeH3QYKp" Name="Downstream Alpha" Kind="InputPin" />
+                  <Pin Id="NsyEmyiPl9IQKenNBKYNya" Name="Alpha Blending Model" Kind="InputPin" />
                   <Pin Id="DHvnoDXQi4mMVnwuD3jrgw" Name="Value T" Kind="OutputPin" />
                   <Pin Id="N1CIhIZuBYYLbJvjJd9og2" Name="Layer Assigned" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="VBfAFM0MLe3Oo4ATwQX0WD" Bounds="564,596" />
+                <ControlPoint Id="VBfAFM0MLe3Oo4ATwQX0WD" Bounds="564,626" />
+                <Node Bounds="574,535,119,19" Id="B6ipId46JrpLWynndTd2O1">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending.Model" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="MultiplyBlendingModel" />
+                  </p:NodeReference>
+                  <Pin Id="D1RRm2wTVNeOg1YByHHVig" Name="Output" Kind="StateOutputPin" />
+                </Node>
               </Canvas>
               <Patch Id="BS05v4PpwO2NP1eycgQEj6" Name="Create" />
               <Patch Id="FNbjUUeuGf8OaEqw4X3qEe" Name="Update">
@@ -295,6 +347,7 @@
               <Link Id="EVNFLuAllBaLgndH1aNsAQ" Ids="DHvnoDXQi4mMVnwuD3jrgw,F0r4b1FfKCvO300IfcQdHH" />
               <Link Id="AunuP3IMWgxM4pMhoNiJan" Ids="N1CIhIZuBYYLbJvjJd9og2,VBfAFM0MLe3Oo4ATwQX0WD" />
               <Link Id="NJ1LhDaHCi7Mls8HJoewdy" Ids="VBfAFM0MLe3Oo4ATwQX0WD,Im8uFNeGpR2MafC6j5JXVd" IsHidden="true" />
+              <Link Id="Ly8j32cno8ePOXBVr5D6f8" Ids="D1RRm2wTVNeOg1YByHHVig,NsyEmyiPl9IQKenNBKYNya" />
             </Patch>
           </Node>
           <Overlay Id="QJ2T3GxosRtOT5YUpb7dOH" Name="Sampling" Bounds="166,155,848,975" />
@@ -303,12 +356,12 @@
     ************************ SampleLayer1DSafe (Internal) ************************
 
 -->
-          <Node Name="SampleLayer1DSafe (Internal)" Bounds="627,265,292,378" Id="KF7PFFaXNlcQEt1YTj0Da0">
+          <Node Name="SampleLayer1DSafe (Internal)" Bounds="627,265,329,423" Id="KF7PFFaXNlcQEt1YTj0Da0">
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
               <Choice Kind="OperationDefinition" Name="Operation" />
             </p:NodeReference>
             <Patch Id="TWq1nd2LURwQNyZKH3HBtf" IsGeneric="true" ManuallySortedPins="true">
-              <ControlPoint Id="VnNl6qgRXbuOpTLTHBjAxx" Bounds="771,626" />
+              <ControlPoint Id="VnNl6qgRXbuOpTLTHBjAxx" Bounds="771,671" />
               <ControlPoint Id="N3zJUy0xqsCLzQsnMHTz0Z" Bounds="815,510" />
               <Link Id="Hyi6HeraOVTMYZ4sC9qgu5" Ids="VnNl6qgRXbuOpTLTHBjAxx,RG3NdANx33NOj9wydpIuI9" IsHidden="true" />
               <Link Id="PjLKFSZkGXqNFO13Pfy1VN" Ids="CL53CCdMyNkMUM1hDbavfz,N3zJUy0xqsCLzQsnMHTz0Z" IsHidden="true" />
@@ -323,19 +376,19 @@
                 <Pin Id="VtB72YfR5IPMyUsQDpTyAb" Name="Result" Kind="OutputPin" />
                 <Pin Id="BkWpJYNsz28OVtA8viPr4Z" Name="Not Assigned" Kind="OutputPin" />
               </Node>
-              <Node Bounds="680,500,108,90" Id="RgCiCZ6IdlgP5Y73Qkxkjd">
+              <Node Bounds="680,500,109,135" Id="RgCiCZ6IdlgP5Y73Qkxkjd">
                 <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
                 <Pin Id="DdCMjlEdNntNvsMlHNucqs" Name="Condition" Kind="InputPin" />
-                <ControlPoint Id="G46CcF05eEHOuZpnYgE8LW" Bounds="771,584" Alignment="Bottom" />
+                <ControlPoint Id="G46CcF05eEHOuZpnYgE8LW" Bounds="771,629" Alignment="Bottom" />
                 <ControlPoint Id="FpjUvmNS8dQMfOXLXsYab1" Bounds="771,506" Alignment="Top" />
                 <Patch Id="ASfUHO993e5MKOJSBmfCS9" ManuallySortedPins="true">
                   <Patch Id="H2EanEcIb6KMqWxC5CN6J8" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="T9HTIHUhAKLLkxRGBth8Ab" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="692,540,82,26" Id="KWb0esYq9dZQAUdVRHeCV6">
+                  <Node Bounds="692,585,85,26" Id="KWb0esYq9dZQAUdVRHeCV6">
                     <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.ILayer1D" LastSymbolSource="VL.LayerX.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SampleT" />
@@ -344,6 +397,8 @@
                     <Pin Id="G34xF8f3CLaNXCJILQ5du5" Name="Input" Kind="InputPin" />
                     <Pin Id="SZCJ703VNCVLA7u1lGLcDT" Name="Background Function" Kind="InputPin" />
                     <Pin Id="Mqd1pI4hkrUPCVOdu2DsLB" Name="Sampling Position" Kind="InputPin" />
+                    <Pin Id="JlXI3Vbex4MQBmK6tIdWtR" Name="Alpha Blending Model" Kind="InputPin" />
+                    <Pin Id="NWwc5Q6raWBNPK6FtEdZsY" Name="Downstream Alpha" Kind="InputPin" />
                     <Pin Id="IBbzKhZNmjtM2jJxKltkNY" Name="Output" Kind="OutputPin" />
                     <Pin Id="G8vPFi73lqINwbnHV8jLsA" Name="Value" Kind="OutputPin" />
                   </Node>
@@ -402,6 +457,18 @@
               <Pin Id="RG3NdANx33NOj9wydpIuI9" Name="Value T" Kind="OutputPin" />
               <Pin Id="EAlkemVbOkaOVwM9pdSByx" Name="Layer Assigned" Kind="OutputPin" Bounds="1545,1010" />
               <Link Id="QkBOMmndHrAMc71MJruPwT" Ids="Cyi2kZuJRnWNo7HK5VVTtp,G34xF8f3CLaNXCJILQ5du5" />
+              <Link Id="NMNPXZspTzIP8nDMQOdHAh" Ids="LLpSyIlzg4FMd3Ws6HfFc8,NWwc5Q6raWBNPK6FtEdZsY" />
+              <ControlPoint Id="LLpSyIlzg4FMd3Ws6HfFc8" Bounds="847,565" />
+              <Pin Id="KiOThI4DnzjMQJWig3PWvc" Name="Downstream Alpha" Kind="InputPin" Bounds="847,565" DefaultValue="1" />
+              <Link Id="G9awh61jO1ENuILhIYp8eq" Ids="KiOThI4DnzjMQJWig3PWvc,LLpSyIlzg4FMd3Ws6HfFc8" IsHidden="true" />
+              <Link Id="Kl028z0LKjdQOtMj9M6ti8" Ids="TueHmpklYUYOPCJeW2tf9r,JlXI3Vbex4MQBmK6tIdWtR" />
+              <ControlPoint Id="TueHmpklYUYOPCJeW2tf9r" Bounds="827,537" />
+              <Pin Id="PJK8wmrWED4QWdoKywveMy" Name="Alpha Blending Model" Kind="InputPin" Bounds="827,537">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="IBlendingModel" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Link Id="OV04FIaWtmoLYs9Z0MmpdH" Ids="PJK8wmrWED4QWdoKywveMy,TueHmpklYUYOPCJeW2tf9r" IsHidden="true" />
             </Patch>
           </Node>
           <!--
@@ -425,9 +492,9 @@
                 </Node>
                 <ControlPoint Id="Ed0IbUF7qxJL1YpzeVFVHN" Bounds="359,427" />
                 <ControlPoint Id="I0Sdyy1jeDfQIjC6MMPeFU" Bounds="462,408" />
-                <ControlPoint Id="N0KycyAp55XQXisW4VAD8a" Bounds="564,506" />
-                <ControlPoint Id="DL2hzJoJYCMOQySl092GEC" Bounds="359,596" />
-                <Node Bounds="357,539,210,19" Id="TgnPpsqJZunQCerqVTEvsi">
+                <ControlPoint Id="N0KycyAp55XQXisW4VAD8a" Bounds="519,484" />
+                <ControlPoint Id="DL2hzJoJYCMOQySl092GEC" Bounds="359,626" />
+                <Node Bounds="357,569,210,19" Id="TgnPpsqJZunQCerqVTEvsi">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Utils" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleLayer1DSafe" />
@@ -435,10 +502,14 @@
                   <Pin Id="NCfChXIwIDVOMtqLmxDOFU" Name="Value Provider T" Kind="InputPin" />
                   <Pin Id="Bt1ox36JqgoQLqvrf0YAxB" Name="Background Function T" Kind="InputPin" />
                   <Pin Id="I7QZIG4EAZcOMxAdjcvMIf" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="E1lM0pmmhwQO7FnXfONX2F" Name="Downstream Alpha" Kind="InputPin" />
+                  <Pin Id="Ps7nClpj1jpMulQHmIFVQW" Name="Alpha Blending Model" Kind="InputPin" />
                   <Pin Id="VhSES69TE4sN4eOdxLunTH" Name="Value T" Kind="OutputPin" />
                   <Pin Id="Q6wrD9xUcPiOVR19z6fCTj" Name="Layer Assigned" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="LS4Jxobl02aPfaFvdTjUhK" Bounds="564,596" />
+                <ControlPoint Id="LS4Jxobl02aPfaFvdTjUhK" Bounds="564,626" />
+                <ControlPoint Id="BPCnd456W3bOHbkpFPiRWY" Bounds="545,511" />
+                <ControlPoint Id="H9g2xY2q8QhQIQLPrug4GX" Bounds="577,534" />
               </Canvas>
               <Patch Id="NV3ZMiWpH5NOwcQ4R6mtZl" Name="Create" />
               <Patch Id="HmUnB7PQhYgNdwP2bXuJeU" Name="Update">
@@ -456,6 +527,8 @@
                 <Pin Id="E6lijhSCPaXOeG9xXMvkW8" Name="Sampling Position" Kind="InputPin" Bounds="564,506" />
                 <Pin Id="RLQxJDbHMJSMRwPD8eFW8V" Name="Output" Kind="OutputPin" Bounds="564,597" />
                 <Pin Id="MIqlulO9oqfL3Ju3lU6Sf7" Name="Layer Assigned" Kind="OutputPin" Bounds="564,596" />
+                <Pin Id="FF5Yv5cmpKEQRo1kckf8DC" Name="Alpha" Kind="InputPin" Bounds="546,510" />
+                <Pin Id="MttCGfiN4tuQD80hQY5faU" Name="Alpha Blending Model" Kind="InputPin" Bounds="576,528" />
               </Patch>
               <ProcessDefinition Id="VqGVLzoBXO3LXHdX4FGnDY">
                 <Fragment Id="QsM2eZVgglkLhOnQJ6U5vz" Patch="NV3ZMiWpH5NOwcQ4R6mtZl" Enabled="true" />
@@ -472,6 +545,10 @@
               <Link Id="NYDa8hS4miuMxyCCWMn0zS" Ids="VhSES69TE4sN4eOdxLunTH,DL2hzJoJYCMOQySl092GEC" />
               <Link Id="TKZB6bMRTt7MbwfbmIRsr8" Ids="Q6wrD9xUcPiOVR19z6fCTj,LS4Jxobl02aPfaFvdTjUhK" />
               <Link Id="Hws35j8PZNSOoTOYoaUARx" Ids="LS4Jxobl02aPfaFvdTjUhK,MIqlulO9oqfL3Ju3lU6Sf7" IsHidden="true" />
+              <Link Id="PRoq7PHAqqcPoXW7YR3Khl" Ids="BPCnd456W3bOHbkpFPiRWY,E1lM0pmmhwQO7FnXfONX2F" />
+              <Link Id="DcpbAVx11EzLQvPiv5C7WL" Ids="FF5Yv5cmpKEQRo1kckf8DC,BPCnd456W3bOHbkpFPiRWY" IsHidden="true" />
+              <Link Id="EqmVSnsUTj6Mu7L26BX7mb" Ids="H9g2xY2q8QhQIQLPrug4GX,Ps7nClpj1jpMulQHmIFVQW" />
+              <Link Id="QeJtbxZ6ZpdLOedQPRZmCn" Ids="MttCGfiN4tuQD80hQY5faU,H9g2xY2q8QhQIQLPrug4GX" IsHidden="true" />
             </Patch>
           </Node>
         </Canvas>
@@ -652,6 +729,8 @@
                       <Pin Id="FgmAtW6CxeyOJBpsNCdjXK" Name="Value Provider T" Kind="InputPin" />
                       <Pin Id="VlPdulDVz8NMJxeY6SUsO9" Name="Background Function T" Kind="InputPin" />
                       <Pin Id="SuC4nHyu5T7L7VBOFufGNq" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="SLLWL7dmDiBNspydHlJ8El" Name="Alpha Blending Model" Kind="InputPin" />
+                      <Pin Id="ITChFhflqyYO2dp6igGCLZ" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="LNktUrC771fMPr1Sl6tEPo" Name="Value T" Kind="OutputPin" />
                       <Pin Id="SNY0FyHleGaP1hXW48OBCG" Name="Layer Assigned" Kind="OutputPin" />
                     </Node>
@@ -703,10 +782,10 @@
                   <Pin Id="A3KyfnoIQguL1qYx5S71rL" Name="Input 2" Kind="InputPin" />
                   <Pin Id="DzWsyqAFse0OoK01p8nmfX" Name="Output" Kind="StateOutputPin" />
                 </Node>
-                <ControlPoint Id="E4YJ4s7kzchNSeQ4g20PmD" Bounds="318,1321" />
-                <ControlPoint Id="DcQ2Ld7iAbCNPlZT6zbmql" Bounds="430,1472" />
-                <ControlPoint Id="EkPZdQ544PvP69IEdE0bn3" Bounds="500,1491" />
-                <ControlPoint Id="TqAcCVJA7xTLX7pRKkohSn" Bounds="387,1342" />
+                <ControlPoint Id="E4YJ4s7kzchNSeQ4g20PmD" Bounds="286,1282" />
+                <ControlPoint Id="DcQ2Ld7iAbCNPlZT6zbmql" Bounds="447,1431" />
+                <ControlPoint Id="EkPZdQ544PvP69IEdE0bn3" Bounds="469,1453" />
+                <ControlPoint Id="TqAcCVJA7xTLX7pRKkohSn" Bounds="323,1302" />
                 <Node Bounds="247,1363,143,19" Id="VSAfTy7ef11N9DUcZuAgyk">
                   <p:NodeReference>
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -718,6 +797,8 @@
                   <Pin Id="I6TNCmdkLl2Ljfv5j9K8YM" Name="Value Provider T" Kind="InputPin" />
                   <Pin Id="PBITzgLnWZlMyxWvFNSwto" Name="Background Function T" Kind="InputPin" />
                   <Pin Id="PReuQi6LANcMm03H7oGcuk" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="EgVVB3ilywPNceniepBsbj" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="V50LIj3yg44LZlQBiFT2Ao" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="FCzfaTIZsiLNM6Zmu172lw" Name="Value T" Kind="OutputPin" />
                   <Pin Id="Exs0kEf4Je0QEIUfBxk5gK" Name="Layer Assigned" Kind="OutputPin" />
                 </Node>
@@ -726,13 +807,13 @@
     ************************ SampleInterpolator1DShape (Internal) ************************
 
 -->
-                <Node Name="SampleInterpolator1DShape (Internal)" Bounds="872,1365,324,396" Id="EUOwG72XZ2OLtSMkp1rH2u">
+                <Node Name="SampleInterpolator1DShape (Internal)" Bounds="872,1383,421,378" Id="EUOwG72XZ2OLtSMkp1rH2u">
                   <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
                     <Choice Kind="OperationDefinition" Name="Operation" />
                   </p:NodeReference>
                   <Patch Id="Ljst6ebjS6XNEL4EBGnZiS" IsGeneric="true" ManuallySortedPins="true">
-                    <ControlPoint Id="NwSzdamOB00Pofs9EkjheJ" Bounds="1048,1744" />
-                    <ControlPoint Id="GgaeGDNP8UMOuhbcXbnL4v" Bounds="1092,1628" />
+                    <ControlPoint Id="NwSzdamOB00Pofs9EkjheJ" Bounds="1048,1744,29,0" />
+                    <ControlPoint Id="GgaeGDNP8UMOuhbcXbnL4v" Bounds="1144,1606" />
                     <Link Id="Serwrb0leNrLAnIPRPi5Ua" Ids="NwSzdamOB00Pofs9EkjheJ,MK52ZDSQbmrMB8UsMiDXNQ" IsHidden="true" />
                     <Link Id="Mtkmeh19cQ1L7arujzIC7j" Ids="NjlMbapMAfPNMcPKED2KBt,GgaeGDNP8UMOuhbcXbnL4v" IsHidden="true" />
                     <Link Id="NCYGC2ll9zOLXkgbdUQft5" Ids="GgaeGDNP8UMOuhbcXbnL4v,OsiTr8QvB1nMFu0Qy78bAS" />
@@ -753,12 +834,12 @@
                         <FullNameCategoryReference ID="Primitive" />
                       </p:NodeReference>
                       <Pin Id="KkMePQUkY1wQJdGQVx4Zqs" Name="Condition" Kind="InputPin" />
-                      <ControlPoint Id="QhFEiWfNgKVNTj7mQJgUav" Bounds="1048,1702" Alignment="Bottom" />
+                      <ControlPoint Id="QhFEiWfNgKVNTj7mQJgUav" Bounds="1048,1702,29,0" Alignment="Bottom" />
                       <ControlPoint Id="BA4grWdZIpwNR57xAplXcH" Bounds="1048,1624" Alignment="Top" />
                       <Patch Id="NZXR21sMp5QLaJUqX99uRc" ManuallySortedPins="true">
                         <Patch Id="CRAqdhG7z49NCsZVjhk32S" Name="Create" ManuallySortedPins="true" />
                         <Patch Id="N42O6Sy4JGKNVK6nwJdLvA" Name="Then" ManuallySortedPins="true" />
-                        <Node Bounds="969,1658,100,26" Id="BnwawjhyWgUNbqg6kCTPpR">
+                        <Node Bounds="969,1658,129,26" Id="BnwawjhyWgUNbqg6kCTPpR">
                           <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Interpolator1D.IInterpolator1DShape" LastSymbolSource="VL.LayerX.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="SampleLayerT" />
@@ -767,6 +848,8 @@
                           <Pin Id="HmEghy3lxNSMPOAxw9O33h" Name="Input" Kind="InputPin" />
                           <Pin Id="N0zkmBmPmSJNOqGJMNPx5L" Name="Background Function" Kind="InputPin" />
                           <Pin Id="OsiTr8QvB1nMFu0Qy78bAS" Name="Sampling Position" Kind="InputPin" />
+                          <Pin Id="THGDzDfLSGYNpw5f5kOaIf" Name="Alpha Blending Model" Kind="InputPin" />
+                          <Pin Id="EIH6I6MmeOYQCnF2kRi3OB" Name="Downstream Alpha" Kind="InputPin" />
                           <Pin Id="RMW04mUrzuwP19r9O70zdc" Name="Output" Kind="OutputPin" />
                           <Pin Id="PQf6cTn8pB8PNETKCXBD9I" Name="Value" Kind="OutputPin" />
                         </Node>
@@ -825,6 +908,14 @@
                     <Pin Id="MK52ZDSQbmrMB8UsMiDXNQ" Name="Value T" Kind="OutputPin" />
                     <Pin Id="LELoZnUnju2QPWCFxz2Uce" Name="Layer Assigned" Kind="OutputPin" Bounds="1545,1010" />
                     <Link Id="SCpGFIYS32pLxjT5z7vbk1" Ids="OCsnR8ghvFiQN3cbAB4zKX,HmEghy3lxNSMPOAxw9O33h" />
+                    <Link Id="NingVJrWyinPj9unrkTa1S" Ids="Sg72fwiOEHcP2jF8s6YZoF,THGDzDfLSGYNpw5f5kOaIf" />
+                    <ControlPoint Id="Sg72fwiOEHcP2jF8s6YZoF" Bounds="1156,1627" />
+                    <Pin Id="PG9G2CY333WQAjcT3fP28j" Name="Alpha Blending Model" Kind="InputPin" Bounds="1156,1626" />
+                    <Link Id="G0FRqesaz2wPJwBijkUHi3" Ids="PG9G2CY333WQAjcT3fP28j,Sg72fwiOEHcP2jF8s6YZoF" IsHidden="true" />
+                    <Link Id="SG3JoEcxUkKMJudiEOOeik" Ids="Q7agzA2nSdUQRd5SpCjwKS,EIH6I6MmeOYQCnF2kRi3OB" />
+                    <ControlPoint Id="Q7agzA2nSdUQRd5SpCjwKS" Bounds="1184,1648" />
+                    <Pin Id="DIhahBXmPj0NFkV6eED9On" Name="Downstream Alpha" Kind="InputPin" Bounds="1184,1648" />
+                    <Link Id="LxeivxQEWvRM2QldbhLIda" Ids="DIhahBXmPj0NFkV6eED9On,Q7agzA2nSdUQRd5SpCjwKS" IsHidden="true" />
                   </Patch>
                 </Node>
                 <Pad Id="TfPZ0Gx4fXsMpWQrzs1K57" SlotId="A5bVcCqEJ7dOu6OVyGWkG2" Bounds="392,509" />
@@ -937,6 +1028,8 @@
                       <Pin Id="RqAElELJCpwML1zY3lBBxg" Name="Input" Kind="StateInputPin" />
                       <Pin Id="B52n6iJRxTmLD4TREdoKAS" Name="Background Function T" Kind="InputPin" />
                       <Pin Id="MSK43zwO4rKNDrTJCl8DA3" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="EfCzsqXv8pxNLRUJOA9Chr" Name="Alpha Blending Model" Kind="InputPin" />
+                      <Pin Id="PWaJE6TYGraPbZHbh82OJ8" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="QPogdJWujXXM6tb4k6KJBE" Name="Output" Kind="StateOutputPin" />
                       <Pin Id="HlDazdFaES6PImc8Mq8Hxz" Name="Value" Kind="OutputPin" />
                     </Node>
@@ -973,7 +1066,7 @@
                   <Pin Id="KomSpbiLoYqOxQuuwkT7qK" Name="Result" Kind="OutputPin" />
                 </Node>
                 <Pad Id="PmNiY6C5wF7NCjOwmiRNKO" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="213,1983" />
-                <Overlay Id="OtEILG26HTELMMF51qNy0e" Name="SampleT" Bounds="131,1910,592,385">
+                <Overlay Id="OtEILG26HTELMMF51qNy0e" Name="SampleT" Bounds="131,1910,701,561">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
                 <Overlay Id="JEP4qRByF29QDuIuw3Zi7q" Name="SetClips" Bounds="131,101,683,438">
@@ -1003,6 +1096,12 @@
                   <Pin Id="R7Am9bmOt81PGl1zLp20uT" Name="Result" Kind="OutputPin" />
                 </Node>
                 <ControlPoint Id="MJ3vp1YIfehNEGi6pEHofG" Bounds="377,886" />
+                <ControlPoint Id="KTdFqM9h7MkNbjqLkynK2d" Bounds="649,2068" />
+                <ControlPoint Id="JnzW2CccPgwLu5gCoepaR3" Bounds="689,2095" />
+                <ControlPoint Id="Lq0bmNHbOpiNswxcEZJyAb" Bounds="355,1330" />
+                <ControlPoint Id="NSsZRrcUOKhLSh0xTJbq4j" Bounds="387,1348" />
+                <ControlPoint Id="CK0BnowVyYcOOSkDUFIoEb" Bounds="498,1482" />
+                <ControlPoint Id="VgZnfFSfsgPMdqQGeeDp20" Bounds="525,1505" />
               </Canvas>
               <Link Id="PsLivK7GDZxLDPazDUTeIY" Ids="STL5PoGh3keQdfhjlwelZX,Lsg0YpcAUmqQDnyM3zzTN2" IsHidden="true" />
               <Link Id="L5JH2DQP3NdNGKiJiuhSXq" Ids="Irkh9nwhhDwL3mY9qwcQIr,E0QJw5yTQddN5jpOHgLeGj" IsHidden="true" />
@@ -1081,56 +1180,6 @@
               <Link Id="AKLRO6NyKIvPtrXYs5L12r" Ids="QP1r5OAVZfMOyeJyrcp5OI,VR6Fg0I8FGcPZ89DGlBaoo" />
               <Link Id="DYb0kkNjZwSNhQaIjVVTEN" Ids="DD8Lr0hjGF9NrM11aIq0yd,QK2lsKDrVYHOvNMNAadhEd" />
               <Link Id="DGIiQC1YQPbM2z0rJmReDJ" Ids="Bnk39rNWWF9QHh5j4A7eKz,NAdOJ3ksfOiMjDS7P6tnhp" />
-              <Patch Id="UwhGSgVVpKKO5nOGGVHrmg" Name="Create" />
-              <Patch Id="HJjtUpfB2yIOBnXinh13Nq" Name="SampleT">
-                <Pin Id="Irkh9nwhhDwL3mY9qwcQIr" MergeId="314272" Name="Background Function" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="T" />
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="STL5PoGh3keQdfhjlwelZX" MergeId="314270" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="QR5doMzg7hpOeM0GTRPi13" MergeId="314274" Name="Value" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
-              <Patch Id="Cn8J5ruGdLUMWQ09IsQMhq" Name="InterpolateT" ParticipatingElements="JyrszutRsNkP3UQqqFKFKI,LI4GoRImID8OFxc0szGtQc,MkuxTTmtASXOxmZ9gLmjUh,VSAfTy7ef11N9DUcZuAgyk" ManuallySortedPins="true">
-                <Pin Id="QhFZlyJR7TyO6vazZDiSG5" MergeId="315203" Name="Background Function T" Kind="InputPin" />
-                <Pin Id="TYFzxlssfNeNwPNHOWVkIn" MergeId="315192" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="DLSQcM0547iNK7VAGjrTOv" Name="Value" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
-              <Patch Id="IIDsjppci3eQNJKZo5KxRE" Name="SetClips" ParticipatingElements="NlgcUFGMIgIL0jHZxPRATM,PdTX6p0m5KCMgbzzFzNUeu,D13yGsKkFoDMCBn80mWIy4">
-                <Pin Id="Uw40Vd5KT2KNGjLFyqysMj" Name="Clips" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="Spread" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="IInterpolator1DShape" />
-                        <p:TypeArguments>
-                          <TypeReference>
-                            <Choice Kind="TypeFlag" Name="T" />
-                          </TypeReference>
-                        </p:TypeArguments>
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
-              <Patch Id="Jgw3uXOMG8CP3XdqxSWONM" Name="Update" ManuallySortedPins="true" />
-              <Patch Id="UCgVaFjVCFfLrSzDxSFvk4" Name="BinarySearchAndHitTest" ParticipatingElements="S8xaTXv9UU5K9lvpyyephS,PWZopxRxeNBMXFSQ2PaEPM">
-                <Pin Id="Qen2gSeoBUKOcITCRrRo4w" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="IGHY2FTdQxGLKc3z1KkYci" Name="Within Range" Kind="OutputPin" />
-              </Patch>
               <Link Id="C3Augzasj08NyanzIMFmqI" Ids="UNrsQCtMm3nQGt6c5qdJbu,HEf3Jpdz1rvPLMTz6Befke" />
               <Slot Id="Udv2fs7Rs2dOzrgINFmqOk" Name="Hit Test Result" />
               <Link Id="D1bdvexHtZsMNwW7nwgfiI" Ids="FlrhMn99YSCMoHYapk9rIH,OuuEz0UPPMaMuCMdaACldW" />
@@ -1162,6 +1211,72 @@
               <Link Id="VFVTQJVj2geNnoFN3mS4PJ" Ids="R7Am9bmOt81PGl1zLp20uT,GT3NFxTHqlXQXvwSdA8N14" />
               <Link Id="OjsuqGBl1HUPyVWy4Chs2I" Ids="Qen2gSeoBUKOcITCRrRo4w,MJ3vp1YIfehNEGi6pEHofG" IsHidden="true" />
               <Link Id="Cu1CUU7ihnzLMRX2gTh4F2" Ids="MJ3vp1YIfehNEGi6pEHofG,PfmunU4SaXhNDnJ9lX5fb3" />
+              <Patch Id="UwhGSgVVpKKO5nOGGVHrmg" Name="Create" />
+              <Patch Id="HJjtUpfB2yIOBnXinh13Nq" Name="SampleT">
+                <Pin Id="Irkh9nwhhDwL3mY9qwcQIr" MergeId="314272" Name="Background Function" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="T" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="STL5PoGh3keQdfhjlwelZX" MergeId="314270" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="GjpaxvfXrY5M9cep1kzUVR" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="Mlsbw7rxwyjPd3Ge5SPC8k" Name="Downstream Alpha" Kind="InputPin" />
+                <Pin Id="QR5doMzg7hpOeM0GTRPi13" MergeId="314274" Name="Value" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="Cn8J5ruGdLUMWQ09IsQMhq" Name="InterpolateT" ParticipatingElements="JyrszutRsNkP3UQqqFKFKI,LI4GoRImID8OFxc0szGtQc,MkuxTTmtASXOxmZ9gLmjUh,VSAfTy7ef11N9DUcZuAgyk" ManuallySortedPins="true">
+                <Pin Id="QhFZlyJR7TyO6vazZDiSG5" MergeId="315203" Name="Background Function T" Kind="InputPin" />
+                <Pin Id="TYFzxlssfNeNwPNHOWVkIn" MergeId="315192" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="DLSQcM0547iNK7VAGjrTOv" Name="Value" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="BUtNjP5wEcBNu1xH0Hb3MA" Name="Alpha Blending Model" Kind="InputPin" Bounds="355,1330" />
+                <Pin Id="Eoe95Nc1bXUPKmxy6fkz81" Name="Downstream Alpha" Kind="InputPin" Bounds="387,1347" />
+              </Patch>
+              <Patch Id="IIDsjppci3eQNJKZo5KxRE" Name="SetClips" ParticipatingElements="NlgcUFGMIgIL0jHZxPRATM,PdTX6p0m5KCMgbzzFzNUeu,D13yGsKkFoDMCBn80mWIy4">
+                <Pin Id="Uw40Vd5KT2KNGjLFyqysMj" Name="Clips" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Spread" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="IInterpolator1DShape" />
+                        <p:TypeArguments>
+                          <TypeReference>
+                            <Choice Kind="TypeFlag" Name="T" />
+                          </TypeReference>
+                        </p:TypeArguments>
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="Jgw3uXOMG8CP3XdqxSWONM" Name="Update" ManuallySortedPins="true" />
+              <Patch Id="UCgVaFjVCFfLrSzDxSFvk4" Name="BinarySearchAndHitTest" ParticipatingElements="S8xaTXv9UU5K9lvpyyephS,PWZopxRxeNBMXFSQ2PaEPM">
+                <Pin Id="Qen2gSeoBUKOcITCRrRo4w" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="IGHY2FTdQxGLKc3z1KkYci" Name="Within Range" Kind="OutputPin" />
+              </Patch>
+              <Link Id="UuupBD7AckMQGzwgb6Fwua" Ids="GjpaxvfXrY5M9cep1kzUVR,KTdFqM9h7MkNbjqLkynK2d" IsHidden="true" />
+              <Link Id="B68swOrOtImMjWG9HycLM7" Ids="Mlsbw7rxwyjPd3Ge5SPC8k,JnzW2CccPgwLu5gCoepaR3" IsHidden="true" />
+              <Link Id="MgXrvcko6bQM6yUnsbbac8" Ids="Lq0bmNHbOpiNswxcEZJyAb,EgVVB3ilywPNceniepBsbj" />
+              <Link Id="PWer7CPpkY4K9pSJGW1JrX" Ids="BUtNjP5wEcBNu1xH0Hb3MA,Lq0bmNHbOpiNswxcEZJyAb" IsHidden="true" />
+              <Link Id="M6gEaOBCOR0LkkvC7SSGHP" Ids="NSsZRrcUOKhLSh0xTJbq4j,V50LIj3yg44LZlQBiFT2Ao" />
+              <Link Id="G3CJvd3rIzdMtOYAO5TDHo" Ids="Eoe95Nc1bXUPKmxy6fkz81,NSsZRrcUOKhLSh0xTJbq4j" IsHidden="true" />
+              <Link Id="SxYw1R7hPFSNlHOGCoL1w9" Ids="CK0BnowVyYcOOSkDUFIoEb,SLLWL7dmDiBNspydHlJ8El" />
+              <Link Id="RH6UeUWlj76OXKtqu8k1qz" Ids="VgZnfFSfsgPMdqQGeeDp20,ITChFhflqyYO2dp6igGCLZ" />
+              <Link Id="RSpFx1nQVo0L1UyOX1gYNi" Ids="Eoe95Nc1bXUPKmxy6fkz81,VgZnfFSfsgPMdqQGeeDp20" IsHidden="true" />
+              <Link Id="DLkdBMjwSEfNCkRtKZ74TX" Ids="BUtNjP5wEcBNu1xH0Hb3MA,CK0BnowVyYcOOSkDUFIoEb" IsHidden="true" />
+              <Link Id="MuDhheOaKtnM9Z0CuEOS11" Ids="KTdFqM9h7MkNbjqLkynK2d,EfCzsqXv8pxNLRUJOA9Chr" />
+              <Link Id="Q1n9DmSDKfWMCRjUi6rMPt" Ids="JnzW2CccPgwLu5gCoepaR3,PWaJE6TYGraPbZHbh82OJ8" />
             </Patch>
           </Node>
           <!--
@@ -1222,9 +1337,9 @@
                   </Patch>
                 </Node>
                 <ControlPoint Id="NB7SN3j0j02N2dFULwtihC" Bounds="701,832" />
-                <ControlPoint Id="OZeit58OZrLNsN3o3srbPC" Bounds="676,945" />
-                <ControlPoint Id="QCrboKSbuITMg6NfPlSDkX" Bounds="701,1032" />
-                <Node Bounds="649,968,55,26" Id="JNG7xP44YNkNTZEOcYKvqN">
+                <ControlPoint Id="OZeit58OZrLNsN3o3srbPC" Bounds="560,942" />
+                <ControlPoint Id="QCrboKSbuITMg6NfPlSDkX" Bounds="1065,1052" />
+                <Node Bounds="428,984,647,26" Id="JNG7xP44YNkNTZEOcYKvqN">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.ILayer1D" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleT" />
@@ -1233,6 +1348,8 @@
                   <Pin Id="AbWvOCqabiRLayCanhGR4N" Name="Input" Kind="StateInputPin" />
                   <Pin Id="AgBGYvFy8auQOYhXoMGHp5" Name="Background Function" Kind="InputPin" />
                   <Pin Id="NXe47ui9Ik1P3N6skgiDPO" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="Cz4AkAZ9VNpPMAnfWjr1fa" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="Royf6cPFlzZQOYO0mUiCyI" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="O8GJp63jQyQQPGc5mFfOTH" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="GlqDkA0CNrAOav2leTbcYy" Name="Value" Kind="OutputPin" />
                 </Node>
@@ -1247,9 +1364,9 @@
                   <Pin Id="DOUayYDCHOhLpV0WK1lsRk" Name="State Output" Kind="StateOutputPin" />
                   <Pin Id="QUlzWKGMQNbOTg40fCwXDs" Name="Output" Kind="OutputPin" />
                 </Node>
-                <Pad Id="KimA7UILH46Nf9vU1P7E4X" SlotId="SS7SO23SsECL4y4aYqFfAW" Bounds="966,921" />
-                <ControlPoint Id="NINwApd908tMJfSrp477Qz" Bounds="966,846" />
-                <ControlPoint Id="Bel4Os7Wew0Po1qDiVfZgp" Bounds="966,974" />
+                <Pad Id="KimA7UILH46Nf9vU1P7E4X" SlotId="SS7SO23SsECL4y4aYqFfAW" Bounds="1721,272" />
+                <ControlPoint Id="NINwApd908tMJfSrp477Qz" Bounds="1721,197" />
+                <ControlPoint Id="Bel4Os7Wew0Po1qDiVfZgp" Bounds="1721,325" />
                 <ControlPoint Id="TnFE4wMoGC5LLLuvn8pLOs" Bounds="765,649" />
                 <Node Bounds="620,730,65,19" Id="L71DoYO4wH4LujkVXg37Ku">
                   <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
@@ -1308,7 +1425,7 @@
                   <ControlPoint Id="A91RFSLxeNAO3c05BqLoTY" Bounds="674,544" Alignment="Top" />
                 </Node>
                 <Pad Id="KruEhPJgB7LPJlKNWeBw4B" Bounds="765,698" />
-                <Pad Id="Me3bww96Vi9PDktdVWAGop" Comment="" Bounds="994,873,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                <Pad Id="Me3bww96Vi9PDktdVWAGop" Comment="" Bounds="1749,224,35,35" ShowValueBox="true" isIOBox="true" Value="True">
                   <p:TypeAnnotation>
                     <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                     <FullNameCategoryReference ID="Primitive" />
@@ -1384,8 +1501,46 @@
                   <Pin Id="VZxBRZ8LVQQN1mSzAFB9T9" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <Pad Id="NNEjTni0rfyOmwUg5VJtxz" SlotId="BpMvWH4mfWOMZacayy31No" Bounds="471,1172" />
+                <ControlPoint Id="TeGinonP4f1LdtxeH4hlF6" Bounds="957,803" />
+                <ControlPoint Id="CgXCXmMk74kNuhcVCW1LRy" Bounds="1293,791" />
+                <Pad Id="Bpztl0DTiD0MqDGccQA0im" SlotId="Rp8dCAuGBS8LPCwmfHsVZ7" Bounds="958,901" />
+                <Pad Id="Rd1s0VnnnIkOmqSy9OGRAc" SlotId="OcGSjzr65RKL4zT8gPyDtB" Bounds="1292,835" />
+                <Pad Id="RuNCdbRtIfWQaoM1H5TTNd" Bounds="1205,863,160,19" ShowValueBox="true" isIOBox="true" Value="current alpha for this pos">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                  <p:ValueBoxSettings>
+                    <p:fontsize p:Type="Int32">9</p:fontsize>
+                    <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+                  </p:ValueBoxSettings>
+                </Pad>
+                <Pad Id="OlIVOf9EPh4NJJXDzhIOwn" Comment="" Bounds="1313,815,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pad>
+                <Node Bounds="995,848,119,19" Id="LOBfiDiCwDWLI1KAVeIkrO">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending.Model" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="MultiplyBlendingModel" />
+                  </p:NodeReference>
+                  <Pin Id="VxthMMsIbecQNkQbNCyTav" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="1199,909,185,19" Id="VawcKxpXBQnN6VpQW89AlU">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="Blend" />
+                  </p:NodeReference>
+                  <Pin Id="SPv0hAiBmFiOKHJYBibnAk" Name="Blending Model" Kind="InputPin" />
+                  <Pin Id="TUHvHGTtoaQLtKFaZ0l6O0" Name="Background" Kind="InputPin" />
+                  <Pin Id="LfyjHnaBKEyMzMpz8hAN26" Name="Value" Kind="InputPin" />
+                  <Pin Id="Nunw0scdh3bNIVRrJm62UD" Name="State Output" Kind="StateOutputPin" />
+                  <Pin Id="LSbAYNoDk9nQFaUSrcQqoF" Name="Found" Kind="OutputPin" />
+                  <Pin Id="Ou9rjK4cgAsL6yhEtQ2trt" Name="Output" Kind="OutputPin" />
+                </Node>
+                <ControlPoint Id="IUJx3JabjomPLRefg4vFQl" Bounds="1203,730" />
+                <ControlPoint Id="R2teGtm1VJzPbadghViFT0" Bounds="1383,750" />
               </Canvas>
-              <Patch Id="PEPCiK6eYQXPS1aaLFAjoD" Name="Create" ParticipatingElements="UH4MX1ujgkuNJhfRekDcFO" />
               <Slot Id="RtCLlFjv7vbLyAo1ypfRhq" Name="Source">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="ILayer1D" />
@@ -1400,28 +1555,10 @@
               <Link Id="GcFkKnMxpTzQSr8vpaPbeq" Ids="KPHP1RU3ffbOrvzbaVP8CB,CZ0huclmfAlNoGGui14hBE" IsHidden="true" />
               <Link Id="MWVLtxxy0NuMHDAAVvuEY4" Ids="QyPQWRrqrDlQNFufhpx4VX,LHtgF9c81tQLm3Dbm0S9ui" IsHidden="true" />
               <Link Id="UhtZQ501MhjNAGldGsXFRX" Ids="ENP2Qv2LtWaNMxrfqLPeDE,GMVAcsCQ5qVOf3wx07vPi3" IsHidden="true" />
-              <Patch Id="TymjZB3s3f9Piv7PstgrEN" Name="SetPosition">
-                <Pin Id="Lm02yXIDtnXOCDIqjxbFXz" Name="Position" Kind="InputPin" />
-              </Patch>
-              <Patch Id="B9hqJgqomhMO8xyNF5oKOQ" Name="SetDuration">
-                <Pin Id="QyPQWRrqrDlQNFufhpx4VX" Name="Duration" Kind="InputPin" />
-              </Patch>
-              <Patch Id="F3nHWCJfcnNO0II2wUWBNW" Name="GetDuration">
-                <Pin Id="GMVAcsCQ5qVOf3wx07vPi3" Name="Duration" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="E4uIXHuJcN4Oi803GNrndm" Name="GetPosition">
-                <Pin Id="CZ0huclmfAlNoGGui14hBE" Name="Position" Kind="OutputPin" />
-              </Patch>
               <Link Id="GQjilX5FpDnNttzlyI02Kt" Ids="RzxIkLzy1NJPXpW6wRJB4E,FFbr5iHfVhBMmVs2z7hTmT" />
               <Link Id="LNUXivFcGwFOFK0zfWjcIr" Ids="FFbr5iHfVhBMmVs2z7hTmT,Fb4JMJrBFp6M7YEtGZ8lAS" IsHidden="true" />
-              <Patch Id="J6aFZ7BN1akP16KRHEIaNC" Name="GetLayer">
-                <Pin Id="Fb4JMJrBFp6M7YEtGZ8lAS" Name="Source" Kind="OutputPin" />
-              </Patch>
               <Link Id="QiasGNe2CNEOKlU7LDGfNF" Ids="Cfei319IzLbOXnUwIZcG9S,RzxIkLzy1NJPXpW6wRJB4E" />
               <Link Id="GVpYQawPgSlN4qMj8arSON" Ids="GWj9svDS2qKNVuds15HzuI,Cfei319IzLbOXnUwIZcG9S" IsHidden="true" />
-              <Patch Id="MSqAGDnrnGFM9VZd9fpHoj" Name="SetLayer">
-                <Pin Id="GWj9svDS2qKNVuds15HzuI" Name="Source" Kind="InputPin" />
-              </Patch>
               <Slot Id="NtzoZNGI7KrQSWhMTJX52k" Name="Value Interpolation Model">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="IInterpolationModel" />
@@ -1432,18 +1569,6 @@
                   <Choice Kind="TypeFlag" Name="IInterpolationModel" />
                 </p:TypeAnnotation>
               </Slot>
-              <Patch Id="O4Iv3xkRLFPPgZ13B0GhLm" Name="SetValueInterpolationModel">
-                <Pin Id="QkTSD1ELksMPP6FUNlhRsE" MergeId="406857" Name="Value Interpolation Model" Kind="InputPin" />
-              </Patch>
-              <Patch Id="BQHswZXBuNkPhdyzd8IvxA" Name="SetSpreadCountInterpolationModel">
-                <Pin Id="Ma2yuOmX8YkNVjXFps0eOX" MergeId="406855" Name="SpreadCount Interpolation Model" Kind="InputPin" />
-              </Patch>
-              <Patch Id="IQa7BQTEWdUOf1EltuPxil" Name="GetValueInterpolationModel">
-                <Pin Id="QINBlikCHrPOHvKrVPjUky" MergeId="406853" Name="Value Interpolation Model" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="NrEKUu15XdWQNeodWUVf5f" Name="GetSpreadCountInterpolationModel">
-                <Pin Id="P4n5GHEurCsNEZcqQ7bpy4" MergeId="406851" Name="SpreadCount Interpolation Model" Kind="OutputPin" />
-              </Patch>
               <Link Id="CHFsDRfToG6PkLsnNYqTGP" Ids="VWd86Mdd6nEP3HcP5H9jEg,MtdqPhJQq9mOspWxW68yQf" />
               <Link Id="SlGVxoFpflQMwYqzq2CoS3" Ids="QkTSD1ELksMPP6FUNlhRsE,VWd86Mdd6nEP3HcP5H9jEg" IsHidden="true" />
               <Link Id="UVUW6jQtoYjMdyWQP7G6JU" Ids="NC4UTzqHj5eQRBukJkn0e3,IuMPHrylH7QOpM40wWILbp" />
@@ -1452,34 +1577,11 @@
               <Link Id="GsvQFANrK3WM32RMNJoriW" Ids="ETXLWv9LhE7LKAZtzD0NfS,QINBlikCHrPOHvKrVPjUky" IsHidden="true" />
               <Link Id="Jc5FPjkoCaQQbStt4RE0qi" Ids="IuMPHrylH7QOpM40wWILbp,IiGxdp8WxolOwHlOXaIOS5" />
               <Link Id="TvH3FLuhzFHL4MWLOtgN2D" Ids="IiGxdp8WxolOwHlOXaIOS5,P4n5GHEurCsNEZcqQ7bpy4" IsHidden="true" />
-              <Patch Id="QJ9XR7aS91SMqdsuI8YC8f" Name="SampleLayerT" ParticipatingElements="SNDB0BifOCONS9mi5jBpcs">
-                <Pin Id="HScUEtFNvqdOiWOmf1QFmX" MergeId="473465" Name="Background Function" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="Dohm2XdFea4NUgCjKKmTrL" MergeId="473466" Name="Sampling Position" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="Float64" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="VonblqjOaCgMiwifLi6p2k" MergeId="473467" Name="Value" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Slot Id="SS7SO23SsECL4y4aYqFfAW" Name="Enabled">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Slot>
-              <Patch Id="IafKoDTFBKwMUEDk4aGt71" Name="GetEnabled">
-                <Pin Id="FXVrf0Nt9p6MbowFsFIU9O" MergeId="588796" Name="Enabled" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="PliEsb4llLYL6Jp9YB2ANP" Name="SetEnabled">
-                <Pin Id="SEV9NyQZzkLMsOHJAtNuZ5" MergeId="589446" Name="Enabled" Kind="InputPin" DefaultValue="True" Visibility="Optional" />
-              </Patch>
               <Link Id="CsBkgTxL4ZJP7GJxQ7uCkS" Ids="Dohm2XdFea4NUgCjKKmTrL,NB7SN3j0j02N2dFULwtihC" IsHidden="true" />
               <Link Id="KqAV1yJ7KUMP2sATiRWzyl" Ids="HScUEtFNvqdOiWOmf1QFmX,OZeit58OZrLNsN3o3srbPC" IsHidden="true" />
               <Link Id="FpHLpkFMKk6O3ZKL79hwsw" Ids="QCrboKSbuITMg6NfPlSDkX,VonblqjOaCgMiwifLi6p2k" IsHidden="true" />
@@ -1492,7 +1594,6 @@
               <Link Id="SHU2m0yQZqYOj5C5J83OQZ" Ids="KimA7UILH46Nf9vU1P7E4X,Bel4Os7Wew0Po1qDiVfZgp" />
               <Link Id="F2cEGC3AbI6PjgTMe5zXQU" Ids="Bel4Os7Wew0Po1qDiVfZgp,FXVrf0Nt9p6MbowFsFIU9O" IsHidden="true" />
               <Link Id="Vcta6g9f5lSNC1GB7eNH8b" Ids="RzxIkLzy1NJPXpW6wRJB4E,AbWvOCqabiRLayCanhGR4N" />
-              <Patch Id="KFHVUavJg1PLtJ5IV8BqiI" Name="Update" />
               <Link Id="C5eFXDT7BEMM36lNoK4S0a" Ids="H2zbWSA8c9wLtgZG66w6hp,TnFE4wMoGC5LLLuvn8pLOs" IsHidden="true" />
               <Link Id="UJs4o9U86nyOzYG28mz2Oa" Ids="EEVTd9xTciENNj08lnzT9s,Vw6HDxLjywiL6HxGWoSZz7" />
               <Link Id="Miv7Of7JNvvN6G53q5r0RQ" Ids="TnFE4wMoGC5LLLuvn8pLOs,KruEhPJgB7LPJlKNWeBw4B" />
@@ -1504,18 +1605,6 @@
               <Link Id="VTfmi6v2wtoOvHqeIWiNID" Ids="AeJcFhAhg4YOpKTWOzj4SF,QgOhUDkGkfCOcLK1F2zLFe" />
               <Link Id="TlrlDvxDU0NOrAqM8jXYtZ" Ids="KruEhPJgB7LPJlKNWeBw4B,MECu8ljSPMfLtBwyPUUdjN" />
               <Link Id="V1KLwIf1L29OEMnIlHpML7" Ids="KruEhPJgB7LPJlKNWeBw4B,EXdhTZ9uwERLLRDCk8zSpb" />
-              <Patch Id="UJuH94JQNulMr0vj31gxM1" Name="SetCustomTransportFunction">
-                <Pin Id="H2zbWSA8c9wLtgZG66w6hp" Name="Custom Transport Function" Kind="InputPin" Visibility="Optional">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="ITransportFunction" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="Float64" />
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Link Id="HaINdWHeSjFM8BwnUsuiGu" Ids="A91RFSLxeNAO3c05BqLoTY,FBNrsKaA3rbOYwaoZ7PoT1" />
               <Link Id="JlMAPMHwEY0PH88qbFrOn4" Ids="J2otfEk1oeIO28cVcWHzSY,Ef7L9ZXYWGqPMndaZ8sKXN" />
               <ProcessDefinition Id="VnMAM2rwmFQMajttB23Bql" HasStateOut="true">
@@ -1541,6 +1630,8 @@
                 <Fragment Id="LeVB2QMscKJMYzYKC0mC9o" Patch="DDIKA8V1M1gOFRfOIPh6ZZ" />
                 <Fragment Id="Mv9aeOPCfAwNsZ0yOXPmdh" Patch="JQ2kLAVBPUnN1FiA7hptfE" />
                 <Fragment Id="Vnofevq5y75OnZhiyMhH8h" Patch="QQt29NjAEaiPv0h1Vk1tYb" />
+                <Fragment Id="UH8WyMcdS2ZQWLGyPMWZMR" Patch="Jg6MjNVXhQwPzQ7fIlD1Pl" Enabled="true" />
+                <Fragment Id="Qhejj0VpnP8MmDPAh9Zejj" Patch="HQGNjqOt6xLOQG050fNTiM" Enabled="true" />
               </ProcessDefinition>
               <Link Id="UH4MX1ujgkuNJhfRekDcFO" Ids="Me3bww96Vi9PDktdVWAGop,KimA7UILH46Nf9vU1P7E4X" />
               <Slot Id="SyXBlCHb0FpMuTtjMmDAK4" Name="Bound Min">
@@ -1553,18 +1644,6 @@
                   <Choice Kind="TypeFlag" Name="Float64" />
                 </p:TypeAnnotation>
               </Slot>
-              <Patch Id="AE8Pc4e6beGQMGU6rQsjaZ" Name="SetBoundMin">
-                <Pin Id="P8tZIJpqRmwLtNPkliNkIk" MergeId="336426" Name="Bound Min" Kind="InputPin" />
-              </Patch>
-              <Patch Id="Ajt0waFeMc3PUl0OGy6hls" Name="SetBoundMax">
-                <Pin Id="GD8LrJErf4zMuX52yM1xBp" MergeId="336189" Name="Bound Max" Kind="InputPin" />
-              </Patch>
-              <Patch Id="DDIKA8V1M1gOFRfOIPh6ZZ" Name="GetBoundMax">
-                <Pin Id="CMUs9O9IlCoOn0MRa86XXZ" MergeId="336187" Name="Bound Max" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="JQ2kLAVBPUnN1FiA7hptfE" Name="GetBoundMin">
-                <Pin Id="Iw9YB47w8ghMu5YkdHCoYQ" MergeId="336185" Name="Bound Min" Kind="OutputPin" />
-              </Patch>
               <Link Id="ALgZ4ZxM6JlPSHBJLV9j8t" Ids="DfhsoX880rILhNttmITjHR,ShtRjEtOUgUMGSjAKxqQsZ" />
               <Link Id="DfULVXcEQ3vQKeFKq4CzvU" Ids="D4glVzMB3JfOMJVLr2Hfhp,Iw9YB47w8ghMu5YkdHCoYQ" IsHidden="true" />
               <Link Id="Ddcpkha786iOgQYl6s8BGj" Ids="ShtRjEtOUgUMGSjAKxqQsZ,D4glVzMB3JfOMJVLr2Hfhp" />
@@ -1582,10 +1661,6 @@
               <Link Id="GrysfqogUxfMIeBndQPQIP" Ids="Pixgc0e2NzPPHHU1V9Ph1C,ShtRjEtOUgUMGSjAKxqQsZ" />
               <Link Id="EcvgyTITJZPNLy74gLQOK8" Ids="ShtRjEtOUgUMGSjAKxqQsZ,KPHP1RU3ffbOrvzbaVP8CB" />
               <Link Id="SNDB0BifOCONS9mi5jBpcs" Ids="OPRWj9YLP43QJXowqv8iS1,A91RFSLxeNAO3c05BqLoTY" />
-              <Patch Id="QQt29NjAEaiPv0h1Vk1tYb" Name="HitTest">
-                <Pin Id="HMHbMDWHUHAL5OYuvvyWEo" MergeId="435143" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="SAQ4NNFFLFeNhKYOmgo3yT" MergeId="435144" Name="Result" Kind="OutputPin" />
-              </Patch>
               <Link Id="MM32JFTWIdELKcWMBhzA6z" Ids="HMHbMDWHUHAL5OYuvvyWEo,DCOTSS5unYALhAgLv7k33M" IsHidden="true" />
               <Link Id="GTCUnEa6pXBQCq80HwKWci" Ids="A4qz2mq7bYGPPkLCoW4kQ5,SAQ4NNFFLFeNhKYOmgo3yT" IsHidden="true" />
               <Link Id="ATbBXT0B9ucLK5iGCkIIdD" Ids="KHLl3CxOLSYM7vAUwA4col,B0L8NgzG9plMTM5XDqTegk" />
@@ -1595,6 +1670,120 @@
               <Link Id="R6lhC5E66trOkFz0yMj8ww" Ids="DCOTSS5unYALhAgLv7k33M,TNqjocUU209LBRn44OetMe" />
               <Link Id="Khw9LnDMt7ZPKPWEb3jUgS" Ids="DCOTSS5unYALhAgLv7k33M,JXesRGACcBxN6dj0cRP9DC" />
               <Link Id="NGi4gf7ICfqPjHHq1yaAva" Ids="VZxBRZ8LVQQN1mSzAFB9T9,A4qz2mq7bYGPPkLCoW4kQ5" />
+              <Slot Id="Rp8dCAuGBS8LPCwmfHsVZ7" Name="Alpha Blending Model" />
+              <Slot Id="OcGSjzr65RKL4zT8gPyDtB" Name="Alpha" />
+              <Link Id="CacL9BGB9u1NUCklcHyTDG" Ids="JY1ETkcDnkFOPnnuaOQtQ3,TeGinonP4f1LdtxeH4hlF6" IsHidden="true" />
+              <Link Id="KkBU5jlPNqtPnHocYw9aYd" Ids="IcIVNYjuLbNLCSko1osqxx,CgXCXmMk74kNuhcVCW1LRy" IsHidden="true" />
+              <Link Id="SD6EzN5Ewg7NjMzVFmJnz3" Ids="CgXCXmMk74kNuhcVCW1LRy,Rd1s0VnnnIkOmqSy9OGRAc" />
+              <Link Id="IwvM1FbiPwxM56TqzayNwM" Ids="TeGinonP4f1LdtxeH4hlF6,Bpztl0DTiD0MqDGccQA0im" />
+              <Link Id="P1ryumddmtdPAscJjgUF1X" Ids="Bpztl0DTiD0MqDGccQA0im,Cz4AkAZ9VNpPMAnfWjr1fa" />
+              <Link Id="DQzZ7LU9SsYN26Rv3WazxJ" Ids="OlIVOf9EPh4NJJXDzhIOwn,Rd1s0VnnnIkOmqSy9OGRAc" />
+              <Link Id="LrGJmLaVKjUNWpdMK7kxuQ" Ids="VxthMMsIbecQNkQbNCyTav,Bpztl0DTiD0MqDGccQA0im" />
+              <Patch Id="PEPCiK6eYQXPS1aaLFAjoD" Name="Create" ParticipatingElements="UH4MX1ujgkuNJhfRekDcFO,DQzZ7LU9SsYN26Rv3WazxJ,LrGJmLaVKjUNWpdMK7kxuQ" />
+              <Patch Id="TymjZB3s3f9Piv7PstgrEN" Name="SetPosition">
+                <Pin Id="Lm02yXIDtnXOCDIqjxbFXz" Name="Position" Kind="InputPin" />
+              </Patch>
+              <Patch Id="B9hqJgqomhMO8xyNF5oKOQ" Name="SetDuration">
+                <Pin Id="QyPQWRrqrDlQNFufhpx4VX" Name="Duration" Kind="InputPin" />
+              </Patch>
+              <Patch Id="F3nHWCJfcnNO0II2wUWBNW" Name="GetDuration">
+                <Pin Id="GMVAcsCQ5qVOf3wx07vPi3" Name="Duration" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="E4uIXHuJcN4Oi803GNrndm" Name="GetPosition">
+                <Pin Id="CZ0huclmfAlNoGGui14hBE" Name="Position" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="J6aFZ7BN1akP16KRHEIaNC" Name="GetLayer">
+                <Pin Id="Fb4JMJrBFp6M7YEtGZ8lAS" Name="Source" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="MSqAGDnrnGFM9VZd9fpHoj" Name="SetLayer">
+                <Pin Id="GWj9svDS2qKNVuds15HzuI" Name="Source" Kind="InputPin" />
+              </Patch>
+              <Patch Id="O4Iv3xkRLFPPgZ13B0GhLm" Name="SetValueInterpolationModel">
+                <Pin Id="QkTSD1ELksMPP6FUNlhRsE" MergeId="406857" Name="Value Interpolation Model" Kind="InputPin" />
+              </Patch>
+              <Patch Id="BQHswZXBuNkPhdyzd8IvxA" Name="SetSpreadCountInterpolationModel">
+                <Pin Id="Ma2yuOmX8YkNVjXFps0eOX" MergeId="406855" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+              </Patch>
+              <Patch Id="IQa7BQTEWdUOf1EltuPxil" Name="GetValueInterpolationModel">
+                <Pin Id="QINBlikCHrPOHvKrVPjUky" MergeId="406853" Name="Value Interpolation Model" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="NrEKUu15XdWQNeodWUVf5f" Name="GetSpreadCountInterpolationModel">
+                <Pin Id="P4n5GHEurCsNEZcqQ7bpy4" MergeId="406851" Name="SpreadCount Interpolation Model" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="QJ9XR7aS91SMqdsuI8YC8f" Name="SampleLayerT" ParticipatingElements="SNDB0BifOCONS9mi5jBpcs">
+                <Pin Id="HScUEtFNvqdOiWOmf1QFmX" MergeId="473465" Name="Background Function" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="Dohm2XdFea4NUgCjKKmTrL" MergeId="473466" Name="Sampling Position" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float64" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="UXWAEDnPtMMOHYMxRP1TZL" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="IgwOSIDoxdSNEPlNcHKF2K" Name="Downstream Alpha" Kind="InputPin" />
+                <Pin Id="VonblqjOaCgMiwifLi6p2k" MergeId="473467" Name="Value" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="IafKoDTFBKwMUEDk4aGt71" Name="GetEnabled">
+                <Pin Id="FXVrf0Nt9p6MbowFsFIU9O" MergeId="588796" Name="Enabled" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="PliEsb4llLYL6Jp9YB2ANP" Name="SetEnabled">
+                <Pin Id="SEV9NyQZzkLMsOHJAtNuZ5" MergeId="589446" Name="Enabled" Kind="InputPin" DefaultValue="True" Visibility="Optional" />
+              </Patch>
+              <Patch Id="KFHVUavJg1PLtJ5IV8BqiI" Name="Update" />
+              <Patch Id="UJuH94JQNulMr0vj31gxM1" Name="SetCustomTransportFunction">
+                <Pin Id="H2zbWSA8c9wLtgZG66w6hp" Name="Custom Transport Function" Kind="InputPin" Visibility="Optional">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="ITransportFunction" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="Float64" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="AE8Pc4e6beGQMGU6rQsjaZ" Name="SetBoundMin">
+                <Pin Id="P8tZIJpqRmwLtNPkliNkIk" MergeId="336426" Name="Bound Min" Kind="InputPin" />
+              </Patch>
+              <Patch Id="Ajt0waFeMc3PUl0OGy6hls" Name="SetBoundMax">
+                <Pin Id="GD8LrJErf4zMuX52yM1xBp" MergeId="336189" Name="Bound Max" Kind="InputPin" />
+              </Patch>
+              <Patch Id="DDIKA8V1M1gOFRfOIPh6ZZ" Name="GetBoundMax">
+                <Pin Id="CMUs9O9IlCoOn0MRa86XXZ" MergeId="336187" Name="Bound Max" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="JQ2kLAVBPUnN1FiA7hptfE" Name="GetBoundMin">
+                <Pin Id="Iw9YB47w8ghMu5YkdHCoYQ" MergeId="336185" Name="Bound Min" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="QQt29NjAEaiPv0h1Vk1tYb" Name="HitTest">
+                <Pin Id="HMHbMDWHUHAL5OYuvvyWEo" MergeId="435143" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="SAQ4NNFFLFeNhKYOmgo3yT" MergeId="435144" Name="Result" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="Jg6MjNVXhQwPzQ7fIlD1Pl" Name="SetAlpha">
+                <Pin Id="IcIVNYjuLbNLCSko1osqxx" MergeId="472889" Name="Alpha" Kind="InputPin" DefaultValue="1">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="HQGNjqOt6xLOQG050fNTiM" Name="SetAlphaBlendingModel">
+                <Pin Id="JY1ETkcDnkFOPnnuaOQtQ3" MergeId="473861" Name="Alpha Blending Model" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBlendingModel" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Link Id="QKyXslhQxEePPyqqe720lu" Ids="Rd1s0VnnnIkOmqSy9OGRAc,TUHvHGTtoaQLtKFaZ0l6O0" />
+              <Link Id="HOd5JqSvgv8LcS1RHro1CS" Ids="UXWAEDnPtMMOHYMxRP1TZL,IUJx3JabjomPLRefg4vFQl" IsHidden="true" />
+              <Link Id="BbWflq2KaNmQUEd5Ar7PGe" Ids="IgwOSIDoxdSNEPlNcHKF2K,R2teGtm1VJzPbadghViFT0" IsHidden="true" />
+              <Link Id="T9a3HwQMYUvN8iRHdtRgRe" Ids="IUJx3JabjomPLRefg4vFQl,SPv0hAiBmFiOKHJYBibnAk" />
+              <Link Id="ROk4wPeWR0dOKcGbZvCmgU" Ids="R2teGtm1VJzPbadghViFT0,LfyjHnaBKEyMzMpz8hAN26" />
+              <Link Id="QSz9FiOpUUJMUzLpJU6Gik" Ids="Ou9rjK4cgAsL6yhEtQ2trt,Royf6cPFlzZQOYO0mUiCyI" />
             </Patch>
           </Node>
           <!--
@@ -1624,9 +1813,9 @@
                 <ControlPoint Id="Npnw0Fm4I6aPu99vY39aUi" Bounds="571,263" />
                 <ControlPoint Id="TS9wEiFVAUOPTWZoyPZk1F" Bounds="838,263" />
                 <ControlPoint Id="PLysoDfZ8KkMkbjTQFWY3S" Bounds="560,573" />
-                <ControlPoint Id="PWPt1gfSkbQOlooyDacqkL" Bounds="535,686" />
-                <ControlPoint Id="C8AeK0wWZjUO6KW09vqGaU" Bounds="560,773" />
-                <Node Bounds="508,709,55,26" Id="L3U7BiWOkmZO0YryGUin51">
+                <ControlPoint Id="PWPt1gfSkbQOlooyDacqkL" Bounds="417,679" />
+                <ControlPoint Id="C8AeK0wWZjUO6KW09vqGaU" Bounds="783,790" />
+                <Node Bounds="344,713,448,26" Id="L3U7BiWOkmZO0YryGUin51">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.ILayer1D" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleT" />
@@ -1635,6 +1824,8 @@
                   <Pin Id="Ekg2jaGFdQ5Nl3N4NJACc4" Name="Input" Kind="StateInputPin" />
                   <Pin Id="T3zGHbEXhLvPD4IfUTFQKW" Name="Background Function" Kind="InputPin" />
                   <Pin Id="OOw7BnzFVUvOFyLpuQTX6I" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="EMlM7AA16iFOQEJLQcSIFl" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="DIKH3jWNPyQMLBA0uKLdQL" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="RQ6BqCCx7QrO6BoBxQwWMV" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="Gix2OHq0J3zMD1V0kDT6s2" Name="Value" Kind="OutputPin" />
                 </Node>
@@ -1649,9 +1840,9 @@
                   <Pin Id="KmENrs7D5MgNRvjOkmRmhh" Name="State Output" Kind="StateOutputPin" />
                   <Pin Id="OmFtDAsxYvRPUdtjvzZEVs" Name="Output" Kind="OutputPin" />
                 </Node>
-                <Pad Id="RYrKgtybaA7MXYkzlhG1Xf" SlotId="Sgdkq5n75vJOI0iO2xihNK" Bounds="825,662" />
-                <ControlPoint Id="HvRGDh1kchQP0RUDGMxN2k" Bounds="825,602" />
-                <ControlPoint Id="CJ3KNJ4CFGzMgGdpHci6GT" Bounds="825,715" />
+                <Pad Id="RYrKgtybaA7MXYkzlhG1Xf" SlotId="Sgdkq5n75vJOI0iO2xihNK" Bounds="1072,641" />
+                <ControlPoint Id="HvRGDh1kchQP0RUDGMxN2k" Bounds="1072,581" />
+                <ControlPoint Id="CJ3KNJ4CFGzMgGdpHci6GT" Bounds="1072,694" />
                 <ControlPoint Id="AuBVxoVj7BfNDnXrCGJxO8" Bounds="521,391" />
                 <Node Bounds="479,471,65,19" Id="TgiWOLONCK4LFZpovu9iy5">
                   <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
@@ -1688,6 +1879,8 @@
                 <Overlay Id="L7ZRGwakOvvOFsL3MzMrfZ" Name="Hit Test" Bounds="187,891,242,181">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
+                <ControlPoint Id="E8k6zy7XW7nOeyBPFD4tY8" Bounds="675,629" />
+                <ControlPoint Id="MGuckFN88UqQcIvn5EMNhK" Bounds="784,668" />
               </Canvas>
               <ProcessDefinition Id="BTsUhxfOKrROuGmW1Qi7oN" IsHidden="true">
                 <Fragment Id="ObGt2hGBX4dLSqmC4E5IDA" Patch="R7MzoRZsLWzLXMcJDMtW2b" />
@@ -1705,6 +1898,7 @@
                 <Fragment Id="BYJHI6jdI8UNVQhnd5pNJi" Patch="V6M1tCOSEm1PYoWElmtO06" />
                 <Fragment Id="ApXW2QTaYEVQPH7uitjLut" Patch="HBqPn6PAatGMVgGmsH5wPn" />
                 <Fragment Id="QNTxcYp3vVaNOa75Pz80wM" Patch="PeKrICoWLdNMjhQJzYP2R0" />
+                <Fragment Id="NEKqhFknTNnLcQqiAlGoaU" Patch="CHxOq0eWdKwQGNJdOdkj7E" />
               </ProcessDefinition>
               <Slot Id="CH9Qsa113EEOPRAaMiFXZ7" Name="Bound Min">
                 <p:TypeAnnotation p:Type="TypeReference">
@@ -1825,6 +2019,16 @@
                     <Choice Kind="TypeFlag" Name="T" />
                   </p:TypeAnnotation>
                 </Pin>
+                <Pin Id="KjSAoVNWVeqNPYT0k1asGI" Name="Alpha Blending Model" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBlendingModel" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="J8YXPM3aoiJP6kCVOfcOWi" Name="Downstream Alpha" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pin>
               </Patch>
               <Patch Id="GZpKT5mUJDGOC1iyT68pba" Name="GetEnabled">
                 <Pin Id="GhHDmi5UZ2jNdfMeLfxyoo" MergeId="6290" Name="Enabled" Kind="OutputPin" />
@@ -1853,6 +2057,11 @@
               <Link Id="F51IayL6VgYNzWpwdKzVXp" Ids="EUcgWfowjyEPthyanWSuzU,AQWqWFzW6hGQAICvSXAYgM" IsHidden="true" />
               <Link Id="HoUZBSRCo6VMAHVIZz9hjO" Ids="F321iOXrlBjQSBybbMCOX5,FtQbNxDkVNYPTkTWWmV1tk" />
               <Link Id="Ko2q4LA7EF1MVIIOEeO55m" Ids="FtQbNxDkVNYPTkTWWmV1tk,UrVNNiadVToOazewXVe7AM" IsHidden="true" />
+              <Patch Id="CHxOq0eWdKwQGNJdOdkj7E" Name="SampleT" />
+              <Link Id="CwVV6BQh8KRMRsaIQgAfmc" Ids="KjSAoVNWVeqNPYT0k1asGI,E8k6zy7XW7nOeyBPFD4tY8" IsHidden="true" />
+              <Link Id="EVTvRA8BfV7LJT0Ss5IHPG" Ids="J8YXPM3aoiJP6kCVOfcOWi,MGuckFN88UqQcIvn5EMNhK" IsHidden="true" />
+              <Link Id="QpGVF40MTmjNtQcqOnDQBu" Ids="E8k6zy7XW7nOeyBPFD4tY8,EMlM7AA16iFOQEJLQcSIFl" />
+              <Link Id="Gx44gGScVvTLqpA4bgEWJl" Ids="MGuckFN88UqQcIvn5EMNhK,DIKH3jWNPyQMLBA0uKLdQL" />
             </Patch>
           </Node>
           <!--
@@ -1911,9 +2120,9 @@
                   </Patch>
                 </Node>
                 <ControlPoint Id="QM2022bUVREPsClMBnp0Rm" Bounds="701,832" />
-                <ControlPoint Id="BJVdVQp4702LEKYSKxP8Gb" Bounds="676,945" />
-                <ControlPoint Id="TpGe35hvev8Nvz6vXKfvIP" Bounds="701,1032" />
-                <Node Bounds="649,968,55,26" Id="HZcV2O2FQnYNTcmxKYqzYQ">
+                <ControlPoint Id="BJVdVQp4702LEKYSKxP8Gb" Bounds="572,985" />
+                <ControlPoint Id="TpGe35hvev8Nvz6vXKfvIP" Bounds="1205,1166" />
+                <Node Bounds="454,1083,758,26" Id="HZcV2O2FQnYNTcmxKYqzYQ">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.ILayer1D" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleT" />
@@ -1922,6 +2131,8 @@
                   <Pin Id="ODISh2a0iiAQSi9YQ1ywMl" Name="Input" Kind="StateInputPin" />
                   <Pin Id="FvILfs3swbvLM5DiOmdoBr" Name="Background Function" Kind="InputPin" />
                   <Pin Id="SZSt8dbSAylQKyye0Xlpfq" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="SyXrj2NoVkqQXKZZwfOD2p" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="ERJvLgpOtqIPgzqHdkWhJg" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="Q7UbkJ3UqWVNYsoKZ8Dj52" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="HQSTHLKBDPkOamKLJasGGQ" Name="Value" Kind="OutputPin" />
                 </Node>
@@ -1936,9 +2147,9 @@
                   <Pin Id="GrkRkmAJJXgQRgSnF2LhDa" Name="State Output" Kind="StateOutputPin" />
                   <Pin Id="J9rQ8hO5z74O1nQKPoWDsB" Name="Output" Kind="OutputPin" />
                 </Node>
-                <Pad Id="EiA9mTLunDLMoW58CtLKlu" SlotId="EF1r2fmYVh0NS1oAzX6KWx" Bounds="966,921" />
-                <ControlPoint Id="Pld5fZn17e1Mmg5Llwr4nR" Bounds="966,846" />
-                <ControlPoint Id="A8clS2Jyn3SQWzQZKVPw3o" Bounds="966,974" />
+                <Pad Id="EiA9mTLunDLMoW58CtLKlu" SlotId="EF1r2fmYVh0NS1oAzX6KWx" Bounds="1608,965" />
+                <ControlPoint Id="Pld5fZn17e1Mmg5Llwr4nR" Bounds="1608,890" />
+                <ControlPoint Id="A8clS2Jyn3SQWzQZKVPw3o" Bounds="1608,1018" />
                 <ControlPoint Id="L2XPvIzAsp9PZTDYzburkL" Bounds="765,649" />
                 <Node Bounds="620,730,65,19" Id="CvSpoKVr3A1QEBcKdl4ybk">
                   <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
@@ -1997,7 +2208,7 @@
                   <ControlPoint Id="OcWPD6zepJ7MLI6nu5qyZe" Bounds="674,544" Alignment="Top" />
                 </Node>
                 <Pad Id="TOpCBL1U5oiMqcAdmRFIh4" Bounds="765,698" />
-                <Pad Id="PHYmpMilzgIL6GeADHoBsy" Comment="" Bounds="994,873,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                <Pad Id="PHYmpMilzgIL6GeADHoBsy" Comment="" Bounds="1636,917,35,35" ShowValueBox="true" isIOBox="true" Value="True">
                   <p:TypeAnnotation>
                     <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                     <FullNameCategoryReference ID="Primitive" />
@@ -2011,8 +2222,8 @@
                 <ControlPoint Id="NGVJcTVy4OhPpKF0fq0Xp9" Bounds="383,344" />
                 <ControlPoint Id="EuLaq1s4mHYLa5bMrNylOY" Bounds="479,340" />
                 <Pad Id="FGre1rj1k7BPoUHrdkOkEe" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="674,515" />
-                <Pad Id="CozSn4f4iX8PzV3mNV8KHM" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="407,1152" />
-                <Node Bounds="405,1184,25,19" Id="CrtbHDmhajtOGvywezhr9P">
+                <Pad Id="CozSn4f4iX8PzV3mNV8KHM" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="1455,494" />
+                <Node Bounds="1453,526,25,19" Id="CrtbHDmhajtOGvywezhr9P">
                   <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="=" />
@@ -2021,13 +2232,51 @@
                   <Pin Id="P0sM022cQFUP0bCYOrGe7o" Name="Input 2" Kind="InputPin" />
                   <Pin Id="SRWgdw9ilbjOZ2BP6PLCbm" Name="Result" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="NGuyKl5aViUNBQ6IzrrJKI" Bounds="427,1158" />
-                <ControlPoint Id="LZJNzQfIJuROaxbHH5xwDc" Bounds="407,1232" />
-                <Overlay Id="KKW0hwNQ11NNlQo990SDkv" Name="Hit Test" Bounds="324,1089,242,181">
+                <ControlPoint Id="NGuyKl5aViUNBQ6IzrrJKI" Bounds="1475,500" />
+                <ControlPoint Id="LZJNzQfIJuROaxbHH5xwDc" Bounds="1455,574" />
+                <Overlay Id="KKW0hwNQ11NNlQo990SDkv" Name="Hit Test" Bounds="1372,431,242,181">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
+                <ControlPoint Id="BmHaqx6hI2gQa2HY5TcJ8T" Bounds="978,762" />
+                <ControlPoint Id="EMedMHbWIz0QXjZGp3KyR8" Bounds="1303,794" />
+                <Pad Id="R5iWaFc1172O9toJCw4xdW" SlotId="JtfFItXOv4VPeKbF5BBLmL" Bounds="978,866" />
+                <Pad Id="HLErfnRtxSjNJNgR8Zl4y7" SlotId="MBl6j1eO407M5AtRW3RC5g" Bounds="1302,838" />
+                <Pad Id="JYY3FvOydXUPoTkObvvGrm" Bounds="1215,866,160,19" ShowValueBox="true" isIOBox="true" Value="current alpha for this pos">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                  <p:ValueBoxSettings>
+                    <p:fontsize p:Type="Int32">9</p:fontsize>
+                    <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+                  </p:ValueBoxSettings>
+                </Pad>
+                <Pad Id="Qlx0O8HQxOwMMFs9yzB16p" Comment="" Bounds="1332,814,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pad>
+                <Node Bounds="1005,811,119,19" Id="G0blPPGZkb5Mmkzv9JIqpf">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending.Model" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="MultiplyBlendingModel" />
+                  </p:NodeReference>
+                  <Pin Id="AChezOsDdRLONHshI6bSg7" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <ControlPoint Id="S1N8WlALFTZPeQTzSt9DBe" Bounds="1181,895" />
+                <ControlPoint Id="Pm6nIa3EQevP0FARncrDiq" Bounds="1417,889" />
+                <Node Bounds="1181,928,243,19" Id="DZX2kM6SW7QNhBuHxzNECw">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="Blend" />
+                  </p:NodeReference>
+                  <Pin Id="QgdcfLDa0sOQIIzqUl4M1w" Name="Blending Model" Kind="InputPin" />
+                  <Pin Id="BsoErtHNTX8OVwKjDBkOVM" Name="Background" Kind="InputPin" />
+                  <Pin Id="ESeWnvftKoMMgIr9I717Pl" Name="Value" Kind="InputPin" />
+                  <Pin Id="EWB9H8KH1JlOfIhSCe4LSn" Name="State Output" Kind="StateOutputPin" />
+                  <Pin Id="Pa3NZEKyVnqMAgMbQtyHv0" Name="Found" Kind="OutputPin" />
+                  <Pin Id="DHVaAmVEGkAMwQZhJCQAun" Name="Output" Kind="OutputPin" />
+                </Node>
               </Canvas>
-              <Patch Id="JTmaevRNHLzOV22PoQpExY" Name="Create" ParticipatingElements="RCHanaEW3BeQR5vOkeHhgc" />
               <Slot Id="Onl6mokuWruOnwFMWUQrKx" Name="Source">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="ILayer1D" />
@@ -2040,22 +2289,10 @@
               </Slot>
               <Link Id="JxgGKQ0EDS5LE0TyakJBiC" Ids="I2PmkzOXn1NOPw29BbYMN0,DfoUzFr5oXQMU9qosyul53" IsHidden="true" />
               <Link Id="A794TbgWct8LdXmA53BkKA" Ids="IdI1GubQ1AIPgGQVcZIyde,CIYh3I51ZwbLeDpRwbtYIi" IsHidden="true" />
-              <Patch Id="Ow8LLBHgPGLLN1jJ9Jjegy" Name="SetPosition">
-                <Pin Id="I2PmkzOXn1NOPw29BbYMN0" Name="Position" Kind="InputPin" />
-              </Patch>
-              <Patch Id="EmZnBSTXDqeL7NVICwfkPG" Name="GetPosition">
-                <Pin Id="CIYh3I51ZwbLeDpRwbtYIi" Name="Position" Kind="OutputPin" />
-              </Patch>
               <Link Id="LmqoeNSF635OCcRqAqvBWT" Ids="CG2M1Fj90GVMKpnoCLK75j,C708uDABFAcP0EIv9ifgwj" />
               <Link Id="VBlbzodEI2cM5B6w8mDhJd" Ids="C708uDABFAcP0EIv9ifgwj,Bzryr2K3ujwLTA7Str9nXM" IsHidden="true" />
-              <Patch Id="Fg6aPIDoAKrL4XULcKOxch" Name="GetLayer">
-                <Pin Id="Bzryr2K3ujwLTA7Str9nXM" Name="Source" Kind="OutputPin" />
-              </Patch>
               <Link Id="NJhKmJh6RelOSEFTobqL7e" Ids="PC37BITrnEeMrdI2UeXTrQ,CG2M1Fj90GVMKpnoCLK75j" />
               <Link Id="G22QsLnQ3s5OaZuIfeQP37" Ids="RAk8bBCDbNHOYle2RdMJmV,PC37BITrnEeMrdI2UeXTrQ" IsHidden="true" />
-              <Patch Id="VoCIhwATHCLOI94wWLXImQ" Name="SetLayer">
-                <Pin Id="RAk8bBCDbNHOYle2RdMJmV" Name="Source" Kind="InputPin" />
-              </Patch>
               <Slot Id="SADYPYo54tDOwmEy2Tm3nu" Name="Value Interpolation Model">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="IInterpolationModel" />
@@ -2066,18 +2303,6 @@
                   <Choice Kind="TypeFlag" Name="IInterpolationModel" />
                 </p:TypeAnnotation>
               </Slot>
-              <Patch Id="LSkMHdYHqqPOz8aFVJv560" Name="SetValueInterpolationModel">
-                <Pin Id="EjX07Cr2AsnLmbYyuXVVLY" MergeId="406857" Name="Value Interpolation Model" Kind="InputPin" />
-              </Patch>
-              <Patch Id="OL1sOPLKhwlPNsOVdriuGf" Name="SetSpreadCountInterpolationModel">
-                <Pin Id="TrorVqb7aveNZHpc5CUkUs" MergeId="406855" Name="SpreadCount Interpolation Model" Kind="InputPin" />
-              </Patch>
-              <Patch Id="Ct1hais5nQZPbd1KwBnmcr" Name="GetValueInterpolationModel">
-                <Pin Id="LUeO62JYTB0OqY4zdiiYms" MergeId="406853" Name="Value Interpolation Model" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="Qobv6KhsrE5NC8aStLdfos" Name="GetSpreadCountInterpolationModel">
-                <Pin Id="HsZAEzLeRjuPEARJxAV8Qz" MergeId="406851" Name="SpreadCount Interpolation Model" Kind="OutputPin" />
-              </Patch>
               <Link Id="MaoEnZgRnv4N7VeMiSV8FX" Ids="UmkLK5Gfj7oNcdATO22fBq,NbfpfRg0L8WOg0Y67r1FfR" />
               <Link Id="O8sl8aJH8kIMdxxxeEZ6SC" Ids="EjX07Cr2AsnLmbYyuXVVLY,UmkLK5Gfj7oNcdATO22fBq" IsHidden="true" />
               <Link Id="Uxzkp2ZoArLLpR8CzvtKVX" Ids="OlgdVJeQDd1QQ5BHKjc8OS,J4K0kJVndYJOW7CQ4Ig4Ny" />
@@ -2086,34 +2311,11 @@
               <Link Id="SCtg8oxHd5wLOzzPDpCBXT" Ids="Puy6sxKXCKONrsnsZXqQfv,LUeO62JYTB0OqY4zdiiYms" IsHidden="true" />
               <Link Id="NeV3aT8spCjMpQLX5iDva1" Ids="J4K0kJVndYJOW7CQ4Ig4Ny,CV5IOKBid39QQpipUYvBaC" />
               <Link Id="UBmV6SQHr2FO1cxsCIDqHp" Ids="CV5IOKBid39QQpipUYvBaC,HsZAEzLeRjuPEARJxAV8Qz" IsHidden="true" />
-              <Patch Id="TQs5aEvSsLPNpntwFDvdfl" Name="SampleLayerT" ParticipatingElements="Jl4gP86jhQaLkL3NoI6oxS">
-                <Pin Id="IiAtFlAsQNlNGJeqAkYLJj" MergeId="473465" Name="Background Function" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="VKjIsNDzqn7MkH1HHQQQwb" MergeId="473466" Name="Sampling Position" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="Float64" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="I0Kw4J1wUqfNcwQy36wz7B" MergeId="473467" Name="Value" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Slot Id="EF1r2fmYVh0NS1oAzX6KWx" Name="Enabled">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Slot>
-              <Patch Id="UKc3qVnUdwIN8I1iaEqEj6" Name="GetEnabled">
-                <Pin Id="LcS4SjDdAL7NITaa5mzfEI" MergeId="588796" Name="Enabled" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="DIIA2NF60AfPNh62Wm5kvz" Name="SetEnabled">
-                <Pin Id="UrYhgLLKDC7MIK9Zrv6hzn" MergeId="589446" Name="Enabled" Kind="InputPin" DefaultValue="True" Visibility="Optional" />
-              </Patch>
               <Link Id="BH91asvKzzBPlO9NBOxKGI" Ids="VKjIsNDzqn7MkH1HHQQQwb,QM2022bUVREPsClMBnp0Rm" IsHidden="true" />
               <Link Id="A03ijdC0LnCOePZUoPaeax" Ids="IiAtFlAsQNlNGJeqAkYLJj,BJVdVQp4702LEKYSKxP8Gb" IsHidden="true" />
               <Link Id="FyG5yqbv9N5PBgytDnDQds" Ids="TpGe35hvev8Nvz6vXKfvIP,I0Kw4J1wUqfNcwQy36wz7B" IsHidden="true" />
@@ -2126,7 +2328,6 @@
               <Link Id="Holb3WZbxFPOWtzxTZ3A6F" Ids="EiA9mTLunDLMoW58CtLKlu,A8clS2Jyn3SQWzQZKVPw3o" />
               <Link Id="VH8OfGVMecePDIBqUhsw7T" Ids="A8clS2Jyn3SQWzQZKVPw3o,LcS4SjDdAL7NITaa5mzfEI" IsHidden="true" />
               <Link Id="JIA9ArlE1hfMVvN3GdmHd9" Ids="CG2M1Fj90GVMKpnoCLK75j,ODISh2a0iiAQSi9YQ1ywMl" />
-              <Patch Id="I9jRe2avJ0nPJC0ro262d5" Name="Update" />
               <Link Id="NQNFWRY7X3UP5nWY2WmPka" Ids="CCzdUCtftB9QMoeFHBObKn,L2XPvIzAsp9PZTDYzburkL" IsHidden="true" />
               <Link Id="JaORetk67GZQZhcScyNxd7" Ids="RxGDtrbYxNPN4VgP8cXA7g,HCnchULgk2yOjmX8LpkIcM" />
               <Link Id="Tz2KlhpN42QOSL8PpA0bqp" Ids="L2XPvIzAsp9PZTDYzburkL,TOpCBL1U5oiMqcAdmRFIh4" />
@@ -2138,18 +2339,6 @@
               <Link Id="DIC5npJyLUdPZrAOZGFkUb" Ids="ReKuRTjM0b9OJdg2RvaBeq,Hw7x7ExvBxVN4QqeParjuz" />
               <Link Id="SH7w8VFcoxBQbg7bExi1Z7" Ids="TOpCBL1U5oiMqcAdmRFIh4,SWmMsqZd95aMR0hE8gvPmD" />
               <Link Id="ANHUyKZpLjYN2cJ2hesOQq" Ids="TOpCBL1U5oiMqcAdmRFIh4,QpGBvnpKGXAQNisZhWMAQU" />
-              <Patch Id="JmwQ6PAVOprN3Bh7FAuSB8" Name="SetCustomTransportFunction">
-                <Pin Id="CCzdUCtftB9QMoeFHBObKn" Name="Custom Transport Function" Kind="InputPin" Visibility="Optional">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="ITransportFunction" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="Float64" />
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Link Id="GwDUdGvGE5vQToH3yqyUXb" Ids="OcWPD6zepJ7MLI6nu5qyZe,SogLdrdqjYFLMdojJ1fDuB" />
               <Link Id="HgofucQx1vZPTeYB4J9GwZ" Ids="EsmFBXLyxvjPwivOd1C5fi,GAFQi7dhLRRLse1ex4T1x2" />
               <ProcessDefinition Id="LK9muXTt7tJPCvv2gSrInL" HasStateOut="true">
@@ -2172,6 +2361,8 @@
                 <Fragment Id="CBERgnL4AHGNetjH0cpzhH" Patch="FK5zhCMduJCNuTEYhdXHKX" />
                 <Fragment Id="BWF2UVbbwZ8NjvAKuLIVs8" Patch="JQbuRgOJQE7No17OzNugdH" />
                 <Fragment Id="FhNlNSU0LhDPQ7gLk6p4lx" Patch="SPUOpeSw0u6PXunCjhJ1mN" />
+                <Fragment Id="MRgZFO2gY3vNKbQgeuWINJ" Patch="Ez4GLlFax5XPYt8AsqdC40" Enabled="true" />
+                <Fragment Id="F0aRzXCbNrDQaHIOCKvjvF" Patch="L1Iqitudh9sNzEuRHK628X" Enabled="true" />
               </ProcessDefinition>
               <Link Id="RCHanaEW3BeQR5vOkeHhgc" Ids="PHYmpMilzgIL6GeADHoBsy,EiA9mTLunDLMoW58CtLKlu" />
               <Slot Id="BdSsYRNwV80QJR4jRdvBZ5" Name="Bound Min">
@@ -2179,15 +2370,6 @@
                   <Choice Kind="TypeFlag" Name="Float64" />
                 </p:TypeAnnotation>
               </Slot>
-              <Patch Id="GfTNXiRc7RPQICxAfsM21x" Name="SetBoundMin">
-                <Pin Id="MbD5JgnzKzsPLvLTJPvEuE" MergeId="336426" Name="Bound Min" Kind="InputPin" />
-              </Patch>
-              <Patch Id="FK5zhCMduJCNuTEYhdXHKX" Name="GetBoundMax">
-                <Pin Id="BuIJ5Nkrp8QMjBYLugPYQr" MergeId="336187" Name="Bound Max" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="JQbuRgOJQE7No17OzNugdH" Name="GetBoundMin">
-                <Pin Id="IEFiuMKxf4qOLbm4o9g6CA" MergeId="336185" Name="Bound Min" Kind="OutputPin" />
-              </Patch>
               <Link Id="MBdTaCOEopzPgxUmXRynkL" Ids="F8ONl5QIliTLynlRcrg4Aw,E50jovtbeA4Pil1x9oT1dm" />
               <Link Id="RMlbX1NuOY4L36yeuHUCba" Ids="NGVJcTVy4OhPpKF0fq0Xp9,IEFiuMKxf4qOLbm4o9g6CA" IsHidden="true" />
               <Link Id="VcNq5m6bP0mLhLw6aZCz9K" Ids="E50jovtbeA4Pil1x9oT1dm,NGVJcTVy4OhPpKF0fq0Xp9" />
@@ -2202,10 +2384,111 @@
               <Link Id="LQcSWY6PihVPRHhVrLrIro" Ids="HFBPgkSfuvNNxw29mxHwCe,NGuyKl5aViUNBQ6IzrrJKI" IsHidden="true" />
               <Link Id="HaNB9E6FE3mL4evCiQiJLl" Ids="SRWgdw9ilbjOZ2BP6PLCbm,LZJNzQfIJuROaxbHH5xwDc" />
               <Link Id="SavdvdWCeksOmy5KIISXHK" Ids="LZJNzQfIJuROaxbHH5xwDc,IAYmg5V77QlMbqNk2vn6FZ" IsHidden="true" />
+              <Slot Id="JtfFItXOv4VPeKbF5BBLmL" Name="Alpha Blending Model" />
+              <Slot Id="MBl6j1eO407M5AtRW3RC5g" Name="Alpha" />
+              <Link Id="FJo9kGTx0AKP4dFHTxZq8Q" Ids="OC63zvtH8WHO2QBAVwTWxV,BmHaqx6hI2gQa2HY5TcJ8T" IsHidden="true" />
+              <Link Id="MCu0E4brlBYPLSe2DQvioc" Ids="BkAsirnGj7NMErYbNxTchw,EMedMHbWIz0QXjZGp3KyR8" IsHidden="true" />
+              <Link Id="OsroGN2TgIyQZ7w0yg12Vs" Ids="EMedMHbWIz0QXjZGp3KyR8,HLErfnRtxSjNJNgR8Zl4y7" />
+              <Link Id="Dq9sGalmfBnQManLswoiYd" Ids="BmHaqx6hI2gQa2HY5TcJ8T,R5iWaFc1172O9toJCw4xdW" />
+              <Link Id="Tf4saX98U7lO2IR35iba2B" Ids="R5iWaFc1172O9toJCw4xdW,SyXrj2NoVkqQXKZZwfOD2p" />
+              <Link Id="NpKFyqEqAGgLgtU6aRhomH" Ids="Qlx0O8HQxOwMMFs9yzB16p,HLErfnRtxSjNJNgR8Zl4y7" />
+              <Link Id="FVhKs5kBMUlNqBQCoOBSfy" Ids="AChezOsDdRLONHshI6bSg7,R5iWaFc1172O9toJCw4xdW" />
+              <Patch Id="JTmaevRNHLzOV22PoQpExY" Name="Create" ParticipatingElements="RCHanaEW3BeQR5vOkeHhgc,NpKFyqEqAGgLgtU6aRhomH,FVhKs5kBMUlNqBQCoOBSfy" />
+              <Patch Id="Ow8LLBHgPGLLN1jJ9Jjegy" Name="SetPosition">
+                <Pin Id="I2PmkzOXn1NOPw29BbYMN0" Name="Position" Kind="InputPin" />
+              </Patch>
+              <Patch Id="EmZnBSTXDqeL7NVICwfkPG" Name="GetPosition">
+                <Pin Id="CIYh3I51ZwbLeDpRwbtYIi" Name="Position" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="Fg6aPIDoAKrL4XULcKOxch" Name="GetLayer">
+                <Pin Id="Bzryr2K3ujwLTA7Str9nXM" Name="Source" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="VoCIhwATHCLOI94wWLXImQ" Name="SetLayer">
+                <Pin Id="RAk8bBCDbNHOYle2RdMJmV" Name="Source" Kind="InputPin" />
+              </Patch>
+              <Patch Id="LSkMHdYHqqPOz8aFVJv560" Name="SetValueInterpolationModel">
+                <Pin Id="EjX07Cr2AsnLmbYyuXVVLY" MergeId="406857" Name="Value Interpolation Model" Kind="InputPin" />
+              </Patch>
+              <Patch Id="OL1sOPLKhwlPNsOVdriuGf" Name="SetSpreadCountInterpolationModel">
+                <Pin Id="TrorVqb7aveNZHpc5CUkUs" MergeId="406855" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+              </Patch>
+              <Patch Id="Ct1hais5nQZPbd1KwBnmcr" Name="GetValueInterpolationModel">
+                <Pin Id="LUeO62JYTB0OqY4zdiiYms" MergeId="406853" Name="Value Interpolation Model" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="Qobv6KhsrE5NC8aStLdfos" Name="GetSpreadCountInterpolationModel">
+                <Pin Id="HsZAEzLeRjuPEARJxAV8Qz" MergeId="406851" Name="SpreadCount Interpolation Model" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="TQs5aEvSsLPNpntwFDvdfl" Name="SampleLayerT" ParticipatingElements="Jl4gP86jhQaLkL3NoI6oxS">
+                <Pin Id="IiAtFlAsQNlNGJeqAkYLJj" MergeId="473465" Name="Background Function" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="VKjIsNDzqn7MkH1HHQQQwb" MergeId="473466" Name="Sampling Position" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float64" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="KGCD2qh6Dd4O1euWCPhUPn" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="VvBKJMhyC94Ns1vHf0Yrh7" Name="Downstream Alpha" Kind="InputPin" />
+                <Pin Id="I0Kw4J1wUqfNcwQy36wz7B" MergeId="473467" Name="Value" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="UKc3qVnUdwIN8I1iaEqEj6" Name="GetEnabled">
+                <Pin Id="LcS4SjDdAL7NITaa5mzfEI" MergeId="588796" Name="Enabled" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="DIIA2NF60AfPNh62Wm5kvz" Name="SetEnabled">
+                <Pin Id="UrYhgLLKDC7MIK9Zrv6hzn" MergeId="589446" Name="Enabled" Kind="InputPin" DefaultValue="True" Visibility="Optional" />
+              </Patch>
+              <Patch Id="I9jRe2avJ0nPJC0ro262d5" Name="Update" />
+              <Patch Id="JmwQ6PAVOprN3Bh7FAuSB8" Name="SetCustomTransportFunction">
+                <Pin Id="CCzdUCtftB9QMoeFHBObKn" Name="Custom Transport Function" Kind="InputPin" Visibility="Optional">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="ITransportFunction" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="Float64" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="GfTNXiRc7RPQICxAfsM21x" Name="SetBoundMin">
+                <Pin Id="MbD5JgnzKzsPLvLTJPvEuE" MergeId="336426" Name="Bound Min" Kind="InputPin" />
+              </Patch>
+              <Patch Id="FK5zhCMduJCNuTEYhdXHKX" Name="GetBoundMax">
+                <Pin Id="BuIJ5Nkrp8QMjBYLugPYQr" MergeId="336187" Name="Bound Max" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="JQbuRgOJQE7No17OzNugdH" Name="GetBoundMin">
+                <Pin Id="IEFiuMKxf4qOLbm4o9g6CA" MergeId="336185" Name="Bound Min" Kind="OutputPin" />
+              </Patch>
               <Patch Id="SPUOpeSw0u6PXunCjhJ1mN" Name="HitTest">
                 <Pin Id="HFBPgkSfuvNNxw29mxHwCe" Name="Sampling Position" Kind="InputPin" />
                 <Pin Id="IAYmg5V77QlMbqNk2vn6FZ" Name="Result" Kind="OutputPin" />
               </Patch>
+              <Patch Id="Ez4GLlFax5XPYt8AsqdC40" Name="SetAlpha">
+                <Pin Id="BkAsirnGj7NMErYbNxTchw" MergeId="472889" Name="Alpha" Kind="InputPin" DefaultValue="1">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="L1Iqitudh9sNzEuRHK628X" Name="SetAlphaBlendingModel">
+                <Pin Id="OC63zvtH8WHO2QBAVwTWxV" MergeId="473861" Name="Alpha Blending Model" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBlendingModel" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Link Id="OCO59qrm8mnQOWim5w5AKr" Ids="KGCD2qh6Dd4O1euWCPhUPn,S1N8WlALFTZPeQTzSt9DBe" IsHidden="true" />
+              <Link Id="DMk3nEQxAQtNCyEtNhgOHN" Ids="VvBKJMhyC94Ns1vHf0Yrh7,Pm6nIa3EQevP0FARncrDiq" IsHidden="true" />
+              <Link Id="LimJye0ZX6mOUWJojiX9W2" Ids="HLErfnRtxSjNJNgR8Zl4y7,BsoErtHNTX8OVwKjDBkOVM" />
+              <Link Id="KLS0ZLOGPB8PiRohVIzxot" Ids="Pm6nIa3EQevP0FARncrDiq,ESeWnvftKoMMgIr9I717Pl" />
+              <Link Id="SCUI1sPGbWGLYilFbtELOs" Ids="S1N8WlALFTZPeQTzSt9DBe,QgdcfLDa0sOQIIzqUl4M1w" />
+              <Link Id="UNgy7D7w6onNclTAT0gWPz" Ids="DHVaAmVEGkAMwQZhJCQAun,ERJvLgpOtqIPgzqHdkWhJg" />
             </Patch>
           </Node>
         </Canvas>
@@ -2227,9 +2510,7 @@
             <Patch Id="APeVbeXNbV3NL97SkdmKEW" IsGeneric="true" ExplicitTypeParameters="T">
               <Canvas Id="AxUnEzvT6QILhAjE4hHXfT" CanvasType="Group">
                 <ControlPoint Id="VjCgjw2NONrMh39dgbJi6x" Bounds="222,162" />
-                <ControlPoint Id="RSOhu1oNtM4MmLcGnlYHI5" Bounds="342,162" />
-                <ControlPoint Id="FbAxWRnZ9kPOowjczH2gko" Bounds="326,492" />
-                <Node Bounds="208,321,194,88" Id="RbtWytpL92rQAQoqTU0kVX">
+                <Node Bounds="208,343,194,65" Id="RbtWytpL92rQAQoqTU0kVX">
                   <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                     <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                     <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
@@ -2247,14 +2528,16 @@
                     <Patch Id="APnq5nlsdKePruPZD7QleO" Name="Create" ManuallySortedPins="true" />
                     <Patch Id="JRPUeppNwUgOOaSWLQvVxv" Name="Update" ManuallySortedPins="true" />
                     <Patch Id="TxP0CHz8SxrL7OLUXYKAGS" Name="Dispose" ManuallySortedPins="true" />
-                    <Node Bounds="220,351,170,19" Id="VQKlq86YMboPMHg7iyOXtd">
+                    <Node Bounds="220,351,392,19" Id="VQKlq86YMboPMHg7iyOXtd">
                       <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Compositor1D" LastSymbolSource="VL.LayerX.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="ProcessAppFlag" Name="BuildBackground1D" />
                       </p:NodeReference>
                       <Pin Id="FDQMiO62aAyOPp3EgAgljN" Name="CompositorClip1D" Kind="InputPin" />
                       <Pin Id="RurAyY9O9OSOBeP3jE80gV" Name="Background Function" Kind="InputPin" />
+                      <Pin Id="T16WplXCCFIN3fAHw32MES" Name="Alpha Blending Model" Kind="InputPin" />
                       <Pin Id="GeVm4sNfim6NWfGrhlupBs" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="Ki94CVlOy40OR7BLFW4k2z" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="GmdEMzmisTNLk5MbQQTdYC" Name="Output" Kind="OutputPin" />
                     </Node>
                   </Patch>
@@ -2278,43 +2561,49 @@
                   <Pin Id="MItXiNMydFQPAQSejMUUEY" Name="Sampling Position" Kind="InputPin" />
                   <Pin Id="ESQF2AcVZ5EOg7I4Q1OuN8" Name="Active Sorted Clips" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="PAMEGl2jq3tLxITE6Q5AMb" Bounds="305,260,384,0" />
-                <ControlPoint Id="JQwerTHNEkZLdZG0wzVLzt" Bounds="388,290" />
-                <ControlPoint Id="DNCaZnMUWrMMJkfaD2LC6E" Bounds="463,595" />
-                <ControlPoint Id="GybQ42eKQ2jNuDw19Nmvcw" Bounds="343,595" />
-                <ControlPoint Id="V3t0sd06RuPPCEp4QpmtaJ" Bounds="463,723" />
-                <Node Bounds="221,595,36,19" Id="ALBB1umTIqzPdQa6DTNWsW">
-                  <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="ProcessNode" Name="This" />
-                    <CategoryReference Kind="Category" Name="Primitive" />
-                  </p:NodeReference>
-                  <Pin Id="OSMqD7oxTbcLHtIX3PL5ls" Name="Instance" Kind="OutputPin" />
-                </Node>
-                <Node Bounds="221,650,245,26" Id="EFeVbwkZ4G3LTk2NZ1sYEK">
-                  <p:NodeReference>
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="ClassType" Name="Compositor1D" />
-                    <Choice Kind="OperationCallFlag" Name="Compose" />
-                  </p:NodeReference>
-                  <Pin Id="LOYt9tNwj7CPANyWoQyFHs" Name="Input" Kind="StateInputPin" />
-                  <Pin Id="CA8OOArRiMuLm5LJ85AXkO" Name="Background Function T" Kind="InputPin" />
-                  <Pin Id="RDDMYAypkP9NhOL9eYRfL3" Name="Sampling Position" Kind="InputPin" />
-                  <Pin Id="IXqIMLCscWdQaGUEaLuYOh" Name="Output" Kind="StateOutputPin" />
-                  <Pin Id="FiHHgCEAUzaPY4wkH5wtmD" Name="Value T" Kind="OutputPin" />
-                </Node>
+                <ControlPoint Id="DNCaZnMUWrMMJkfaD2LC6E" Bounds="387,292" />
+                <ControlPoint Id="GybQ42eKQ2jNuDw19Nmvcw" Bounds="305,266" />
+                <ControlPoint Id="V3t0sd06RuPPCEp4QpmtaJ" Bounds="326,492" />
+                <ControlPoint Id="BhsjJrERXoiOoH2cU7dZPk" Bounds="342,172" />
+                <Pad Id="MIQylMbln7TN8WqdHYXh9A" Bounds="709,339,254,89" ShowValueBox="true" isIOBox="true" Value="The term background fucntion is misleading here. Let's build a function composition that we call &quot;background function&quot; and call it.">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                  <p:ValueBoxSettings>
+                    <p:fontsize p:Type="Int32">9</p:fontsize>
+                    <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+                  </p:ValueBoxSettings>
+                </Pad>
+                <ControlPoint Id="UfyS5tWExK7OgyzHVS4OnM" Bounds="518,262" />
+                <ControlPoint Id="FBRsTTjbrgkNdaYfQTsXSz" Bounds="558,289" />
               </Canvas>
               <Link Id="QBsJ0o6gnjQOP9if1UwrjJ" Ids="EGU6jHh1wynOqFUV8HWAq6,VjCgjw2NONrMh39dgbJi6x" IsHidden="true" />
               <ProcessDefinition Id="Jm7lpCFuUz6MaoE0Da29cS" HasStateOut="true">
                 <Fragment Id="D9AxhxeYjg1Oc49vpsq3lB" Patch="QS6PsGItuj8P83gqrAYwgN" Enabled="true" />
                 <Fragment Id="FxxxtsNCjsaPw2iWDToUwz" Patch="Ew50CtXtKh6NUWGI75BoN4" Enabled="true" />
                 <Fragment Id="GUNuVtFF8bALNwFgYljV5e" Patch="FwrtZm6XSdPLdy76vLwDs4" Enabled="true" />
-                <Fragment Id="Psp8urZUbsrOSJKaFrsGFB" Patch="U368FjotAJeLqlf75J8Jta" />
               </ProcessDefinition>
+              <Link Id="Us7Ob5MrDl5PaRbHsMxm0s" Ids="LbEooatFEw3NsMqcLTxb4p,BiwQiAAXc18PKfoukRsFEf" IsFeedback="true" />
+              <Link Id="LVSiWNIMacWLBaL5Rd5APm" Ids="LbEooatFEw3NsMqcLTxb4p,RurAyY9O9OSOBeP3jE80gV" />
+              <Link Id="CInII3cdw4FMNospQEMBGi" Ids="GmdEMzmisTNLk5MbQQTdYC,BiwQiAAXc18PKfoukRsFEf" />
+              <Link Id="MWUJPcDfO6OL0FbKVaMHD9" Ids="BiwQiAAXc18PKfoukRsFEf,R2PJmjZ7UXQN38kEqcCLRv" />
+              <Link Id="EHwWmfXmzXHOE4YphaBirX" Ids="ESQF2AcVZ5EOg7I4Q1OuN8,Ug6EMqFgvi9OlVG7dFbJu6" />
+              <Link Id="PzwSUu9TBgTNWmlDIvW9mF" Ids="RL1zXWucCHMPLjMOzKvD57,DNCaZnMUWrMMJkfaD2LC6E" IsHidden="true" />
+              <Link Id="E0A1gLGSKdwN08HvLhQLG9" Ids="Sm1PyUuP5e6MaH72nIoaNu,GybQ42eKQ2jNuDw19Nmvcw" IsHidden="true" />
+              <Link Id="UeWaZRc06NBPDljVVkvu0X" Ids="V3t0sd06RuPPCEp4QpmtaJ,S853PRr0XkBMDNvT8V5CGl" IsHidden="true" />
+              <Link Id="H6y8R0N8UmbLwQUxx9xlzF" Ids="VjCgjw2NONrMh39dgbJi6x,NJbuv9b0fO2QC83n0W5MmU" />
+              <Link Id="HnzjXUXnUMeOqExNS4Ztvs" Ids="Ug6EMqFgvi9OlVG7dFbJu6,FDQMiO62aAyOPp3EgAgljN" />
+              <Link Id="J5enrdgrcjTPYTFCW1kAjo" Ids="GybQ42eKQ2jNuDw19Nmvcw,LbEooatFEw3NsMqcLTxb4p" />
+              <Link Id="GQobhxfxln0OKLcZybgt6w" Ids="DNCaZnMUWrMMJkfaD2LC6E,GeVm4sNfim6NWfGrhlupBs" />
+              <Link Id="U6zbIXQnMK8PrJBaePu6Xy" Ids="Q4kyBwyaYNrNdn9KvCIG6U,V3t0sd06RuPPCEp4QpmtaJ" />
+              <Link Id="JKIUJhCsIFWPCrGZFdDYIc" Ids="RL1zXWucCHMPLjMOzKvD57,BhsjJrERXoiOoH2cU7dZPk" IsHidden="true" />
+              <Link Id="Rkb2kWJr8gdNLjxSmJjxvd" Ids="BhsjJrERXoiOoH2cU7dZPk,MItXiNMydFQPAQSejMUUEY" />
               <Patch Id="QS6PsGItuj8P83gqrAYwgN" Name="Create" />
               <Patch Id="FwrtZm6XSdPLdy76vLwDs4" Name="SampleT">
                 <Pin Id="Sm1PyUuP5e6MaH72nIoaNu" Name="Background Function" Kind="InputPin" />
                 <Pin Id="RL1zXWucCHMPLjMOzKvD57" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="TQliWqCJlO7NP6KDKWvGSn" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="AhilBFAHn4wPXGsNxJ4F6o" Name="Downstream Alpha" Kind="InputPin" />
                 <Pin Id="S853PRr0XkBMDNvT8V5CGl" Name="Value" Kind="OutputPin" />
               </Patch>
               <Patch Id="Ew50CtXtKh6NUWGI75BoN4" Name="SetClips">
@@ -2323,7 +2612,7 @@
                     <Choice Kind="TypeFlag" Name="Spread" />
                     <p:TypeArguments>
                       <TypeReference>
-                        <Choice Kind="TypeFlag" Name="CompositorClip1D" />
+                        <Choice Kind="TypeFlag" Name="Clip (Compositor1D)" />
                         <p:TypeArguments>
                           <TypeReference>
                             <Choice Kind="TypeFlag" Name="T" />
@@ -2334,41 +2623,18 @@
                   </p:TypeAnnotation>
                 </Pin>
               </Patch>
-              <Patch Id="U368FjotAJeLqlf75J8Jta" Name="Compose" ManuallySortedPins="true">
-                <Pin Id="UCmcJMI4Ue3P6ENHn2NDmH" MergeId="354563" Name="Background Function T" Kind="InputPin" />
-                <Pin Id="BlXz7DxnsghOsCxKB7xWOI" MergeId="354548" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="RwLJG6a1r1MLwZ7H48ncFz" MergeId="354550" Name="Value T" Kind="OutputPin" />
-              </Patch>
-              <Link Id="RWb7SQOA8SiNhtgxBkOl6G" Ids="BlXz7DxnsghOsCxKB7xWOI,RSOhu1oNtM4MmLcGnlYHI5" IsHidden="true" />
-              <Link Id="APkvbRNmw49QJj2XNvDL7t" Ids="FbAxWRnZ9kPOowjczH2gko,RwLJG6a1r1MLwZ7H48ncFz" IsHidden="true" />
-              <Link Id="Us7Ob5MrDl5PaRbHsMxm0s" Ids="LbEooatFEw3NsMqcLTxb4p,BiwQiAAXc18PKfoukRsFEf" IsFeedback="true" />
-              <Link Id="LVSiWNIMacWLBaL5Rd5APm" Ids="LbEooatFEw3NsMqcLTxb4p,RurAyY9O9OSOBeP3jE80gV" />
-              <Link Id="CInII3cdw4FMNospQEMBGi" Ids="GmdEMzmisTNLk5MbQQTdYC,BiwQiAAXc18PKfoukRsFEf" />
-              <Link Id="MWUJPcDfO6OL0FbKVaMHD9" Ids="BiwQiAAXc18PKfoukRsFEf,R2PJmjZ7UXQN38kEqcCLRv" />
-              <Link Id="EHwWmfXmzXHOE4YphaBirX" Ids="ESQF2AcVZ5EOg7I4Q1OuN8,Ug6EMqFgvi9OlVG7dFbJu6" />
-              <Link Id="TtjhfmUmWaMLgtni2Jtd8P" Ids="RSOhu1oNtM4MmLcGnlYHI5,MItXiNMydFQPAQSejMUUEY" />
-              <Link Id="Q8ZvcQ81uMTNg5SWq5AqKI" Ids="UCmcJMI4Ue3P6ENHn2NDmH,PAMEGl2jq3tLxITE6Q5AMb" IsHidden="true" />
-              <Link Id="UaNdKUBJs28NmiovhY7WpN" Ids="PAMEGl2jq3tLxITE6Q5AMb,LbEooatFEw3NsMqcLTxb4p" />
-              <Link Id="PIqxP2LGib0O69UPwzBRB5" Ids="BlXz7DxnsghOsCxKB7xWOI,JQwerTHNEkZLdZG0wzVLzt" IsHidden="true" />
-              <Link Id="HPgjYmAWdoWLzO3Fil9tFQ" Ids="Q4kyBwyaYNrNdn9KvCIG6U,FbAxWRnZ9kPOowjczH2gko" />
-              <Link Id="PzwSUu9TBgTNWmlDIvW9mF" Ids="RL1zXWucCHMPLjMOzKvD57,DNCaZnMUWrMMJkfaD2LC6E" IsHidden="true" />
-              <Link Id="E0A1gLGSKdwN08HvLhQLG9" Ids="Sm1PyUuP5e6MaH72nIoaNu,GybQ42eKQ2jNuDw19Nmvcw" IsHidden="true" />
-              <Link Id="UeWaZRc06NBPDljVVkvu0X" Ids="V3t0sd06RuPPCEp4QpmtaJ,S853PRr0XkBMDNvT8V5CGl" IsHidden="true" />
-              <Link Id="UtUuneTs2nyN85qWCXm4fu" Ids="OSMqD7oxTbcLHtIX3PL5ls,LOYt9tNwj7CPANyWoQyFHs" />
-              <Link Id="MXrBRbSQAqXM33WSTwmwYe" Ids="DNCaZnMUWrMMJkfaD2LC6E,RDDMYAypkP9NhOL9eYRfL3" />
-              <Link Id="HL9U8D4MFrIO9sTv5GEIqA" Ids="FiHHgCEAUzaPY4wkH5wtmD,V3t0sd06RuPPCEp4QpmtaJ" />
-              <Link Id="VkEPps213zhQTr6APa1Vg6" Ids="GybQ42eKQ2jNuDw19Nmvcw,CA8OOArRiMuLm5LJ85AXkO" />
-              <Link Id="H6y8R0N8UmbLwQUxx9xlzF" Ids="VjCgjw2NONrMh39dgbJi6x,NJbuv9b0fO2QC83n0W5MmU" />
-              <Link Id="VF37uxwOZe1ORjGlzeChWo" Ids="JQwerTHNEkZLdZG0wzVLzt,GeVm4sNfim6NWfGrhlupBs" />
-              <Link Id="HnzjXUXnUMeOqExNS4Ztvs" Ids="Ug6EMqFgvi9OlVG7dFbJu6,FDQMiO62aAyOPp3EgAgljN" />
+              <Link Id="BFB4NLXBbvuMriEAKcLaxC" Ids="TQliWqCJlO7NP6KDKWvGSn,UfyS5tWExK7OgyzHVS4OnM" IsHidden="true" />
+              <Link Id="HbWZ8Y9EW0kMB5HYOciDH0" Ids="AhilBFAHn4wPXGsNxJ4F6o,FBRsTTjbrgkNdaYfQTsXSz" IsHidden="true" />
+              <Link Id="VUwj0p2ESFmOEEFfMU8i2r" Ids="UfyS5tWExK7OgyzHVS4OnM,T16WplXCCFIN3fAHw32MES" />
+              <Link Id="AfSYY0IfDE8N2EIZsabCVN" Ids="FBRsTTjbrgkNdaYfQTsXSz,Ki94CVlOy40OR7BLFW4k2z" />
             </Patch>
           </Node>
           <!--
 
-    ************************ CompositorClip1D ************************
+    ************************ Clip (Compositor1D) ************************
 
 -->
-          <Node Name="CompositorClip1D" Bounds="190,215" Id="R81R5bJVwNTOtDCTeNo8UT">
+          <Node Name="Clip (Compositor1D)" Bounds="190,215" Id="R81R5bJVwNTOtDCTeNo8UT">
             <p:NodeReference>
               <Choice Kind="RecordDefinition" Name="Record" />
               <FullNameCategoryReference ID="Primitive" />
@@ -2393,7 +2659,7 @@
                   <Patch Id="TBCR2NMaaCSLxedTbZNJq7" IsGeneric="true">
                     <Pin Id="EGkvlgHSaueO2iiSfZg4mc" Name="Output" Kind="OutputPin">
                       <p:TypeAnnotation>
-                        <Choice Kind="TypeFlag" Name="CompositorClip1D" />
+                        <Choice Kind="TypeFlag" Name="Clip (Compositor1D)" />
                       </p:TypeAnnotation>
                     </Pin>
                     <ControlPoint Id="BTcI82Z7XYfOa8EwTnH4Ln" Bounds="102,337" />
@@ -2414,10 +2680,10 @@
                 <Pad Id="K1zwxY8fCh7OLFseo5ZeVF" SlotId="HtLlk5wMjHPPh7qwDQ8yLu" Bounds="321,817" />
                 <ControlPoint Id="HzN655ueLZAQOjy29qtC4V" Bounds="321,877" />
                 <ControlPoint Id="TIx6Ab5e3hoOgn7p6oTZ2N" Bounds="321,754" />
-                <ControlPoint Id="TtU04xM7GmvMvB5NJTM8f7" Bounds="659,794" />
-                <ControlPoint Id="A9YJTyaKlu5QJHvKrO3LM6" Bounds="635,907" />
-                <ControlPoint Id="B5ji9kGKgxUL0aJ5VSrlQK" Bounds="660,994" />
-                <Node Bounds="608,930,55,26" Id="JpIAX901SZzLPSGNZddthi">
+                <ControlPoint Id="TtU04xM7GmvMvB5NJTM8f7" Bounds="661,778" />
+                <ControlPoint Id="A9YJTyaKlu5QJHvKrO3LM6" Bounds="545,919" />
+                <ControlPoint Id="B5ji9kGKgxUL0aJ5VSrlQK" Bounds="1036,1062" />
+                <Node Bounds="445,983,595,26" Id="JpIAX901SZzLPSGNZddthi">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.ILayer1D" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleT" />
@@ -2426,6 +2692,8 @@
                   <Pin Id="L00mne9Fah0OhnW4Cb7g1q" Name="Input" Kind="StateInputPin" />
                   <Pin Id="T0xZTrg8L6JMZp24Pif6tt" Name="Background Function" Kind="InputPin" />
                   <Pin Id="L73Ru0wQBeDL9ZhZ9b6W4o" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="CipXOEj6KRjMaOtBYSxAGe" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="EuzIybX0pC5MbWkFTCmAhN" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="JeTCq6BCIH2NjF3sMLQGZm" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="GL9orZJOYdcPVAo54USQ0Y" Name="Value" Kind="OutputPin" />
                 </Node>
@@ -2511,8 +2779,47 @@
                     <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
                   </p:ValueBoxSettings>
                 </Pad>
+                <ControlPoint Id="KQpC04qiRnAQW3moVGVRyi" Bounds="1009,654" />
+                <ControlPoint Id="IQiZNLwhX4FMPI4uN5Xta7" Bounds="1294,686" />
+                <Pad Id="JdVYVs4UcuWOgUl24sicbi" SlotId="EnwYCduttRhLDZnwvspPkf" Bounds="1008,752" />
+                <Pad Id="VIeI3mfzE1RQOIaTWlsxcb" SlotId="Vi7TCdzKBpYPBCfREb734z" Bounds="1294,761" />
+                <Pad Id="EDunCI6OMcYOcmIAfUjKfr" Bounds="1207,789,160,19" ShowValueBox="true" isIOBox="true" Value="current alpha for this pos">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                  <p:ValueBoxSettings>
+                    <p:fontsize p:Type="Int32">9</p:fontsize>
+                    <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+                  </p:ValueBoxSettings>
+                </Pad>
+                <Pad Id="U6akpmRP62yO9Q7C3QGCeQ" Comment="" Bounds="1315,739,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pad>
+                <Node Bounds="1034,696,119,19" Id="ErlQaM8QNsyPf4kW3q6MvA">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending.Model" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="MultiplyBlendingModel" />
+                  </p:NodeReference>
+                  <Pin Id="KpS3EMwf0anPO0RatmRoWE" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <ControlPoint Id="Bhg7325EENoL3MsJWB2miy" Bounds="1261,904" />
+                <ControlPoint Id="DFZhVaXYPHxNDUP7qElz5X" Bounds="1497,898" />
+                <Node Bounds="1261,937,243,19" Id="TxdHdeDMmDkQPQLsi2kB8J">
+                  <p:NodeReference LastCategoryFullName="LerpX.Blending" LastSymbolSource="VL.LerpX.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="Blend" />
+                  </p:NodeReference>
+                  <Pin Id="Azz6q7eAxW1POHw0hJu8qn" Name="Blending Model" Kind="InputPin" />
+                  <Pin Id="N8wmkhjM09IMNEHpbPSabF" Name="Background" Kind="InputPin" />
+                  <Pin Id="G23nUlT4c33Lc7iymJXMpN" Name="Value" Kind="InputPin" />
+                  <Pin Id="R6DuTxRcqYALtrdUZ813NO" Name="State Output" Kind="StateOutputPin" />
+                  <Pin Id="I4Apb0KEJH1NHBMnDB8BJZ" Name="Found" Kind="OutputPin" />
+                  <Pin Id="Hcsmt4Obq3BMQRB21XZPpj" Name="Output" Kind="OutputPin" />
+                </Node>
               </Canvas>
-              <Patch Id="LnlTxjy9K76Ly0gKKUhSb8" Name="Create" ParticipatingElements="PkVEHeonUj7MgnaZZ5lrdC" />
+              <Patch Id="LnlTxjy9K76Ly0gKKUhSb8" Name="Create" ParticipatingElements="PkVEHeonUj7MgnaZZ5lrdC,MMtLp4YhmalPXw3LVwA9ty,OkNKJAqn1wwOjA3vDfBM0o" />
               <Slot Id="U6puAHaV7mOLoABoCOl5Vu" Name="Position">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="Float64" />
@@ -2590,6 +2897,12 @@
                     <Choice Kind="TypeFlag" Name="T" />
                   </p:TypeAnnotation>
                 </Pin>
+                <Pin Id="HRQbKR6jcSMPstUBqQk7QB" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="ICq2ZsXgtrBMhVOpABXTUO" Name="Downstream Alpha" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pin>
               </Patch>
               <Slot Id="DAR8k3Yr4p3OzvAUj5RjMo" Name="Enabled">
                 <p:TypeAnnotation p:Type="TypeReference">
@@ -2660,8 +2973,39 @@
                 <Fragment Id="E7CDh80yobvMP7wtJGCDCL" Patch="O94G4PvT0EPObEPzrbPI9X" />
                 <Fragment Id="RwnRK5a0ujvPIGFuRD8yqx" Patch="LIrWpPJkhDyO9d0wjoRr3o" />
                 <Fragment Id="PlSXbFUfA3RM3NH5q6kb2s" Patch="CRH6gJ7mpRfNrjUUhfeiGg" />
+                <Fragment Id="VWmIVU6AFcJMrQ63o5yp0a" Patch="Jykrz7EgbLRPOqlFDy29at" Enabled="true" />
+                <Fragment Id="NCIhQvT1FARM24jcwpCaCz" Patch="Da6ITfvJbV2QCNCjQ5QdRy" Enabled="true" />
               </ProcessDefinition>
               <Link Id="PkVEHeonUj7MgnaZZ5lrdC" Ids="VlsTvvV5r8zLyJwO9rB4VR,AmLzsJ3nodEO5VB8XhPDDN" />
+              <Link Id="LB0ISTm5lUdMXoTerSf0OG" Ids="Caa9xOvMAPWM5kRKtV6unM,KQpC04qiRnAQW3moVGVRyi" IsHidden="true" />
+              <Link Id="S9t931Aow6bM3JNfOdXpHg" Ids="IqCqoLpC2BKOTFS6OkK4GT,IQiZNLwhX4FMPI4uN5Xta7" IsHidden="true" />
+              <Slot Id="EnwYCduttRhLDZnwvspPkf" Name="Alpha Blending Model">
+                <p:TypeAnnotation p:Type="TypeReference">
+                  <Choice Kind="TypeFlag" Name="IBlendingModel" />
+                </p:TypeAnnotation>
+              </Slot>
+              <Link Id="JT8KDGzgXsMLShcefRN83e" Ids="IQiZNLwhX4FMPI4uN5Xta7,VIeI3mfzE1RQOIaTWlsxcb" />
+              <Link Id="RXmnKAyKHN0Ojcsc2A0wRJ" Ids="KQpC04qiRnAQW3moVGVRyi,JdVYVs4UcuWOgUl24sicbi" />
+              <Link Id="Hlht8Jo3I5xLXLiCQZSrU4" Ids="JdVYVs4UcuWOgUl24sicbi,CipXOEj6KRjMaOtBYSxAGe" />
+              <Patch Id="Jykrz7EgbLRPOqlFDy29at" Name="SetAlpha">
+                <Pin Id="IqCqoLpC2BKOTFS6OkK4GT" Name="Alpha" Kind="InputPin" DefaultValue="1">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="Da6ITfvJbV2QCNCjQ5QdRy" Name="SetAlphaBlendingModel">
+                <Pin Id="Caa9xOvMAPWM5kRKtV6unM" Name="Alpha Blending Model" Kind="InputPin" />
+              </Patch>
+              <Slot Id="Vi7TCdzKBpYPBCfREb734z" Name="Alpha" />
+              <Link Id="MMtLp4YhmalPXw3LVwA9ty" Ids="U6akpmRP62yO9Q7C3QGCeQ,VIeI3mfzE1RQOIaTWlsxcb" />
+              <Link Id="OkNKJAqn1wwOjA3vDfBM0o" Ids="KpS3EMwf0anPO0RatmRoWE,JdVYVs4UcuWOgUl24sicbi" />
+              <Link Id="AKguiQpfacCNzkT2TuHJss" Ids="HRQbKR6jcSMPstUBqQk7QB,Bhg7325EENoL3MsJWB2miy" IsHidden="true" />
+              <Link Id="OfzcyJy4CSgOK06We3E1va" Ids="ICq2ZsXgtrBMhVOpABXTUO,DFZhVaXYPHxNDUP7qElz5X" IsHidden="true" />
+              <Link Id="F5zxNVaGi6pOth2HquRFXV" Ids="DFZhVaXYPHxNDUP7qElz5X,G23nUlT4c33Lc7iymJXMpN" />
+              <Link Id="GkkqgK9tFlPOTatO5z3U1E" Ids="Bhg7325EENoL3MsJWB2miy,Azz6q7eAxW1POHw0hJu8qn" />
+              <Link Id="Bacm2NhnbEvPUSa6j2JAUc" Ids="VIeI3mfzE1RQOIaTWlsxcb,N8wmkhjM09IMNEHpbPSabF" />
+              <Link Id="Nkmgs8woqBgPL8bSbal9yQ" Ids="Hcsmt4Obq3BMQRB21XZPpj,EuzIybX0pC5MbWkFTCmAhN" />
             </Patch>
           </Node>
           <!--
@@ -2796,7 +3140,7 @@
                       <Patch Id="F0NuDEASz03PrXKHBO2bYz" Name="Key Selector" ManuallySortedPins="true">
                         <Pin Id="GsHuiDGdl6WQPM4w3rIQ4K" Name="Arg" Kind="InputPin">
                           <p:TypeAnnotation>
-                            <Choice Kind="TypeFlag" Name="CompositorClip1D" />
+                            <Choice Kind="TypeFlag" Name="Clip (Compositor1D)" />
                             <p:TypeArguments>
                               <TypeReference>
                                 <Choice Kind="TypeFlag" Name="T" />
@@ -2808,10 +3152,10 @@
                         <ControlPoint Id="IjQ0Wut1VQpNROgzIzjfEO" Bounds="386,938" />
                         <ControlPoint Id="TmtZaC9koyeNw32CRh7Ykr" Bounds="387,1012" />
                         <Node Bounds="384,958,82,26" Id="SV2ufL5L0LuLoPzG0jByLw">
-                          <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Compositor1D.CompositorClip1D" LastSymbolSource="VL.LayerX.vl">
+                          <p:NodeReference>
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="GetStackIndex" />
-                            <CategoryReference Kind="RecordType" Name="CompositorClip1D" NeedsToBeDirectParent="true" />
+                            <CategoryReference Kind="RecordType" Name="Clip (Compositor1D)" NeedsToBeDirectParent="true" />
                           </p:NodeReference>
                           <Pin Id="IR6Bnnziu14O4uHSIyPkjv" Name="Input" Kind="StateInputPin" />
                           <Pin Id="MDGxSTii0DJPQ8LBxQyqnY" Name="Output" Kind="StateOutputPin" />
@@ -2856,7 +3200,7 @@
                           <p:NodeReference>
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="GetPosition" />
-                            <CategoryReference Kind="RecordType" Name="CompositorClip1D" NeedsToBeDirectParent="true" />
+                            <CategoryReference Kind="RecordType" Name="Clip (Compositor1D)" NeedsToBeDirectParent="true" />
                           </p:NodeReference>
                           <Pin Id="RYelemki85hLR5ay1tgbPH" Name="Input" Kind="StateInputPin" />
                           <Pin Id="RBAQFf8R9LKPYsOJG6S0J9" Name="Position" Kind="OutputPin" />
@@ -2865,15 +3209,15 @@
                           <p:NodeReference>
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="GetDuration" />
-                            <CategoryReference Kind="RecordType" Name="CompositorClip1D" NeedsToBeDirectParent="true" />
+                            <CategoryReference Kind="RecordType" Name="Clip (Compositor1D)" NeedsToBeDirectParent="true" />
                           </p:NodeReference>
                           <Pin Id="LOtwFNe7X2xPiZiGvGcsOX" Name="Input" Kind="StateInputPin" />
                           <Pin Id="LEnR6JdcbhNQDPoILlD1yT" Name="Duration" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="644,299,82,26" Id="EcH20J7VHiCMwXECAsQWGj">
-                          <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Compositor1D.CompositorClip1D" LastSymbolSource="VL.LayerX.vl">
+                          <p:NodeReference>
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <CategoryReference Kind="RecordType" Name="CompositorClip1D" />
+                            <CategoryReference Kind="RecordType" Name="Clip (Compositor1D)" />
                             <Choice Kind="OperationCallFlag" Name="GetEnabled" />
                           </p:NodeReference>
                           <Pin Id="FxbAxZtDp49OOkqVR9VlZe" Name="Input" Kind="StateInputPin" />
@@ -3113,14 +3457,16 @@
                   <ControlPoint Id="SsqtqBcTePtP8FnMCGJn6S" Bounds="1012,543" Name="" Alignment="Top" />
                   <Patch Id="U0VKxPvfvNVN0iqJBCkBty" ManuallySortedPins="true">
                     <Node Bounds="936,573,72,26" Id="MVo2OeOGlJYNVduXB4KrkD">
-                      <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Compositor1D.CompositorClip1D" LastSymbolSource="VL.LayerX.vl">
+                      <p:NodeReference>
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <CategoryReference Kind="RecordType" Name="CompositorClip1D" />
+                        <CategoryReference Kind="RecordType" Name="Clip (Compositor1D)" />
                         <Choice Kind="OperationCallFlag" Name="SampleLayerT" />
                       </p:NodeReference>
                       <Pin Id="Q3afMiqsLCiLp4Nb1paUn5" Name="Input" Kind="StateInputPin" />
                       <Pin Id="C23kRF7ZXabQOiXXYHeDST" Name="Background Function" Kind="InputPin" />
                       <Pin Id="F4SvNdyVRSOOWa8Z7R7UC6" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="FdYdf6luis8NCQMAAEmBBC" Name="Alpha Blending Model" Kind="InputPin" />
+                      <Pin Id="HWurx0wjsrMNYMxnkMRH5a" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="Plarz9ENo6qLoskMVDDJCw" Name="Output" Kind="OutputPin" />
                       <Pin Id="KLcnmSSXkjXNAcJFJPhyXH" Name="Value" Kind="OutputPin" />
                     </Node>
@@ -3184,14 +3530,16 @@
                   <ControlPoint Id="FcNhcwPnO06QMUuRUuquXe" Bounds="500,539" Name="" Alignment="Top" />
                   <Patch Id="SVAIuAwxBNnMicSY5NsdiZ" ManuallySortedPins="true">
                     <Node Bounds="421,563,72,26" Id="Ip3ujopy2HAOBKCqw2jua9">
-                      <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Compositor1D.CompositorClip1D" LastSymbolSource="VL.LayerX.vl">
+                      <p:NodeReference>
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="OperationCallFlag" Name="SampleLayerT" />
-                        <CategoryReference Kind="RecordType" Name="CompositorClip1D" NeedsToBeDirectParent="true" />
+                        <CategoryReference Kind="RecordType" Name="Clip (Compositor1D)" NeedsToBeDirectParent="true" />
                       </p:NodeReference>
                       <Pin Id="B8BMJ5RItwCPALxhvQVsF7" Name="Input" Kind="StateInputPin" />
                       <Pin Id="OlkZxtI4tj0NThTKC36imT" Name="Background Function" Kind="InputPin" />
                       <Pin Id="E1mAZl5eJccPz3Nf5Z0rGp" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="KKNdakaggjmL3Da5VWVjG1" Name="Alpha Blending Model" Kind="InputPin" />
+                      <Pin Id="T7xyst5g7B0M3lyL84Z9nd" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="V4BD0ciQz5TMrni4vAmJhE" Name="Output" Kind="OutputPin" />
                       <Pin Id="BnpqasO02NFOcS7kFDzxTS" Name="Value" Kind="OutputPin" />
                     </Node>
@@ -3221,6 +3569,10 @@
                   <Pin Id="VVQOEWsmysBNBoSwfsYG4f" Name="Result" Kind="OutputPin" />
                   <Pin Id="Rf7P3We6aFgPCcaSkr1rxx" Name="Success" Kind="OutputPin" />
                 </Node>
+                <ControlPoint Id="IrAkm5Ve0TcMr2hzQ0w3tR" Bounds="649,438" />
+                <Pad Id="H67746A3YWPQF9Qw4Yg1C6" Bounds="648,468" />
+                <ControlPoint Id="UMDuK8u8docL09cqrWinUT" Bounds="707,471" />
+                <Pad Id="CD246JFRm8DNQCjJK1b7B0" Bounds="682,489" />
               </Canvas>
               <ProcessDefinition Id="SN8kOLB7jiiOIdqGYlmppx" HasStateOut="true">
                 <Fragment Id="FqovTUu3zS5NTz1dUU2FGs" Patch="AgacHOEfFcoOz7z3X3Sn4o" Enabled="true" />
@@ -3238,7 +3590,7 @@
               <Link Id="QKcxbDiyrVQOV4n2ODopc7" Ids="FKb7TqzRbuVLRK9aBO7bNY,PINkzkm4TEeLrokMjo6fND" IsHidden="true" />
               <Slot Id="R9C5hDwKHIyN8J21WdcrB2" Name="CompositorClip1D">
                 <p:TypeAnnotation p:Type="TypeReference">
-                  <Choice Kind="TypeFlag" Name="CompositorClip1D" />
+                  <Choice Kind="TypeFlag" Name="Clip (Compositor1D)" />
                 </p:TypeAnnotation>
               </Slot>
               <Slot Id="AbyNXp9gtn2NGN7402a5B4" Name="Background Function" />
@@ -3246,29 +3598,6 @@
               <Link Id="KK5dHJpaN2mNaGEJB6PlH3" Ids="FfHWHNbCxLhNjK5wuuDeCH,C23kRF7ZXabQOiXXYHeDST" />
               <Link Id="C3ly9YT7WqsPD7isG1K0j5" Ids="MKv0jign0VUL1tagJJaCqx,F4SvNdyVRSOOWa8Z7R7UC6" />
               <Link Id="AOuJ19cr1pCLp8HyhhN5Tx" Ids="ARNiszNbhhwN6XvA7KFQYI,DsrxqHNJj2COukkkmYQSli" IsHidden="true" />
-              <Patch Id="AgacHOEfFcoOz7z3X3Sn4o" Name="Create" />
-              <Patch Id="JqcJtmAfDyTQSpukqXgggv" Name="Update">
-                <Pin Id="Vn7RzAm0z73MWJv2j0TnPp" Name="CompositorClip1D" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="CompositorClip1D" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="VF02QlxjfvKOicWAq4h5jM" Name="Background Function" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="RnmX5eZHgnCMhGC4u7FRHe" Name="Sampling Position" Kind="InputPin" />
-              </Patch>
-              <Patch Id="SYdZmMe6hNPOfiI2c3jG9X" Name="SampleBackground" ParticipatingElements="GQMWCgqm6q8NxcjcQQyDp3">
-                <Pin Id="PINkzkm4TEeLrokMjo6fND" MergeId="1782357" Name="Output" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="LOOGL9TSSZsLa305LqBB6E" Name="SampleBackgroundT" ParticipatingElements="Eaz0DthDT5VNkfWurb96kc">
-                <Pin Id="DsrxqHNJj2COukkkmYQSli" MergeId="1795664" Name="OutputT" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="RlJDowDX9J0MFj2REoBWBD" Name="GetTypeWitness">
-                <Pin Id="KOXtUUiziViMuuIVGNsAzw" MergeId="978109" Name="Type Witness" Kind="OutputPin" />
-              </Patch>
               <Slot Id="Bhv0RJBHTlHLIXMK0zI8Uw" Name="Background Value">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="T" />
@@ -3299,6 +3628,39 @@
               <Link Id="N7XkEplE2J4MSv29KrmPFx" Ids="CO5tg1bfFO3LM1ybq5NTSf,Q3afMiqsLCiLp4Nb1paUn5" />
               <Link Id="ToFpjMVhGyPLQqm5BnHxQ1" Ids="IzYiycER00lLRVoBgcMI2E,KOItyXBuZyPLzasIzqiX3x" />
               <Link Id="JrhD5orGdz0QXXZxLK04AX" Ids="VVQOEWsmysBNBoSwfsYG4f,FKb7TqzRbuVLRK9aBO7bNY" />
+              <Link Id="PA6o5R9w9P8PqAzKNXesTm" Ids="IrAkm5Ve0TcMr2hzQ0w3tR,H67746A3YWPQF9Qw4Yg1C6" />
+              <Link Id="Kk7WYCYeeOVOnxYtpR0e45" Ids="NFsl2tHRGQKMj9BV7ecgwI,IrAkm5Ve0TcMr2hzQ0w3tR" IsHidden="true" />
+              <Patch Id="AgacHOEfFcoOz7z3X3Sn4o" Name="Create" />
+              <Patch Id="JqcJtmAfDyTQSpukqXgggv" Name="Update">
+                <Pin Id="Vn7RzAm0z73MWJv2j0TnPp" Name="CompositorClip1D" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Clip (Compositor1D)" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="VF02QlxjfvKOicWAq4h5jM" Name="Background Function" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="NFsl2tHRGQKMj9BV7ecgwI" Name="Alpha Blending Model" Kind="InputPin" Bounds="618,486" />
+                <Pin Id="RnmX5eZHgnCMhGC4u7FRHe" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="N5WwQdKmKRvOuRX6O4wXrs" Name="Downstream Alpha" Kind="InputPin" Bounds="707,471" />
+              </Patch>
+              <Patch Id="SYdZmMe6hNPOfiI2c3jG9X" Name="SampleBackground" ParticipatingElements="GQMWCgqm6q8NxcjcQQyDp3">
+                <Pin Id="PINkzkm4TEeLrokMjo6fND" MergeId="1782357" Name="Output" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="LOOGL9TSSZsLa305LqBB6E" Name="SampleBackgroundT" ParticipatingElements="Eaz0DthDT5VNkfWurb96kc">
+                <Pin Id="DsrxqHNJj2COukkkmYQSli" MergeId="1795664" Name="OutputT" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="RlJDowDX9J0MFj2REoBWBD" Name="GetTypeWitness">
+                <Pin Id="KOXtUUiziViMuuIVGNsAzw" MergeId="978109" Name="Type Witness" Kind="OutputPin" />
+              </Patch>
+              <Link Id="PBHll0pbsCqMU1ja1D49jt" Ids="H67746A3YWPQF9Qw4Yg1C6,KKNdakaggjmL3Da5VWVjG1" />
+              <Link Id="BTyq4eZ8H6oP3miC3Ubip8" Ids="UMDuK8u8docL09cqrWinUT,CD246JFRm8DNQCjJK1b7B0" />
+              <Link Id="Tk8uHl1UB3kNz3rZ2ynZdk" Ids="N5WwQdKmKRvOuRX6O4wXrs,UMDuK8u8docL09cqrWinUT" IsHidden="true" />
+              <Link Id="Mb18dRI6OqRLQZloNbZS76" Ids="CD246JFRm8DNQCjJK1b7B0,T7xyst5g7B0M3lyL84Z9nd" />
+              <Link Id="AG6FvHcJ537PD3H2q9yg39" Ids="CD246JFRm8DNQCjJK1b7B0,HWurx0wjsrMNYMxnkMRH5a" />
+              <Link Id="QH35L1MsCyqPBYl9Vahe0W" Ids="H67746A3YWPQF9Qw4Yg1C6,FdYdf6luis8NCQMAAEmBBC" />
             </Patch>
           </Node>
         </Canvas>
@@ -3438,34 +3800,6 @@
                 <Fragment Id="L3pLg5r6QDMNvtGxZ0Tsqp" Patch="FYJY90R7xjKOEzLnIMpClp" />
                 <Fragment Id="AFdNZxcBHDePKizsfqNVko" Patch="Rel5dJtfVKTOSnTvMx0klj" />
               </ProcessDefinition>
-              <Patch Id="R7Rkw96hNMvPT9FUS9J5Rw" Name="Create" />
-              <Patch Id="FYJY90R7xjKOEzLnIMpClp" Name="SampleT">
-                <Pin Id="NIrnEwEhRiWPTY37QOAZdf" Name="Background Function" Kind="InputPin" />
-                <Pin Id="F4Y0W5TXV6UPEfxOhoE7rk" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="G580d4hmaHVPYGTBwEGipY" Name="Value" Kind="OutputPin" />
-              </Patch>
-              <Patch Id="MJUtbDATP4uPIt98SyLj35" Name="SetLayers">
-                <Pin Id="UCqe2RmKdmoPbqnoFg50jz" Name="Layers" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="Spread" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="ILayer1D" />
-                        <p:TypeArguments>
-                          <TypeReference>
-                            <Choice Kind="TypeFlag" Name="T" />
-                          </TypeReference>
-                        </p:TypeArguments>
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
-              <Patch Id="Rel5dJtfVKTOSnTvMx0klj" Name="Stack" ManuallySortedPins="true">
-                <Pin Id="EOQifdw7YCgPwknjdgdqak" MergeId="354563" Name="Background Function T" Kind="InputPin" />
-                <Pin Id="QfCw4VvRy4iOytxWPa0iiN" MergeId="354548" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="Mf14iXCvQweOJzRDBMyGMh" MergeId="354550" Name="Value T" Kind="OutputPin" />
-              </Patch>
               <Link Id="URnx9ZUYlKuMAhgqY21lCG" Ids="KYIHz04yzkXLDgezqSi3gP,Mf14iXCvQweOJzRDBMyGMh" IsHidden="true" />
               <Link Id="ELsbVDgj7AbOQNolmUJcQY" Ids="SwY4lWNnRYWLujX7VnLZqP,Kky02zCmYs2Mgv3mJmcLgz" IsFeedback="true" />
               <Link Id="ISwN1a66KT5N3WWEtM2DKt" Ids="SwY4lWNnRYWLujX7VnLZqP,T02wJNFuSrXNmXNSuloUVg" />
@@ -3494,6 +3828,36 @@
               <Link Id="CNhmQsEQaGqOJRxkreP03V" Ids="T561C1pRb3kLpUugWp2gZa,HMRujagN2JoNHhlJOXvOtS" />
               <Link Id="AKopj6StMeUMqdZZixcrmX" Ids="U6RA5PQhpmRQE0FJkpsF6I,QpnZ9PGrNVUP71ry7iJUMe" />
               <Link Id="AIepPfI7NU4PhQAFP1OouA" Ids="QpnZ9PGrNVUP71ry7iJUMe,ORiK71JR0aHPMV8JRy3zTe" />
+              <Patch Id="R7Rkw96hNMvPT9FUS9J5Rw" Name="Create" />
+              <Patch Id="FYJY90R7xjKOEzLnIMpClp" Name="SampleT">
+                <Pin Id="NIrnEwEhRiWPTY37QOAZdf" Name="Background Function" Kind="InputPin" />
+                <Pin Id="F4Y0W5TXV6UPEfxOhoE7rk" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="SAcZRdM0P40PEegCOG3L0l" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="AL1uQp5es6EOXcDzymbh6k" Name="Downstream Alpha" Kind="InputPin" />
+                <Pin Id="G580d4hmaHVPYGTBwEGipY" Name="Value" Kind="OutputPin" />
+              </Patch>
+              <Patch Id="MJUtbDATP4uPIt98SyLj35" Name="SetLayers">
+                <Pin Id="UCqe2RmKdmoPbqnoFg50jz" Name="Layers" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Spread" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="ILayer1D" />
+                        <p:TypeArguments>
+                          <TypeReference>
+                            <Choice Kind="TypeFlag" Name="T" />
+                          </TypeReference>
+                        </p:TypeArguments>
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="Rel5dJtfVKTOSnTvMx0klj" Name="Stack" ManuallySortedPins="true">
+                <Pin Id="EOQifdw7YCgPwknjdgdqak" MergeId="354563" Name="Background Function T" Kind="InputPin" />
+                <Pin Id="QfCw4VvRy4iOytxWPa0iiN" MergeId="354548" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="Mf14iXCvQweOJzRDBMyGMh" MergeId="354550" Name="Value T" Kind="OutputPin" />
+              </Patch>
             </Patch>
           </Node>
           <!--
@@ -3555,6 +3919,8 @@
                       <Pin Id="J0lgnJFtFboMzkfQU8Jhse" Name="Input" Kind="StateInputPin" />
                       <Pin Id="K5MmSJPzsUMOOhqYURF8VJ" Name="Background Function" Kind="InputPin" />
                       <Pin Id="B2qwlDOKNjtLgVADem5ldP" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="J903aqi19lmOjngJWLvw5H" Name="Alpha Blending Model" Kind="InputPin" />
+                      <Pin Id="IMSoGd0GShZMi4h3hMxpPE" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="MBlvXXsHBu0Nx3lQ26YhjY" Name="Output" Kind="OutputPin" />
                       <Pin Id="RtsQFjzOgp0Ot0tdbH0cm4" Name="Value" Kind="OutputPin" />
                     </Node>
@@ -3626,6 +3992,8 @@
                       <Pin Id="OCmkp8tjYJ7LhPEpc6Xk79" Name="Input" Kind="StateInputPin" />
                       <Pin Id="GPD3WsetIhyNfC6A29jDFY" Name="Background Function" Kind="InputPin" />
                       <Pin Id="BETj8Z6vXu7OMyNDs2i5HD" Name="Sampling Position" Kind="InputPin" />
+                      <Pin Id="EueiSic2LDQOgu6DjQJSY8" Name="Alpha Blending Model" Kind="InputPin" />
+                      <Pin Id="SVTEnMhMMAlLUpY2pcALZf" Name="Downstream Alpha" Kind="InputPin" />
                       <Pin Id="H54qSo22YbmOi2pRNIUrth" Name="Output" Kind="OutputPin" />
                       <Pin Id="DXpbEEh50uTPnYFBiB0tM4" Name="Value" Kind="OutputPin" />
                     </Node>
@@ -4223,52 +4591,6 @@
               <Link Id="GQc6LOPKGz8QMfHYTBiKVQ" Ids="Pv1GcgDE9RsNtLv78m8U0g,VDxUwroTz1iM0iHQ9gj56t" IsHidden="true" />
               <Link Id="Kjz3J7ZqFCSMDPEhJaSBpQ" Ids="TByoou6yfWvPBUkFWbMe1j,RkoQOCPfC55MFMvfBwULCJ" IsHidden="true" />
               <Link Id="CAfsl54IwExNYpE5Q59SLr" Ids="RWfwBv2J2ctPTqJJEk17fq,RAtsxrHTO3BP0VYZe4lGO4" IsHidden="true" />
-              <Patch Id="FPRbWA2uzOrOpX7dNxlgvu" Name="Create" />
-              <Patch Id="NSjjaCpn27JNketB9ERD1o" Name="SampleT">
-                <Pin Id="TByoou6yfWvPBUkFWbMe1j" MergeId="314272" Name="Background Function" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="T" />
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="Pv1GcgDE9RsNtLv78m8U0g" MergeId="314270" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="RAtsxrHTO3BP0VYZe4lGO4" MergeId="314274" Name="Value" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
-              <Patch Id="DhQmxGgIKDgLB4q9QsxdqO" Name="SwitchT" ParticipatingElements="Om6i6xmGz1bMoLqZeijZnx" ManuallySortedPins="true">
-                <Pin Id="DMK0GO3ydqHNCPQt5Mnhjo" MergeId="315203" Name="Background Function T" Kind="InputPin" />
-                <Pin Id="GSzQovyXmdnNc3JZPAgO2y" MergeId="315192" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="TgrV6FFT8ynOaIFfBVOmLo" MergeId="315201" Name="Value T" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-                <Pin Id="NCs63doL3ddNEOyo8xCdfo" Name="Current Index" Kind="InputPin" Bounds="644,263" />
-              </Patch>
-              <Patch Id="OGoIuIzeo5ePzIUjIMYVQ3" Name="SetClips">
-                <Pin Id="RUti252veSpMvwi5zDAbxo" Name="Clips" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="Spread" />
-                    <p:TypeArguments>
-                      <TypeReference>
-                        <Choice Kind="TypeFlag" Name="Clip (Launcher1D)" />
-                        <p:TypeArguments>
-                          <TypeReference>
-                            <Choice Kind="TypeFlag" Name="T" />
-                          </TypeReference>
-                        </p:TypeArguments>
-                      </TypeReference>
-                    </p:TypeArguments>
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Link Id="VqdnkZVH1EHQUq7jJp2Gpv" Ids="GSzQovyXmdnNc3JZPAgO2y,LkT38tIH8h2PWyuIPeNdKd" IsHidden="true" />
               <Link Id="GrBsuGrCP8kODoED92ZfCI" Ids="FN9ApLS5OxBMpNgStu9RD4,TgrV6FFT8ynOaIFfBVOmLo" IsHidden="true" />
               <Link Id="L84TPUKephyLGiK6jMjhsi" Ids="DMK0GO3ydqHNCPQt5Mnhjo,NnaIxBftxkjOhoYth8BJoA" IsHidden="true" />
@@ -4308,15 +4630,6 @@
               <Link Id="QjEKdOrddCMOF7gAwSpYnJ" Ids="NT231AR2vKELs8K0oLbYaj,AeTNO4TGsCVPaykjAMRxwL" />
               <Link Id="KAcaUeuviZPMDXq5F7oEwC" Ids="IjbB6wGzfpUPeGOU6wrhAy,Iaj4hlz3SxRPiea64hQr48" />
               <Slot Id="AK72bftIvx7MPl5v9AiCMV" Name="Shapes" />
-              <Patch Id="KOWmvxkqyYYMH6TCGrpipw" Name="InterpolateT" ManuallySortedPins="true">
-                <Pin Id="HXtV7pXiPSuM5ZZgOVxHha" MergeId="5265" Name="Background Function T" Kind="InputPin" />
-                <Pin Id="KV8f1UA1jp5O6jpMpaatTG" MergeId="5269" Name="Sampling Position" Kind="InputPin" />
-                <Pin Id="GGTL8Etfk9TP0J16mO5m7d" MergeId="394877" Name="Value" Kind="OutputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="T" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Slot Id="C21osu6sIXbOVjQ7yFB418" Name="Hit Test Result" />
               <Slot Id="JtVOuibCHiIMAPKqyS6VD9" Name="Interpolation Scalar" />
               <Slot Id="TSgINuk1IARME6htPTEOQ7" Name="Lower Index" />
@@ -4351,13 +4664,6 @@
               <Link Id="N8ZktoVUFJPN1wVviquRGN" Ids="DGfM61cmSjPP7FjVivZpOq,EzieljSpTufNOKhPiRUOj3" />
               <Link Id="UAFhEGL1zC1Pe7uNADZBMG" Ids="UnZzlWs3sbGPjL4ywbCgJO,SRv6M8TtlivOzGzyLut8Wd" />
               <Link Id="DmBCjjZSkN3MY7RLjpA9HJ" Ids="P3f6165iMKoPDT7jVYMg0K,UaIYDMQFPD1PCiKZ8OASS8" IsHidden="true" />
-              <Patch Id="IhjRUMfpbd1M4kXqmk86Yo" Name="SetCustomIndex" ParticipatingElements="QT3lopgYmIcMN7hH3bWqiI">
-                <Pin Id="P3f6165iMKoPDT7jVYMg0K" Name="Custom Index" Kind="InputPin">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="Integer32" />
-                  </p:TypeAnnotation>
-                </Pin>
-              </Patch>
               <Slot Id="Cs5dEr11mxIQbvhy8AZwIV" Name="Custom Index" />
               <Link Id="NGZgRVbh8QxLWDDCrRVl0f" Ids="UaIYDMQFPD1PCiKZ8OASS8,G7rlmeiWEjLMmCYLzXxFYE" />
               <Link Id="SrtsgCBmxQEMuiVsDB4Jds" Ids="QofSg0byNKJOeBCjiDczgn,DFMobOhz5o6LD4yoMc6GUJ" />
@@ -4373,9 +4679,6 @@
               <Link Id="N7Nz6IolJwtPjoVlBcp79o" Ids="NgF4T06oHvkPDWcqTGfkND,GXmG5UiaqzyLZcc4d6o49V" />
               <Link Id="K289Wbmoh94NhPbwP7436J" Ids="BpRYyoWKbRrNxu35I5t8n2,NgF4T06oHvkPDWcqTGfkND" />
               <Link Id="CNZHPhAXylbOMCFfCpvH6D" Ids="VUS2QuzGxiGONF1Y2wwVpG,BpRYyoWKbRrNxu35I5t8n2" IsHidden="true" />
-              <Patch Id="Q40ux3HQhF7LpVqBOChYII" Name="SetLerpTime">
-                <Pin Id="VUS2QuzGxiGONF1Y2wwVpG" Name="Lerp Duration" Kind="InputPin" />
-              </Patch>
               <Link Id="ES0SMPWrTsyOmYUQ1a4nZM" Ids="NgF4T06oHvkPDWcqTGfkND,NoGkt8dEd7TQKsrmHTQo77" />
               <Link Id="PqNqi1W8ztzOoXLPWigRKu" Ids="I7rN7hv4UGyPP00FZkt5PZ,SHZRrqyf22wQcgeEEV1Hnc" />
               <Link Id="QT3lopgYmIcMN7hH3bWqiI" Ids="KyfCgmWETrVLBlvR2AyNnp,M4JWZVryucNLos8R6r9sIo" />
@@ -4388,8 +4691,6 @@
               <Link Id="QhxZ6glcmNhQb4VAv1Iry3" Ids="AamDnKIp0VjQIi1zRnoSWc,LBfdGbccKPCQdzzrcDLT6S" />
               <Link Id="ERw8NboxMNWMehDlTLs16K" Ids="BjkALBo5uA8LOqGcuhFZ96,PlI32fCWrpiOaoF1bV5aMH" />
               <Link Id="S0sR0Ao7tamOeCBfeHdP7C" Ids="JeDMLp2NXeMN0RXX5T6dBx,Ftx8WayaDTZLwH12Kg1G8i" />
-              <Patch Id="UtBL6nUWK3ZOwsGXdiKx5v" Name="ResetLerpingTime" ParticipatingElements="S0sR0Ao7tamOeCBfeHdP7C" />
-              <Patch Id="Mb78q6RMEiLQNSM1aJ1AmL" Name="UpdateLerpingTime" ParticipatingElements="SkCQPnaJDlKMdqflh1sTIs" />
               <Slot Id="Lhw91FUtt4SO1Qaywub2YY" Name="A Index">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="Integer32" />
@@ -4400,6 +4701,75 @@
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Slot>
+              <Patch Id="FPRbWA2uzOrOpX7dNxlgvu" Name="Create" />
+              <Patch Id="NSjjaCpn27JNketB9ERD1o" Name="SampleT">
+                <Pin Id="TByoou6yfWvPBUkFWbMe1j" MergeId="314272" Name="Background Function" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="T" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="Pv1GcgDE9RsNtLv78m8U0g" MergeId="314270" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="DHC3XzYbNSzQMvHpmjToVP" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="IsOOW56YUPXL9mv0M1E2Sq" Name="Downstream Alpha" Kind="InputPin" />
+                <Pin Id="RAtsxrHTO3BP0VYZe4lGO4" MergeId="314274" Name="Value" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="DhQmxGgIKDgLB4q9QsxdqO" Name="SwitchT" ParticipatingElements="Om6i6xmGz1bMoLqZeijZnx" ManuallySortedPins="true">
+                <Pin Id="DMK0GO3ydqHNCPQt5Mnhjo" MergeId="315203" Name="Background Function T" Kind="InputPin" />
+                <Pin Id="GSzQovyXmdnNc3JZPAgO2y" MergeId="315192" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="TgrV6FFT8ynOaIFfBVOmLo" MergeId="315201" Name="Value T" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="NCs63doL3ddNEOyo8xCdfo" Name="Current Index" Kind="InputPin" Bounds="644,263" />
+              </Patch>
+              <Patch Id="OGoIuIzeo5ePzIUjIMYVQ3" Name="SetClips">
+                <Pin Id="RUti252veSpMvwi5zDAbxo" Name="Clips" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Spread" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="Clip (Launcher1D)" />
+                        <p:TypeArguments>
+                          <TypeReference>
+                            <Choice Kind="TypeFlag" Name="T" />
+                          </TypeReference>
+                        </p:TypeArguments>
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="KOWmvxkqyYYMH6TCGrpipw" Name="InterpolateT" ManuallySortedPins="true">
+                <Pin Id="HXtV7pXiPSuM5ZZgOVxHha" MergeId="5265" Name="Background Function T" Kind="InputPin" />
+                <Pin Id="KV8f1UA1jp5O6jpMpaatTG" MergeId="5269" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="GGTL8Etfk9TP0J16mO5m7d" MergeId="394877" Name="Value" Kind="OutputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="IhjRUMfpbd1M4kXqmk86Yo" Name="SetCustomIndex" ParticipatingElements="QT3lopgYmIcMN7hH3bWqiI">
+                <Pin Id="P3f6165iMKoPDT7jVYMg0K" Name="Custom Index" Kind="InputPin">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Integer32" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+              <Patch Id="Q40ux3HQhF7LpVqBOChYII" Name="SetLerpTime">
+                <Pin Id="VUS2QuzGxiGONF1Y2wwVpG" Name="Lerp Duration" Kind="InputPin" />
+              </Patch>
+              <Patch Id="UtBL6nUWK3ZOwsGXdiKx5v" Name="ResetLerpingTime" ParticipatingElements="S0sR0Ao7tamOeCBfeHdP7C" />
+              <Patch Id="Mb78q6RMEiLQNSM1aJ1AmL" Name="UpdateLerpingTime" ParticipatingElements="SkCQPnaJDlKMdqflh1sTIs" />
             </Patch>
           </Node>
           <!--
@@ -4462,6 +4832,8 @@
                   <Pin Id="MIl85vUS4mcN3BdlFNx8Wa" Name="Input" Kind="StateInputPin" />
                   <Pin Id="TS22waFkxKjN50EfYFHodV" Name="Background Function" Kind="InputPin" />
                   <Pin Id="RQH1X3Qd3QRNeWoet4qFEY" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="FPSq3k8lv0WNj4sTCC1PvQ" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="SsW8CuFtTeRNWpjZvZsqPP" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="ReXepQlRFuFLZX2JSpMBpd" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="U2QMr96CQJxMYRpQa21skJ" Name="Value" Kind="OutputPin" />
                 </Node>
@@ -4784,6 +5156,8 @@
                   <Pin Id="OjU3Xmg4UmILea8t5n7m9P" Name="Value Provider T" Kind="InputPin" />
                   <Pin Id="OkaKKcYKuqwMRTr04GR8ng" Name="Background Function T" Kind="InputPin" />
                   <Pin Id="LqzpzbDLoD9NeqnituiyY3" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="OveEQakDDy1Lus8pwxNKW3" Name="Downstream Alpha" Kind="InputPin" />
+                  <Pin Id="TVssTAGi72xNkbVeX7gJul" Name="Alpha Blending Model" Kind="InputPin" />
                   <Pin Id="CST6pQnYH63PdGC9H8goCr" Name="Value T" Kind="OutputPin" />
                   <Pin Id="BB2DQBi1RAuL6e4lNfFIcf" Name="Layer Assigned" Kind="OutputPin" />
                 </Node>
@@ -4816,10 +5190,26 @@
               <Link Id="K2allk7WwFKPJbnvwue88O" Ids="FgOrARdOMSDMrXkLaVzS7k,GNhjOEaWqhyN6h7FMYZCLQ" />
               <Link Id="PWoa6VKGca2LlHD8OifCbf" Ids="CiMS9tGGA7mMn5tLmkHlKJ,FgOrARdOMSDMrXkLaVzS7k" />
               <Link Id="CJnvz0pMDqkNvxCGsjR1Nf" Ids="OBLItknboV1MyPSMvHMi0w,CiMS9tGGA7mMn5tLmkHlKJ" IsHidden="true" />
+              <Link Id="IM1FrsXBOkpNATc2Bc3ol1" Ids="Vu9lOPG7GncNnDuTBdmi9N,LqzpzbDLoD9NeqnituiyY3" />
+              <Link Id="DlVKrzAmEQrMDr3znk8jMP" Ids="VcA80852VbHLVer04A0neW,Vu9lOPG7GncNnDuTBdmi9N" IsHidden="true" />
+              <Slot Id="Tb7ooLhsI9WLXWH9rHIRBS" Name="Layer Assigned" />
+              <Link Id="VVec7YSOTOsLfESsG01kjZ" Ids="BB2DQBi1RAuL6e4lNfFIcf,J06hFZAhqtaMAILER5jAh8" />
+              <Link Id="IJApmg6scXAPdEUswA06qz" Ids="J06hFZAhqtaMAILER5jAh8,IndifoA5eooPoIjx4O8L7F" />
+              <Link Id="Ik4umlyXkSSNiU4xI5E3jW" Ids="IndifoA5eooPoIjx4O8L7F,Ddy9vcMwi0oMPciCOOhcrl" IsHidden="true" />
+              <ProcessDefinition Id="DKZEYSfVU5nMsJcXMIfTsM" HasStateOut="true">
+                <Fragment Id="RqkPsKmLNPmNySpXaAUrzl" Patch="Rgk60P7IC4ePjhL0EvPBWd" Enabled="true" />
+                <Fragment Id="FWVYzUsGcIYNGh8UXZOnmv" Patch="GRw4u7ls9qVL27yUp8loIT" Enabled="true" />
+                <Fragment Id="BK0aK49bHwROdof26flnrg" Patch="PFj6jnEaefDNp34KWeGyxI" Enabled="true" />
+                <Fragment Id="HKHhz8JxfUwPySAnX8Dbcm" Patch="NymmOIGZe8tNTdGesRfFe7" Enabled="true" />
+                <Fragment Id="AAynWyLmz2gMiYoVDv04MK" Patch="GhqkGsClsCrOAPl2QYy5if" />
+              </ProcessDefinition>
+              <Link Id="TXTYfivTE3NPew70vL3LWu" Ids="MFuHKQVAgGDNLBTdWsL1Zg,MDnzAD0ExNaPcXiuQfU83D" />
               <Patch Id="Rgk60P7IC4ePjhL0EvPBWd" Name="Create" />
               <Patch Id="GhqkGsClsCrOAPl2QYy5if" Name="SampleT">
                 <Pin Id="GbpVqK91S6ONNLzgugnklQ" Name="Background Function" Kind="InputPin" />
                 <Pin Id="VcA80852VbHLVer04A0neW" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="NmETvOw30PKNUcfnBV3UBo" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="FkQ2EFkiycvMdlx3SZEGfT" Name="Downstream Alpha" Kind="InputPin" />
                 <Pin Id="NZuNwO4E7NQMxjBIT0NMAq" Name="Value" Kind="OutputPin" />
               </Patch>
               <Patch Id="PFj6jnEaefDNp34KWeGyxI" Name="SetLayers" ManuallySortedPins="true">
@@ -4843,23 +5233,9 @@
               <Patch Id="GRw4u7ls9qVL27yUp8loIT" Name="SetIndex">
                 <Pin Id="FPEh6kJQAbyL5h038I2bKB" Name="Index" Kind="InputPin" />
               </Patch>
-              <Link Id="IM1FrsXBOkpNATc2Bc3ol1" Ids="Vu9lOPG7GncNnDuTBdmi9N,LqzpzbDLoD9NeqnituiyY3" />
-              <Link Id="DlVKrzAmEQrMDr3znk8jMP" Ids="VcA80852VbHLVer04A0neW,Vu9lOPG7GncNnDuTBdmi9N" IsHidden="true" />
-              <Slot Id="Tb7ooLhsI9WLXWH9rHIRBS" Name="Layer Assigned" />
-              <Link Id="VVec7YSOTOsLfESsG01kjZ" Ids="BB2DQBi1RAuL6e4lNfFIcf,J06hFZAhqtaMAILER5jAh8" />
-              <Link Id="IJApmg6scXAPdEUswA06qz" Ids="J06hFZAhqtaMAILER5jAh8,IndifoA5eooPoIjx4O8L7F" />
-              <Link Id="Ik4umlyXkSSNiU4xI5E3jW" Ids="IndifoA5eooPoIjx4O8L7F,Ddy9vcMwi0oMPciCOOhcrl" IsHidden="true" />
               <Patch Id="NymmOIGZe8tNTdGesRfFe7" Name="GetLayerAssigned">
                 <Pin Id="Ddy9vcMwi0oMPciCOOhcrl" Name="Layer Assigned" Kind="OutputPin" />
               </Patch>
-              <ProcessDefinition Id="DKZEYSfVU5nMsJcXMIfTsM" HasStateOut="true">
-                <Fragment Id="RqkPsKmLNPmNySpXaAUrzl" Patch="Rgk60P7IC4ePjhL0EvPBWd" Enabled="true" />
-                <Fragment Id="FWVYzUsGcIYNGh8UXZOnmv" Patch="GRw4u7ls9qVL27yUp8loIT" Enabled="true" />
-                <Fragment Id="BK0aK49bHwROdof26flnrg" Patch="PFj6jnEaefDNp34KWeGyxI" Enabled="true" />
-                <Fragment Id="HKHhz8JxfUwPySAnX8Dbcm" Patch="NymmOIGZe8tNTdGesRfFe7" Enabled="true" />
-                <Fragment Id="AAynWyLmz2gMiYoVDv04MK" Patch="GhqkGsClsCrOAPl2QYy5if" />
-              </ProcessDefinition>
-              <Link Id="TXTYfivTE3NPew70vL3LWu" Ids="MFuHKQVAgGDNLBTdWsL1Zg,MDnzAD0ExNaPcXiuQfU83D" />
             </Patch>
           </Node>
           <!--
@@ -8909,6 +9285,8 @@
                   <Pin Id="CfcJk3eV6rcLiFox38mS4T" Name="Input" Kind="StateInputPin" />
                   <Pin Id="MtnoEQui634LikaZhKjXKg" Name="Background Function" Kind="InputPin" />
                   <Pin Id="N89gCElRhMWLAslNjnyNFX" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="Lu5Ixs4cC9ePjoLgjXZ9Oq" Name="Alpha Blending Model" Kind="InputPin" />
+                  <Pin Id="KDI24YNXE6aLoJXDqW36NA" Name="Downstream Alpha" Kind="InputPin" />
                   <Pin Id="DT58pYl1YUtNnZTkfUOYXe" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="Pyp2LF2SzW6OtDqoNoZCpf" Name="Value" Kind="OutputPin" />
                 </Node>
@@ -9395,6 +9773,23 @@
             <Link Id="AqVVeYTN34VNSCUs0YjOd3" Ids="K33vJrzDrhePqD26NWDR62,DIkdaUn4Yj3OnwjIPXhzR9" IsHidden="true" />
             <Link Id="EZj56OwQLaOPJ18E0iLJ0t" Ids="Jk5DtxXkyvmQP9KSO5fJEt,KF7biTNQBV9QU8Vrvisywm" IsHidden="true" />
             <Link Id="KTzTkx3ZjC0OrKp7UDaPOX" Ids="H8ScogjSYylPd1vd6zJ8Hs,O1jnCUNbK8nP2mNTN9OGsc" IsHidden="true" />
+            <ProcessDefinition Id="Exi6Ss6USlQMsqjD0XfhJR" HasStateOut="true">
+              <Fragment Id="SxJJgSwmERNLXaxTITySyt" Patch="SZ9n6UrOghEMbuR9uv3FpE" Enabled="true" />
+              <Fragment Id="MTgSxOYk04HNwrVIeBsblf" Patch="Rg6EpGbbzRCLbJ4AZirbie" />
+              <Fragment Id="NVwTCiLHia2QFHPwn0MtGf" Patch="KqKWg9EvBhaQUd3TjqB06J" Enabled="true" />
+            </ProcessDefinition>
+            <Slot Id="LPXmDnCEYUyLYPzYaXo1Yy" Name="Layer2D" />
+            <Link Id="H0UxAX69VS8PDFtqh1eson" Ids="BMf6bNzyQmWMEg14Tql5Sg,EsFii0e7Ws8L8xPEAW7BRO" />
+            <Link Id="VxJ2bFIR2N5O3PMmkZdOyI" Ids="BITK1rc53nlNIqnvuo1JSo,BMf6bNzyQmWMEg14Tql5Sg" />
+            <Link Id="J0N26nlnTiJPPu7YXZlRxd" Ids="RIehSjAUSUrO2jm6tE77tx,BITK1rc53nlNIqnvuo1JSo" IsHidden="true" />
+            <Link Id="L7Kvh5UNGsPLuPGeEFXNEb" Ids="KF7biTNQBV9QU8Vrvisywm,FOXrSgCh7A8QcbPEW3HZhM" />
+            <Link Id="Lncseyuv40tOIw1D3kBktJ" Ids="DIkdaUn4Yj3OnwjIPXhzR9,DFOQF8MYUVbQTItcMUfHF2" />
+            <Link Id="H7yUy6THb8cN3iXd1EmFyz" Ids="CiaTK9uXPCELognhKuSZRs,TlJQAG3qXOoOFVUsUuJ2Iz" />
+            <Slot Id="BBlbMHP9InUPerYy9B68Aw" Name="Transport Function" />
+            <Link Id="IINFVZ5gJg4PNwozq7LpQv" Ids="URG3vWTxYToPab4ZGinY6p,Pz1LVaDvaXSPVSHQCVEtxn" />
+            <Link Id="GtSb4sfc7JeNP0hQl7Skao" Ids="D1LT8onb4mhMgMMWXh1hix,URG3vWTxYToPab4ZGinY6p" />
+            <Link Id="RKXiAlJNLnoPf7lj8TL4Lj" Ids="DFlAXeeWXoJL68amt0nvQd,D1LT8onb4mhMgMMWXh1hix" IsHidden="true" />
+            <Link Id="Cs9UK85rraZLo3qn3dAbHZ" Ids="HBrheTSwzJQNWQS0LwkEJX,H8ScogjSYylPd1vd6zJ8Hs" />
             <Patch Id="SZ9n6UrOghEMbuR9uv3FpE" Name="Create" />
             <Patch Id="Rg6EpGbbzRCLbJ4AZirbie" Name="SampleT">
               <Pin Id="Jk5DtxXkyvmQP9KSO5fJEt" MergeId="314272" Name="Background Function" Kind="InputPin">
@@ -9408,29 +9803,14 @@
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="K33vJrzDrhePqD26NWDR62" MergeId="314270" Name="Sampling Position" Kind="InputPin" />
+              <Pin Id="GabN5l2ae2ELyC7vJ0nHE3" Name="Alpha Blending Model" Kind="InputPin" />
+              <Pin Id="JnD8MhZ8nheNzhlqDOhqhL" Name="Downstream Alpha" Kind="InputPin" />
               <Pin Id="O1jnCUNbK8nP2mNTN9OGsc" MergeId="314274" Name="Value" Kind="OutputPin" />
             </Patch>
-            <ProcessDefinition Id="Exi6Ss6USlQMsqjD0XfhJR" HasStateOut="true">
-              <Fragment Id="SxJJgSwmERNLXaxTITySyt" Patch="SZ9n6UrOghEMbuR9uv3FpE" Enabled="true" />
-              <Fragment Id="MTgSxOYk04HNwrVIeBsblf" Patch="Rg6EpGbbzRCLbJ4AZirbie" />
-              <Fragment Id="NVwTCiLHia2QFHPwn0MtGf" Patch="KqKWg9EvBhaQUd3TjqB06J" Enabled="true" />
-            </ProcessDefinition>
-            <Slot Id="LPXmDnCEYUyLYPzYaXo1Yy" Name="Layer2D" />
-            <Link Id="H0UxAX69VS8PDFtqh1eson" Ids="BMf6bNzyQmWMEg14Tql5Sg,EsFii0e7Ws8L8xPEAW7BRO" />
-            <Link Id="VxJ2bFIR2N5O3PMmkZdOyI" Ids="BITK1rc53nlNIqnvuo1JSo,BMf6bNzyQmWMEg14Tql5Sg" />
-            <Link Id="J0N26nlnTiJPPu7YXZlRxd" Ids="RIehSjAUSUrO2jm6tE77tx,BITK1rc53nlNIqnvuo1JSo" IsHidden="true" />
             <Patch Id="KqKWg9EvBhaQUd3TjqB06J" Name="Update">
               <Pin Id="RIehSjAUSUrO2jm6tE77tx" Name="Input" Kind="InputPin" />
               <Pin Id="DFlAXeeWXoJL68amt0nvQd" Name="Transport Function" Kind="InputPin" />
             </Patch>
-            <Link Id="L7Kvh5UNGsPLuPGeEFXNEb" Ids="KF7biTNQBV9QU8Vrvisywm,FOXrSgCh7A8QcbPEW3HZhM" />
-            <Link Id="Lncseyuv40tOIw1D3kBktJ" Ids="DIkdaUn4Yj3OnwjIPXhzR9,DFOQF8MYUVbQTItcMUfHF2" />
-            <Link Id="H7yUy6THb8cN3iXd1EmFyz" Ids="CiaTK9uXPCELognhKuSZRs,TlJQAG3qXOoOFVUsUuJ2Iz" />
-            <Slot Id="BBlbMHP9InUPerYy9B68Aw" Name="Transport Function" />
-            <Link Id="IINFVZ5gJg4PNwozq7LpQv" Ids="URG3vWTxYToPab4ZGinY6p,Pz1LVaDvaXSPVSHQCVEtxn" />
-            <Link Id="GtSb4sfc7JeNP0hQl7Skao" Ids="D1LT8onb4mhMgMMWXh1hix,URG3vWTxYToPab4ZGinY6p" />
-            <Link Id="RKXiAlJNLnoPf7lj8TL4Lj" Ids="DFlAXeeWXoJL68amt0nvQd,D1LT8onb4mhMgMMWXh1hix" IsHidden="true" />
-            <Link Id="Cs9UK85rraZLo3qn3dAbHZ" Ids="HBrheTSwzJQNWQS0LwkEJX,H8ScogjSYylPd1vd6zJ8Hs" />
           </Patch>
         </Node>
         <!--
@@ -9466,6 +9846,8 @@
                 <Pin Id="R1D15r3VcsOLKy0GVNe7kH" Name="Input" Kind="StateInputPin" />
                 <Pin Id="MdsEZExPvuJPpMJFun56zt" Name="Background Function" Kind="InputPin" />
                 <Pin Id="E7zqYfccMtxMrB56Dy0LAV" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="KN25yZ9E5X8OiRBF3reMFU" Name="Alpha Blending Model" Kind="InputPin" />
+                <Pin Id="Pvao25EFBHXP0RiSZWNH4x" Name="Downstream Alpha" Kind="InputPin" />
                 <Pin Id="PlY4U0SEEsWNeXrhflgL4e" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="FeqX7kMZ6PAMIHbDf5xSqI" Name="Value" Kind="OutputPin" />
               </Node>
