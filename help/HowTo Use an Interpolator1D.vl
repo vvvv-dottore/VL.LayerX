@@ -133,6 +133,7 @@
             <Pin Id="ESdDHg9G0XCN8pq3l0IaiY" Name="Clips" Kind="InputPin" />
             <Pin Id="Q6aBW7E2rSPQboT20iQxiR" Name="Background Function" Kind="InputPin" />
             <Pin Id="OGxSXGWTKJpODBRG7A5ilo" Name="Sampling Position" Kind="InputPin" />
+            <Pin Id="FXEPwaIoztYOBN3XKSKVd9" Name="Alpha Function" Kind="InputPin" />
             <Pin Id="JFnbMWKAFszO3m54fZ2BPD" Name="Update" Kind="InputPin" />
             <Pin Id="EXXrKQUE9NIOvYNjo5IiA0" Name="Output" Kind="OutputPin" />
             <Pin Id="GWRtAUJErAyP0Q6pRpM67z" Name="Value" Kind="OutputPin" />
@@ -149,6 +150,8 @@
             <Pin Id="Il3jp39eM7ILytzxpQSdps" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="IH3hw8Ok7GhLTyolrqm2bi" Name="Update" Kind="InputPin" />
             <Pin Id="Qx0kkZhSt2mPCiG1w6nH6K" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="A71XMBngVVMOSjyCSNN24a" Name="Alpha" Kind="InputPin" />
+            <Pin Id="QzHsP4NSd9QNFyW5h3sDw5" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="Lc1zC57GHPkL86VzdgrqWj" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Pad Id="QcgVPcEUkqrMag8LCC9kn4" Comment="Position" Bounds="1207,587,35,15" ShowValueBox="true" isIOBox="true" Value="5">
@@ -215,6 +218,8 @@
             <Pin Id="UpBxtf743XFPcPXQ1bfbE4" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="I62vRsi58PbQSKg8BRAIiv" Name="Update" Kind="InputPin" />
             <Pin Id="TGXzKht0YcKOjRY3eQhgOU" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="TeI16LmuBCwMVD2U8LR2sf" Name="Alpha" Kind="InputPin" />
+            <Pin Id="Ttr3uncbwfALdoK49nnWLu" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="EoQH6GKyVTEOnaPM72R4WF" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="138,392,65,19" Id="FndD4HbnzinMwrsceLXRvz">
@@ -224,6 +229,7 @@
             </p:NodeReference>
             <Pin Id="Hgd8DKNDtFkPqXgHwkYKge" Name="Value" Kind="InputPin" />
             <Pin Id="L6mI9EZf9UoNCYVY1Gfwbe" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="O0Hd1uddIiFNgYQERpNLgR" Name="Alpha" Kind="InputPin" />
             <Pin Id="Rks61EEEck7O1wMkL7tW1r" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="399,640,85,19" Id="EzmuQ7U2fCjMrWuDfeg4O2">
@@ -238,6 +244,8 @@
             <Pin Id="G5pUb0h0DCOPPg1ryQtMJq" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="GybMht1lXRHM8Gfk5BG0tL" Name="Update" Kind="InputPin" />
             <Pin Id="NLJnOCxGDXHOX0njUSGQzh" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="HLOsWQLVdunNkGTDLIlvEm" Name="Alpha" Kind="InputPin" />
+            <Pin Id="VS4wcSHsm1NLkOLu2utnZj" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="A4jUEwQp2kGNEpL2beAzDT" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="399,392,65,19" Id="DPZ7gZENRwuM6wKIkWkeJS">
@@ -247,6 +255,7 @@
             </p:NodeReference>
             <Pin Id="FO3gG30uxhcM2bccp71pT1" Name="Value" Kind="InputPin" />
             <Pin Id="KgjjsCd1YSmOFsufV9lLx9" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="UJouzYJXBsEOY4tprrgzrF" Name="Alpha" Kind="InputPin" />
             <Pin Id="B84sb5VUzAtM0Oyf3ojHaj" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="661,640,85,19" Id="Ab8dGTmqDjSMgezb0anT9o">
@@ -261,6 +270,8 @@
             <Pin Id="QvXEm5yucLgLONeqBwE1Kz" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="DKsdw9E24g1ORM8XXPxHD0" Name="Update" Kind="InputPin" />
             <Pin Id="Esdqp0vU5JsMDqOLsP6jPt" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="PqXeE4LYyOnNfrcleQdxQV" Name="Alpha" Kind="InputPin" />
+            <Pin Id="SeiMgXWYcQ5LyvKIlb3iZe" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="SAMokdoGzYBMI89Uxjr8C1" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="923,640,85,19" Id="JFq8T6oUjqzNhIqs5ORu0L">
@@ -274,6 +285,8 @@
             <Pin Id="IUzLqwMFzo3L6GUxJpqMK7" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="UU0COsCSaqcMh41z7muXtR" Name="Update" Kind="InputPin" />
             <Pin Id="BduewXFENobLMMU7CsottJ" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="MjtcpdtFbSyMuvYaYvehQ6" Name="Alpha" Kind="InputPin" />
+            <Pin Id="SNxdwszNyfzMh3HJUAdXwN" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="CjXouyHM1ZWNSeAsXgvro4" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="923,392,65,19" Id="Mj3B0Uapsd6L1vpz1mitMj">
@@ -283,6 +296,7 @@
             </p:NodeReference>
             <Pin Id="SFTZtW7t4RDLSypxDcR9fj" Name="Value" Kind="InputPin" />
             <Pin Id="BGrip4Wpo20NWe3fXPhbot" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="KGNkDNZAVNWOzNqww02Vh8" Name="Alpha" Kind="InputPin" />
             <Pin Id="SUayI2pj8TMM6BRj5W9Umz" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="125,928,112,78" Id="RK2iCeGlC61M45FdFdvhCd">
@@ -292,6 +306,8 @@
               <CategoryReference Kind="Category" Name="Primitive" />
             </p:NodeReference>
             <Pin Id="ENsBoe0EbEJOJSpLVcUMPK" Name="Break" Kind="OutputPin" />
+            <ControlPoint Id="LHHrMykAZaeObfiYt4KifW" Bounds="220,934" Alignment="Top" />
+            <ControlPoint Id="T3VZwWJE1FLOpFjCNAXuKs" Bounds="139,1000" Alignment="Bottom" />
             <Patch Id="D2GFY6vI1SiOncnAfjm1MY" ManuallySortedPins="true">
               <Patch Id="LaI9cSMUxZQO5GkAc6uRBZ" Name="Create" ManuallySortedPins="true" />
               <Patch Id="VYa40VMoDFnOhCxGJvVobn" Name="Update" ManuallySortedPins="true" />
@@ -305,10 +321,9 @@
                 <Pin Id="NjL1EPNh6xTOOy1yoeQHg3" Name="Background Value" Kind="InputPin" />
                 <Pin Id="HASGhS5SCd2LaLVmMyApnN" Name="Sampling Position" Kind="InputPin" />
                 <Pin Id="TNR6UAyi6FcPJ4EUgSXMZs" Name="Output" Kind="OutputPin" />
+                <Pin Id="VO8ad0yoTFlM2XLXH5Kyge" Name="Layer Assigned" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="LHHrMykAZaeObfiYt4KifW" Bounds="220,934" Alignment="Top" />
-            <ControlPoint Id="T3VZwWJE1FLOpFjCNAXuKs" Bounds="139,1000" Alignment="Bottom" />
           </Node>
           <Node Bounds="218,890,85,19" Id="AsUAS8SNn1cOVl9bBC3HkJ">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
@@ -415,6 +430,8 @@
             <Pin Id="Plz8yvsTaleMzHos10D50n" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="Lmk0PhIVfBTO1GYVEaAjkN" Name="Update" Kind="InputPin" />
             <Pin Id="KLupBLL3EkiP7gIxSlEnwd" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="SZRfa0Sn1EWNpdojWKuHbP" Name="Alpha" Kind="InputPin" />
+            <Pin Id="NlD7E9BrLrgOIGnhNMeu9v" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="R8GrBh874xEMVDYowq2XVJ" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1186,-36,65,19" Id="HKQ27xcriDCMikzhcBkVVE">
@@ -424,6 +441,7 @@
             </p:NodeReference>
             <Pin Id="O9bUKru7jvqPcBMZ9M6Qni" Name="Value" Kind="InputPin" />
             <Pin Id="Qj419WxT1tbPAO5QbQRdy1" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="Qy7okmTsrCPNTQLZB0HqhL" Name="Alpha" Kind="InputPin" />
             <Pin Id="ElkSgkDqpugOsEYAVYRqv3" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1447,217,85,19" Id="MR12HSc7eWUN1NHuLCvNwE">
@@ -438,6 +456,8 @@
             <Pin Id="NLXD1Hf91jRO8kYB1i0F0N" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="S616xRafxTaOxI1RC5kie7" Name="Update" Kind="InputPin" />
             <Pin Id="NjnHVJYWNwHOMCcb5cCx3e" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="C5x55kpFQikPJNd1L9E2yZ" Name="Alpha" Kind="InputPin" />
+            <Pin Id="EaW1uSFfrvdPUSobMqAUdM" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="MmIwfGtSRPpOfqUqH9AVHx" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1447,-36,65,19" Id="Szp6jU6kUmFLuPs9KSSCTd">
@@ -447,6 +467,7 @@
             </p:NodeReference>
             <Pin Id="H9jM0A3BXGNPwcB7Mp64H3" Name="Value" Kind="InputPin" />
             <Pin Id="J7hlb5gzUONPOIHXmBNOQj" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="MlaoNcgepYJOH1an3vQOK4" Name="Alpha" Kind="InputPin" />
             <Pin Id="U3llrtm0u6gQKRXlQ3291k" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1708,217,85,19" Id="U0mCIQSSTSJLH5nQTN5ebt">
@@ -461,6 +482,8 @@
             <Pin Id="NtLt6xZK5BMPdHXebApF09" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="BRCrFIT7oCULB9XQYT8nzb" Name="Update" Kind="InputPin" />
             <Pin Id="PyhBb84x6wDOFyLxmKWnqM" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="NUvaDc0xrCpNkcu0Z7Aswj" Name="Alpha" Kind="InputPin" />
+            <Pin Id="BQb6X5QTvnSNxg8IstOoUM" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="R2b7OKR2B2VPLbhtiTII3g" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1970,217,59,19" Id="EJHLWKplesDNaz9RCefBH0">
@@ -474,6 +497,8 @@
             <Pin Id="APmVKY4bR7OPjimjf6dkLV" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="CTcDDixT4YbMNnqzeOeiyr" Name="Update" Kind="InputPin" />
             <Pin Id="HWwJtpXeeHFOT13FLW5218" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="LSkYrDKlA3ZQVYZYyAcQKB" Name="Alpha" Kind="InputPin" />
+            <Pin Id="IAThSANOPsGM8RnMirPlIT" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="TcNIz7kLEctMmp6kwG6qhC" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1969,-36,65,19" Id="SKELry6TnnuM0wgeV7hBi5">
@@ -483,6 +508,7 @@
             </p:NodeReference>
             <Pin Id="DlRDiBjoWAmQa8wnfmBCRo" Name="Value" Kind="InputPin" />
             <Pin Id="TkL2vMADCEbLRvUkyduQck" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="FTA1nIzzqHPN4gyb337OFf" Name="Alpha" Kind="InputPin" />
             <Pin Id="J6lsEbwtOgZQHeoLYmkJqn" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1447,-142,65,19" Id="MCFhV42pUdhNloOaI6D6gP">
@@ -519,6 +545,8 @@
               <CategoryReference Kind="Category" Name="Primitive" />
             </p:NodeReference>
             <Pin Id="OM5QTvI3IKOMlPxYDmblNi" Name="Break" Kind="OutputPin" />
+            <ControlPoint Id="VcRCrDOfQLRLZM0lVBPn5X" Bounds="1608,478" Alignment="Top" />
+            <ControlPoint Id="NEkBcNSfaooLpsm9I9w4Zs" Bounds="1527,535" Alignment="Bottom" />
             <Patch Id="EreOz0652qrPNVL4sMtCUk" ManuallySortedPins="true">
               <Patch Id="KyrKP7GPirHOdOxxpRKlsU" Name="Create" ManuallySortedPins="true" />
               <Patch Id="KHm1TDDvcVmNsvCeNliXhB" Name="Update" ManuallySortedPins="true" />
@@ -532,10 +560,9 @@
                 <Pin Id="DDHsSg8Yj2uLnS6Qc0npT2" Name="Background Value" Kind="InputPin" />
                 <Pin Id="QuwwcEoedDCPZd6dFjuhCQ" Name="Sampling Position" Kind="InputPin" />
                 <Pin Id="Te0WsBrvagFNI8KK4qhdW5" Name="Output" Kind="OutputPin" />
+                <Pin Id="CHMFseIfNwvOQLrRBl9bfa" Name="Layer Assigned" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="VcRCrDOfQLRLZM0lVBPn5X" Bounds="1608,478" Alignment="Top" />
-            <ControlPoint Id="NEkBcNSfaooLpsm9I9w4Zs" Bounds="1527,535" Alignment="Bottom" />
           </Node>
           <Node Bounds="1606,433,85,19" Id="QYIOdldaIW2PzqP3tmOWH2">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
@@ -640,6 +667,7 @@
             <Pin Id="D4UNJDKc8VcLIb4BebFqZw" Name="Clips" Kind="InputPin" />
             <Pin Id="DjztZLUSSpALzeOTd3KQ4F" Name="Background Function" Kind="InputPin" />
             <Pin Id="BSEwJBpiOi3PheX3irnpnW" Name="Sampling Position" Kind="InputPin" />
+            <Pin Id="LniKDkjSftDMn77K3vJ5dn" Name="Alpha Function" Kind="InputPin" />
             <Pin Id="PNFrjpAczd1MkmfUe2YOT4" Name="Update" Kind="InputPin" />
             <Pin Id="MjeOl5TJDh6Pb3W56d0tqZ" Name="Output" Kind="OutputPin" />
             <Pin Id="OQnegOTLNxaMGhusLCKGeo" Name="Value" Kind="OutputPin" />
@@ -656,9 +684,11 @@
             <Pin Id="T5HzsB1QAAWLjkDJFx4Ytt" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="Kd76ELyEeNPPQ9XdBz8wvq" Name="Update" Kind="InputPin" />
             <Pin Id="ELXINGWiPZmM3ezxwex3TI" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="ElKGaJuwaVPPKxzsBq6wLB" Name="Alpha" Kind="InputPin" />
+            <Pin Id="Hl0qVxwtRqlMlsV8Qpw139" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="R15ewmbyhBrLxzCNRSuNIb" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Pad Id="O4nJIWcyU59OBgK4Y1mIZJ" Comment="Position" Bounds="1190,2125,35,15" ShowValueBox="true" isIOBox="true" Value="6">
+          <Pad Id="O4nJIWcyU59OBgK4Y1mIZJ" Comment="Position" Bounds="1190,2125,35,15" ShowValueBox="true" isIOBox="true" Value="5.99999986588955">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
@@ -691,6 +721,8 @@
             <Pin Id="GEqrXOwJPw5PdKNF06ux6x" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="GoYJIdKfxc3PmXdg9Wyv9Q" Name="Update" Kind="InputPin" />
             <Pin Id="H8tFS8dWDXLNhza8ASs8vr" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="VZi9yxhpdyXNjeWi6nMSW7" Name="Alpha" Kind="InputPin" />
+            <Pin Id="VDuvXgEV5bFO69OLenmZMT" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="QI5UzwcwMhXNf2RnhxuFTS" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="121,1930,65,19" Id="VxJKQzncJcmOzU814K5tEl">
@@ -700,6 +732,7 @@
             </p:NodeReference>
             <Pin Id="ICLZq5q778qQK9KDuMGT8u" Name="Value" Kind="InputPin" />
             <Pin Id="UVcDaRk3liXQKosaJYJYIr" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="DAnAQcsjF19MaZt343xPX4" Name="Alpha" Kind="InputPin" />
             <Pin Id="VkGo3dGoB1mOcA73mWzba7" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="382,2178,85,19" Id="V6cWYvaSlObPpaIoE2unqq">
@@ -714,6 +747,8 @@
             <Pin Id="JILNazxfddUPihk3l5ofno" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="TLFnKQxJyLJMwin8vmGJzd" Name="Update" Kind="InputPin" />
             <Pin Id="JaIA62danD3NZr9VuvxP1c" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="FfFo3JT3YYBO0DAW8hNyHo" Name="Alpha" Kind="InputPin" />
+            <Pin Id="RxlH9IVHBJ3LECI2kPEn2k" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="HEHydaZD15qMBqIvZxT8tq" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="382,1930,65,19" Id="OOT6EmIYxKfNhZhk0As7qe">
@@ -723,6 +758,7 @@
             </p:NodeReference>
             <Pin Id="VYqn0qfqWEYQNTfrc52oDB" Name="Value" Kind="InputPin" />
             <Pin Id="J6H6orYPjlkLQ9fkTpmmaK" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="RTqtHQpDMFsNPzQn0Agh0V" Name="Alpha" Kind="InputPin" />
             <Pin Id="HZrNHU5zNecPQ540X7Zsjz" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="644,2178,85,19" Id="NLF9PUIkewXNxpKKecxX0F">
@@ -737,6 +773,8 @@
             <Pin Id="AqBV8j5fGm8Lh17XSvURLc" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="LFgEM3gD5JtNx0qgFMFzgo" Name="Update" Kind="InputPin" />
             <Pin Id="VpHK7wNY3v9NagdL2vWXLm" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="EqmUEfcXvvBQYxkPqW8E76" Name="Alpha" Kind="InputPin" />
+            <Pin Id="Jik4x80RWjEMvdYaz1UDgT" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="NCuVgMSaXfeOqmv5dZsIom" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="906,2178,64,19" Id="Mi8wStEMykBPtsfh8QIxEi">
@@ -750,6 +788,8 @@
             <Pin Id="TpgG95zixNZL8MRRaQsnec" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="PQMwLnid721PJEYaMooxQu" Name="Update" Kind="InputPin" />
             <Pin Id="LiuafPEL78PNjkUVsTUp08" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="HxpTiMXhfHvNWmRivO2jN3" Name="Alpha" Kind="InputPin" />
+            <Pin Id="Ge6QDjypabZLItwND8KeeD" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="FRxntOri3wmPOfAQW3Igfu" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="906,1930,65,19" Id="IuBDrRzGyN7Ld3fR6rTqW5">
@@ -759,6 +799,7 @@
             </p:NodeReference>
             <Pin Id="QCKhqEumj8FQVkvZkH8K0E" Name="Value" Kind="InputPin" />
             <Pin Id="JLNneNp3fGdPRzXjr96LXc" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="FhR22a1qdrvODy3Mo8BJwS" Name="Alpha" Kind="InputPin" />
             <Pin Id="ChXmqCEZ2j4O2SMbRsbdt5" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="107,2478,99,65" Id="HRjsTwimhMsODVNVnEPXzC">
@@ -768,6 +809,8 @@
               <CategoryReference Kind="Category" Name="Primitive" />
             </p:NodeReference>
             <Pin Id="Gob3lMhR48eLCEgeqslUiF" Name="Break" Kind="OutputPin" />
+            <ControlPoint Id="Hz6fNMMY4dnPYwYU3SAlxT" Bounds="189,2485" Alignment="Top" />
+            <ControlPoint Id="DS7D4SZPXncL9djAAz0ZJE" Bounds="121,2537" Alignment="Bottom" />
             <Patch Id="I7LcRdiDws1L1IAazcX1EE" ManuallySortedPins="true">
               <Patch Id="Vt6reLq7SjbOiqJ36yAe92" Name="Create" ManuallySortedPins="true" />
               <Patch Id="PIuh26IJuCfPxop79YWURF" Name="Update" ManuallySortedPins="true" />
@@ -781,10 +824,9 @@
                 <Pin Id="TCF0CdcM4hiL7aYEaURlub" Name="Background Value" Kind="InputPin" />
                 <Pin Id="CnVdG6KCYnlOTYRVrw3BMU" Name="Sampling Position" Kind="InputPin" />
                 <Pin Id="UxbILJKArR4OeDslXAiT9a" Name="Output" Kind="OutputPin" />
+                <Pin Id="Byt3Omi694tPqjb8VcSmDc" Name="Layer Assigned" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="Hz6fNMMY4dnPYwYU3SAlxT" Bounds="189,2485" Alignment="Top" />
-            <ControlPoint Id="DS7D4SZPXncL9djAAz0ZJE" Bounds="121,2537" Alignment="Bottom" />
           </Node>
           <Node Bounds="187,2440,85,19" Id="N0om9ftCprbLrTb0Zcut9k">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
@@ -885,6 +927,8 @@
             <Pin Id="KeibLLXjZsENgmsxJIO370" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="Ozpy89LcQ1EPXrfn9Yn5Zn" Name="Update" Kind="InputPin" />
             <Pin Id="CMjPAjTX29QLyb7XWEey1m" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="G62LNmSoDigMzHmkWuO09N" Name="Alpha" Kind="InputPin" />
+            <Pin Id="GhODyPrsXrONs73KADqj47" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="VIq6p1ZDjTPM65xn3GJ9FD" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1169,1502,65,19" Id="TjZGsy2oRuHOmu0Z2QVJXv">
@@ -894,6 +938,7 @@
             </p:NodeReference>
             <Pin Id="CsZqkR5iqFEPNWe90gyBzW" Name="Value" Kind="InputPin" />
             <Pin Id="KKQHqMm1mF7OZ9Kj8c27Lg" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="RllYt2DOWwONVnLa5N3FCF" Name="Alpha" Kind="InputPin" />
             <Pin Id="A8LuymUmbldM1BYb3EMgpC" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1430,1755,85,19" Id="GybRfGfGKcaP6FnJNXhydA">
@@ -908,6 +953,8 @@
             <Pin Id="CPYkyzxgJ1iOanIw9ANEjK" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="DuzNcxH2CuCOZWbrp6mtkl" Name="Update" Kind="InputPin" />
             <Pin Id="JEzgLSp95A6MpAio2QoNiN" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="JVvNnq4jzhRL9S6Xdi1GRw" Name="Alpha" Kind="InputPin" />
+            <Pin Id="Hk87Qfv4QVaQMLIs9fQn9c" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="UTqERqYuMxtM4jUeVXq4bp" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1430,1502,65,19" Id="UfujlgIvNmZPi1kcGZJXxV">
@@ -917,6 +964,7 @@
             </p:NodeReference>
             <Pin Id="PWrysaY1FCnOUEGo1dHXty" Name="Value" Kind="InputPin" />
             <Pin Id="H7Gw5MSe1fFM4PcsVu3gPS" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="RbW2SraKDDUN4L25CCGxZM" Name="Alpha" Kind="InputPin" />
             <Pin Id="Aa79DZMtOKvNbAX0aUCDAI" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1691,1755,85,19" Id="DejxSjFfsbSLChxUaqZiwP">
@@ -931,6 +979,8 @@
             <Pin Id="M5SoTp2nJicOR7LGgyQRey" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="A5j3P8AczjbLV2y7TtMC8x" Name="Update" Kind="InputPin" />
             <Pin Id="EHi4AXHfFz7OKVKJQ0bmsg" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="UdqZRv7kETrQD4HxqyZJ1S" Name="Alpha" Kind="InputPin" />
+            <Pin Id="B0o24pkPRinLatuhTq11W8" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="UvzOxTVlcDRMk8qUrp9a6U" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1953,1755,59,19" Id="K3Yb0dKoH1ONOnSUS7y3Xy">
@@ -944,6 +994,8 @@
             <Pin Id="Ra436X986eHNaSS6489zSy" Name="SpreadCount Interpolation Model" Kind="InputPin" />
             <Pin Id="D7XlFICDdY7Oyk8OJikpi3" Name="Update" Kind="InputPin" />
             <Pin Id="B9EL0JwY3PwNP0JV55Ulkn" Name="Custom Transport Function" Kind="InputPin" />
+            <Pin Id="Lzm3RPCJCCOMhskniI4521" Name="Alpha" Kind="InputPin" />
+            <Pin Id="F4xUWQgIraLNVM1MVd9qkw" Name="Alpha Blending Model" Kind="InputPin" />
             <Pin Id="Vp6lmE3IaZdM5eaVk2wkUp" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1952,1502,65,19" Id="CRgvktv6Lt2OsnR3OJMXks">
@@ -953,6 +1005,7 @@
             </p:NodeReference>
             <Pin Id="IE9kiPXLViGMPj6JkpsNKP" Name="Value" Kind="InputPin" />
             <Pin Id="F5LfHfwUPuoPCHM3UoniV6" Name="Compositing Model" Kind="InputPin" />
+            <Pin Id="G6ukdAf8aOoLwNrOjkdN2U" Name="Alpha" Kind="InputPin" />
             <Pin Id="L9aamF5C8IBO2lZTfwuSjz" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="1431,1373,65,19" Id="FvnIJhpPlrVMsm8yad2pcc">
@@ -989,6 +1042,8 @@
               <CategoryReference Kind="Category" Name="Primitive" />
             </p:NodeReference>
             <Pin Id="IDlHjDhEFWRMzwrwD39s3K" Name="Break" Kind="OutputPin" />
+            <ControlPoint Id="FY7lR7a2m7dOZGW9nxPI5f" Bounds="1604,2019" Alignment="Top" />
+            <ControlPoint Id="JSjckJ6OzaZQTekpBez9EX" Bounds="1523,2081" Alignment="Bottom" />
             <Patch Id="RqPw5aigmfKLKfGXRX3ns4" ManuallySortedPins="true">
               <Patch Id="EzpazHesr2tPtVWzfAvkrQ" Name="Create" ManuallySortedPins="true" />
               <Patch Id="AY85Gq1Hg1VNB71HhsSD1b" Name="Update" ManuallySortedPins="true" />
@@ -1002,10 +1057,9 @@
                 <Pin Id="JzSxbqTZQwEPxHFwjWbAhZ" Name="Background Value" Kind="InputPin" />
                 <Pin Id="Vw177JH2UpuPKWXxDEQt60" Name="Sampling Position" Kind="InputPin" />
                 <Pin Id="QeLHGMskYb9OfI1oI4QOQi" Name="Output" Kind="OutputPin" />
+                <Pin Id="An77XU1U8QFPUFSFu7EkAR" Name="Layer Assigned" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="FY7lR7a2m7dOZGW9nxPI5f" Bounds="1604,2019" Alignment="Top" />
-            <ControlPoint Id="JSjckJ6OzaZQTekpBez9EX" Bounds="1523,2081" Alignment="Bottom" />
           </Node>
           <Node Bounds="1602,1978,85,19" Id="Hlb24DZHloQO6PjtG7tqYI">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
@@ -1093,6 +1147,7 @@
             <Pin Id="OsogDmR5SwQPyTPNqmxRhz" Name="Background Value" Kind="InputPin" />
             <Pin Id="FFQAPyhq2VgPLy7zOQdFZa" Name="Sampling Position" Kind="InputPin" />
             <Pin Id="UtJ3lVercVfM4dMj3m2jT7" Name="Output" Kind="OutputPin" />
+            <Pin Id="LHtu6L17dJVMYFN3FJj5xj" Name="Layer Assigned" Kind="OutputPin" />
           </Node>
           <Pad Id="PXYOMKtqWbiNwklxTBMc0y" Comment="" Bounds="572,1938,59,22" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="120,2299,70,19" Id="HTaIjnaCRXFLoT2d5R1xP6">
@@ -1103,6 +1158,7 @@
             <Pin Id="QTF9hvtlbiYPYQtbYeCH4L" Name="Clips" Kind="InputPin" />
             <Pin Id="CkaH3cfG6xGPHs0bHhFNad" Name="Background Function" Kind="InputPin" />
             <Pin Id="LF7gnpZzXWDMwsbmsy1Phz" Name="Sampling Position" Kind="InputPin" />
+            <Pin Id="Vob2X9Y2a9lO8Cg3lD9TWQ" Name="Alpha Function" Kind="InputPin" />
             <Pin Id="O5gQCi3DYZ8NhLSX47v907" Name="Update" Kind="InputPin" />
             <Pin Id="NxhxduLjAC7PWhGKvdLSmo" Name="Output" Kind="OutputPin" />
             <Pin Id="GHWklCyetvJOWdyHMbtqrU" Name="Value" Kind="OutputPin" />
@@ -1116,6 +1172,7 @@
             <Pin Id="IoMtaMcJiLlPpIavZyNrhJ" Name="Background Value" Kind="InputPin" DefaultValue="0" />
             <Pin Id="Glb2SZhV78JPXzoSbqV3Yv" Name="Sampling Position" Kind="InputPin" />
             <Pin Id="O0x4SBbbvRyPAFlJmhdMmA" Name="Output" Kind="OutputPin" />
+            <Pin Id="HtM30v048uYLkkNP2UBbpq" Name="Layer Assigned" Kind="OutputPin" />
           </Node>
           <Pad Id="AKrjE9gEDGPPQ4gGdtFsK3" Comment="" Bounds="692,355,44,77" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation>
@@ -1141,6 +1198,7 @@
             <Pin Id="Sqh29Uf0X9ULo03BLuf8TK" Name="Clips" Kind="InputPin" />
             <Pin Id="RlEMFQyrcsoM9B3uoYisUB" Name="Background Function" Kind="InputPin" />
             <Pin Id="PdFyczkw6hJNwDeVwuxbK0" Name="Sampling Position" Kind="InputPin" />
+            <Pin Id="CxIlEL3OWDPQY1TvjDJ5Wq" Name="Alpha Function" Kind="InputPin" />
             <Pin Id="IjeDAuVlNRPPIK6u4Aj6YC" Name="Update" Kind="InputPin" />
             <Pin Id="QdsnombaVNvLbI2rSa2zG6" Name="Output" Kind="OutputPin" />
             <Pin Id="SBMtoE6GvIuLilGbaA6W52" Name="Value" Kind="OutputPin" />
