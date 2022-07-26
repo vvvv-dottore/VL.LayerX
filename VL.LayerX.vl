@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Document xmlns:p="property" Id="Q5gxGPO5irXPMzGPkC28oK" LanguageVersion="2021.4.9.982" Version="0.128">
   <Patch Id="LXv0ddmdjXNQZnqEXXDb3W">
-    <Canvas Id="KCGQRwxbluWObmtEmvdQAk" DefaultCategory="VL.Kairos.Layer" CanvasType="FullCategory">
+    <Canvas Id="KCGQRwxbluWObmtEmvdQAk" DefaultCategory="LayerX" CanvasType="FullCategory">
       <Canvas Id="Dv85rVoqEaYMIPpGsm5NCI" Name="1D" Position="183,345">
         <!--
 
@@ -299,7 +299,7 @@
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
               <Choice Kind="ContainerDefinition" Name="Process" />
             </p:NodeReference>
-            <Patch Id="LDRSWIVvQHFQcOMb5ZOn1n" IsGeneric="true">
+            <Patch Id="LDRSWIVvQHFQcOMb5ZOn1n" IsGeneric="true" ExplicitTypeParameters="T">
               <Canvas Id="UKWtrB243LBOJzLNL0BMEL" CanvasType="Group">
                 <Node Bounds="428,428,111,19" Id="QoIfeDta8LOMKrUZb1fYlL">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.Background" LastSymbolSource="VL.Kairos.Layer.vl">
@@ -343,21 +343,25 @@
                   <Pin Id="O7uY4lT3Q6hOgWhgwTKaJu" Name="Output" Kind="StateOutputPin" />
                 </Node>
               </Canvas>
-              <Patch Id="BS05v4PpwO2NP1eycgQEj6" Name="Create" />
+              <Patch Id="BS05v4PpwO2NP1eycgQEj6" Name="Create" ParticipatingElements="Ly8j32cno8ePOXBVr5D6f8" />
               <Patch Id="FNbjUUeuGf8OaEqw4X3qEe" Name="Update">
                 <Pin Id="F3Kvb731qIJNZXMw5Qbrni" Name="Input" Kind="InputPin" Bounds="359,427" />
-                <Pin Id="IZSdtXKp8AYLiA3jaV56pH" Name="Background Value" Kind="InputPin" Bounds="457,408" />
                 <Pin Id="EorX3sHPFSZPDhBrDxyKjn" Name="Sampling Position" Kind="InputPin" Bounds="564,506" />
-                <Pin Id="Eer2nnbC5cePbHFXvHUIjh" Name="Output" Kind="OutputPin" Bounds="564,597" />
+                <Pin Id="Eer2nnbC5cePbHFXvHUIjh" Name="Output" Kind="OutputPin" Bounds="564,597">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="T" />
+                  </p:TypeAnnotation>
+                </Pin>
                 <Pin Id="Im8uFNeGpR2MafC6j5JXVd" Name="Layer Assigned" Kind="OutputPin" Bounds="564,596" />
               </Patch>
               <ProcessDefinition Aspects="Advanced" Id="KUrH93c9fAXPcaO3hCCUj6">
                 <Fragment Id="H1wYLD53Io6OSzGr8hNMqR" Patch="BS05v4PpwO2NP1eycgQEj6" Enabled="true" />
                 <Fragment Id="BeSNtNZAfZPNpZwJUGZTpo" Patch="FNbjUUeuGf8OaEqw4X3qEe" Enabled="true" />
+                <Fragment Id="LlPm0AUBuJoPHpqBNd87mE" Patch="TnNnjqmp0ieL8UDo8AP4Rn" Enabled="true" />
               </ProcessDefinition>
               <Link Id="KPeHI3pigCmNaGJ3QOdbdv" Ids="F3Kvb731qIJNZXMw5Qbrni,NW0ahTEENQtMFitKFoXCtD" IsHidden="true" />
               <Link Id="HtJd9IUCVg8OqNgfyk1Wn7" Ids="D5SZrIBoVDvLUGhtGNe8Qq,IkTg6xKsDnkNo0MMjT0cyS" />
-              <Link Id="Pc0qMtLhl8kLUDLT9GF41g" Ids="IZSdtXKp8AYLiA3jaV56pH,D5SZrIBoVDvLUGhtGNe8Qq" IsHidden="true" />
+              <Link Id="Pc0qMtLhl8kLUDLT9GF41g" Ids="KTc1JqJ2oeKMbxmrEHrzzj,D5SZrIBoVDvLUGhtGNe8Qq" IsHidden="true" />
               <Link Id="JUEwbhhyZHZPTBhKQyfn0d" Ids="EorX3sHPFSZPDhBrDxyKjn,PQKK1EQzHYsQdbc4H6b4Lr" IsHidden="true" />
               <Link Id="Ov4uHkHOoisO8jemQbHjPN" Ids="F0r4b1FfKCvO300IfcQdHH,Eer2nnbC5cePbHFXvHUIjh" IsHidden="true" />
               <Link Id="CGMb2oLQH5wPfSklbbEmq0" Ids="NW0ahTEENQtMFitKFoXCtD,DWWNA8loFRAPFPX8hMxRwF" />
@@ -368,6 +372,9 @@
               <Link Id="NJ1LhDaHCi7Mls8HJoewdy" Ids="VBfAFM0MLe3Oo4ATwQX0WD,Im8uFNeGpR2MafC6j5JXVd" IsHidden="true" />
               <Link Id="Ly8j32cno8ePOXBVr5D6f8" Ids="D1RRm2wTVNeOg1YByHHVig,C6mu7XaMKY1PZmGIB2UszI" />
               <Link Id="OfXISw21jSjPQeyxghsLch" Ids="O7uY4lT3Q6hOgWhgwTKaJu,L3QXYKeFckoL9HJORwLu1c" />
+              <Patch Id="TnNnjqmp0ieL8UDo8AP4Rn" Name="SetBackgroundValue">
+                <Pin Id="KTc1JqJ2oeKMbxmrEHrzzj" Name="Background Value" Kind="InputPin" />
+              </Patch>
             </Patch>
           </Node>
           <Overlay Id="QJ2T3GxosRtOT5YUpb7dOH" Name="Sampling" Bounds="166,155,848,975" />
@@ -1338,8 +1345,8 @@
                   </Patch>
                 </Node>
                 <ControlPoint Id="NB7SN3j0j02N2dFULwtihC" Bounds="849,795" />
-                <ControlPoint Id="OZeit58OZrLNsN3o3srbPC" Bounds="560,942" />
-                <ControlPoint Id="QCrboKSbuITMg6NfPlSDkX" Bounds="1065,1052" />
+                <ControlPoint Id="OZeit58OZrLNsN3o3srbPC" Bounds="643,940" />
+                <ControlPoint Id="QCrboKSbuITMg6NfPlSDkX" Bounds="1070,1052" />
                 <Node Bounds="428,984,647,26" Id="JNG7xP44YNkNTZEOcYKvqN">
                   <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.ILayer1D" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -2551,9 +2558,12 @@
                     <Patch Id="JRPUeppNwUgOOaSWLQvVxv" Name="Update" ManuallySortedPins="true" />
                     <Patch Id="TxP0CHz8SxrL7OLUXYKAGS" Name="Dispose" ManuallySortedPins="true" />
                     <Node Bounds="220,351,392,19" Id="VQKlq86YMboPMHg7iyOXtd">
-                      <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.1D.Compositor1D" LastSymbolSource="VL.LayerX.vl">
+                      <p:NodeReference LastCategoryFullName="Kairos.Layer.1D.Compositor1D" LastSymbolSource="VL.LayerX.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="ProcessAppFlag" Name="BuildBackground1D" />
+                        <CategoryReference Kind="Category" Name="Compositor1D" NeedsToBeDirectParent="true">
+                          <p:OuterCategoryReference Kind="Category" Name="1D" NeedsToBeDirectParent="true" />
+                        </CategoryReference>
                       </p:NodeReference>
                       <Pin Id="FDQMiO62aAyOPp3EgAgljN" Name="CompositorClip1D" Kind="InputPin" />
                       <Pin Id="RurAyY9O9OSOBeP3jE80gV" Name="Background Function" Kind="InputPin" />
@@ -9376,11 +9386,11 @@
                     <Patch Id="RayP3tpCvrBQNSKEUcEYSc" Name="Update" ManuallySortedPins="true" />
                     <Patch Id="ONKTpsICzXzP1ndrNusJl4" Name="Dispose" ManuallySortedPins="true" />
                     <Node Bounds="220,351,170,19" Id="R3gW9XUTWkyPgaBIBn8FJT">
-                      <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.2D" LastSymbolSource="VL.LayerX.vl">
+                      <p:NodeReference LastCategoryFullName="LayerX.2D" LastSymbolSource="VL.LayerX.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="ProcessAppFlag" Name="BuildBackground2D" />
                         <CategoryReference Kind="Category" Name="2D" NeedsToBeDirectParent="true">
-                          <p:OuterCategoryReference Kind="Category" Name="Layer" NeedsToBeDirectParent="true" />
+                          <p:OuterCategoryReference Kind="Category" Name="LayerX" NeedsToBeDirectParent="true" />
                         </CategoryReference>
                       </p:NodeReference>
                       <Pin Id="Tk9vgQi2JyaNVDEXQF9E2W" Name="Layer2D" Kind="InputPin" />
